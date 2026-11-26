@@ -14,7 +14,7 @@ const related = (post.relatedArticles || []).filter((item) => item?.slug?.curren
     {post.subtitle && <p class="sanity-subtitle">{post.subtitle}</p>}
     {post.publishedAt && <time datetime={post.publishedAt}>{new Intl.DateTimeFormat(locale, {dateStyle: 'long', timeZone: 'UTC'}).format(new Date(post.publishedAt))}</time>}
   </header>
-  {cover && <figure><img src={cover} alt={post.cover.alt || ''} />{post.cover.caption && <figcaption>{post.cover.caption}</figcaption>}</figure>}
+  {cover && <figure><img src={cover} alt={post.cover.alt || ''} width={post.cover.asset?.dimensions?.width} height={post.cover.asset?.dimensions?.height} decoding="async" />{post.cover.caption && <figcaption>{post.cover.caption}</figcaption>}</figure>}
   <div class="sanity-body" set:html={renderBody(post.body)} />
   {related.length > 0 && <section class="sanity-related"><h2>{locale === 'es' ? 'Artículos relacionados' : 'Related articles'}</h2><ul>{related.map((item) => <li><a href={`/${encodeURIComponent(locale)}/blog/${encodeURIComponent(item.slug.current)}/`}>{item.title}</a>{item.subtitle && <p>{item.subtitle}</p>}</li>)}</ul></section>}
 </article>

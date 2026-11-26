@@ -18,6 +18,8 @@ export interface Article {
   type: ArticleKind;
   date: string;
   isoDate: string;
+  publishedAt?: string;
+  updatedAt?: string;
   tags: string[];
   image: string;
   alt: string;

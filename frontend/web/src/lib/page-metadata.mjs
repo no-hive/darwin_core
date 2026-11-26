@@ -5,7 +5,7 @@ import {canonicalURL} from './routes.mjs';
 
 /**
  * Pure metadata model shared by Astro and the legacy page adapter.
- * @param {{locale:string, route:string, article?:{title:string,dek:string,seoTitle?:string,seoDescription?:string}|null, fallbackTitle?:string, description?:string, classes?:string[]}} options
+ * @param {{locale:string, route:string, article?:{title:string,dek:string,isoDate?:string,seoTitle?:string,seoDescription?:string,image?:string,publishedAt?:string,updatedAt?:string}|null, fallbackTitle?:string, description?:string, classes?:string[]}} options
  */
 export function pageMetadata({locale, route, article, fallbackTitle = '', description: sourceDescription, classes = []}) {
   const fallback = fallbackTitle.replace(/Quiet Light/g, SITE.name)
@@ -27,6 +27,16 @@ export function pageMetadata({locale, route, article, fallbackTitle = '', descri
     {'@context': 'https://schema.org', '@type': 'WebSite', '@id': canonicalURL(locale, 'concept/') + '#website', name: SITE.name, url: canonicalURL(locale, 'concept/'), inLanguage: locale},
     {'@context': 'https://schema.org', '@type': 'WebPage', '@id': url + '#webpage', name: title, description, url, inLanguage: locale, isPartOf: {'@id': canonicalURL(locale, 'concept/') + '#website'}}
   ];
+  if (article) structured.push({
+    '@context': 'https://schema.org', '@type': 'BlogPosting', '@id': url + '#article',
+    headline: pageTitle, description, url, mainEntityOfPage: {'@id': url + '#webpage'},
+    datePublished: article.publishedAt || article.isoDate,
+    dateModified: article.updatedAt || article.publishedAt || article.isoDate,
+    image: article.image ? [article.image] : undefined,
+    author: {'@type': 'Organization', name: SITE.name, url: SITE.origin},
+    publisher: {'@type': 'Organization', name: SITE.name, url: SITE.origin},
+    inLanguage: locale,
+  });
   const availableLocales = article?.availableLocales || SITE.locales;
   const defaultLocale = availableLocales.includes(SITE.defaultLocale) ? SITE.defaultLocale : availableLocales[0];
   const alternates = [...availableLocales.map(lang => ({lang, href: canonicalURL(lang, route)})), {lang: 'x-default', href: canonicalURL(defaultLocale, route)}];

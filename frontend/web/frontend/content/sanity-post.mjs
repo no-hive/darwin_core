@@ -4,7 +4,7 @@ import hljs from 'highlight.js';
 
 // This query and renderer are prepared for a future Sanity-powered route.
 export const SANITY_POST_QUERY = `*[_type == "post" && slug.current == $slug][0]{
-  _id, title, kicker, subtitle, slug, publishedAt, cover, seoTitle, seoDescription, body,
+  _id, title, kicker, subtitle, slug, publishedAt, cover{alt, caption, "asset": asset->{_id, url, "dimensions": metadata.dimensions}}, seoTitle, seoDescription, body[]{..., _type == "articleImage" => {..., "asset": asset->{_id, url, "dimensions": metadata.dimensions}}},
   "relatedArticles": relatedArticles[]->{_id, title, subtitle, slug}
 }`;
 
@@ -15,6 +15,12 @@ export function imageUrl(image) {
   if (!image?.asset?._ref && !image?.asset?._id) return '';
   try { return imageBuilder.image(image).width(1200).fit('max').auto('format').url(); }
   catch { return ''; }
+}
+
+function imageDimensions(image) {
+  const dimensions = image?.asset?.dimensions;
+  if (!Number.isSafeInteger(dimensions?.width) || !Number.isSafeInteger(dimensions?.height)) return '';
+  return ` width="${dimensions.width}" height="${dimensions.height}"`;
 }
 
 export function renderBody(body) {
@@ -28,7 +34,7 @@ export function renderBody(body) {
     types: {
       articleImage: ({value}) => {
         const src = imageUrl(value);
-        return src ? `<figure><img src="${escape(src)}" alt="${escape(value.alt)}" loading="lazy">${value.caption ? `<figcaption>${escape(value.caption)}</figcaption>` : ''}</figure>` : '';
+        return src ? `<figure><img src="${escape(src)}" alt="${escape(value.alt)}"${imageDimensions(value)} loading="lazy" decoding="async">${value.caption ? `<figcaption>${escape(value.caption)}</figcaption>` : ''}</figure>` : '';
       },
       separator: () => '<hr>',
       code: ({value}) => {

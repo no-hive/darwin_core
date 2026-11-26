@@ -10,6 +10,8 @@ interface LocalArticle {
   type: ArticleKind;
   date: string;
   isoDate: string;
+  publishedAt?: string;
+  updatedAt?: string;
   tags: string[];
   body?: unknown[];
   relatedArticles?: string[];

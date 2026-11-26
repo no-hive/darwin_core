@@ -12,7 +12,7 @@ import {imageDimensions} from './lib/images.mjs';
 const root=path.resolve('dist');
 const catalogs=Object.fromEntries(SITE.locales.map(locale=>[locale,localizedArticles(locale)]));
 async function walk(d){return(await Promise.all((await readdir(d,{withFileTypes:true})).map(e=>e.isDirectory()?walk(path.join(d,e.name)):[path.join(d,e.name)]))).flat();}
-const files=await walk(root),failures=[];let pages=0,references=0;
+const files=await walk(root),failures=[],canonicalUrls=[];let pages=0,references=0;
 const exists=async p=>{try{await stat(p);return true;}catch{return false;}};
 for(const f of files.filter(f=>f.endsWith('.html'))){
  const html=await readFile(f,'utf8'),{document:d}=parseHTML(html),route='/'+path.relative(root,f).replace(/index\.html$/,'');
@@ -27,6 +27,8 @@ for(const f of files.filter(f=>f.endsWith('.html'))){
  assert.equal(d.querySelectorAll('meta[name="description"]').length,1,`Single description: ${route}`);
  assert(d.querySelector('meta[name="description"]').content.trim(),`Nonempty description: ${route}`);
  assert.equal(d.querySelector('link[rel="canonical"]').href,SITE.origin+route,`Canonical URL: ${route}`);
+ assert.equal(d.querySelectorAll('meta[name="robots"]').length,0,`Public page remains indexable: ${route}`);
+ canonicalUrls.push(SITE.origin+route);
  for(const key of ['title','description','url','image','type','site_name','locale'])assert.equal(d.querySelectorAll(`meta[property="og:${key}"]`).length,1,`Social metadata ${key}: ${route}`);
  assert.equal(d.querySelector('meta[property="og:title"]').content,d.title,`Social title matches: ${route}`);
  assert.equal(d.querySelector('meta[property="og:url"]').content,SITE.origin+route,`Social URL matches: ${route}`);
@@ -41,12 +43,24 @@ for(const f of files.filter(f=>f.endsWith('.html'))){
    const src=image.getAttribute('src');
    if(src.startsWith('/assets/'))assert.deepEqual([Number(image.getAttribute('width')),Number(image.getAttribute('height'))],imageDimensions(await readFile(path.join(root,src))),`Actual image dimensions: ${route}`);
  }
+ const structuredItems=[];
  for(const script of d.querySelectorAll('script[type="application/ld+json"]')){
    const data=JSON.parse(script.textContent);
    for(const item of Array.isArray(data)?data:[data]){
+     structuredItems.push(item);
      if(item.inLanguage)assert.equal(item.inLanguage,lang,`Structured data language: ${route}`);
      if(item['@type']==='WebPage')assert.equal(item.url,SITE.origin+route,`Structured page URL: ${route}`);
    }
+ }
+ if(article){
+   const posting=structuredItems.find(item=>item['@type']==='BlogPosting');
+   assert(posting,`Article structured data: ${route}`);
+   assert.equal(posting.url,SITE.origin+route,`Article structured URL: ${route}`);
+   assert.equal(posting.mainEntityOfPage?.['@id'],`${SITE.origin+route}#webpage`,`Article main entity: ${route}`);
+   assert.equal(posting.datePublished,article.publishedAt||article.isoDate,`Article publication date: ${route}`);
+   assert.equal(posting.dateModified,article.updatedAt||article.publishedAt||article.isoDate,`Article modification date: ${route}`);
+   assert.equal(posting.image?.[0],article.image,`Article structured image: ${route}`);
+   assert.equal(posting.author?.name,SITE.name,`Article publisher: ${route}`);
  }
  for(const alternate of [...availableLocales,'x-default']){
    const locale=alternate==='x-default'?SITE.defaultLocale:alternate;
@@ -114,7 +128,12 @@ assert(!files.some(file=>/\.(ttf|otf)$/.test(file)),'Deploy WOFF2 only; keep sou
 for(const f of files.filter(f=>/\/(en|es)\//.test(f)&&f.endsWith('.html'))){const {document}=parseHTML(await readFile(f,'utf8'));if(document.querySelector('meta[http-equiv="refresh"]'))continue;assert(document.title.endsWith('. Darwin Core Protocol.'),`Consistent page title: ${f}`);assert(!/[—–|]\s*Darwin Core Protocol(?: App)?\./.test(document.title),`No legacy brand separator: ${f}`);}
 for(const m of css.matchAll(/url\(['"]?([^)'"\s]+)/g)){if(!m[1].startsWith('data:')&&!await exists(path.join(root,m[1])))failures.push(`CSS missing ${m[1]}`);}
 for(const f of files.filter(f=>f.endsWith('.woff2')))assert((await stat(f)).size>1000,`Valid font: ${f}`);
-const sitemap=await readFile(path.join(root,'sitemap.xml'),'utf8');assert([...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].every(m=>/^https:\/\/[^/]+\/(en|es)\//.test(m[1])));
+const robots=await readFile(path.join(root,'robots.txt'),'utf8');assert.equal(robots,`User-agent: *\nAllow: /\nSitemap: ${SITE.origin}/sitemap.xml\n`,'Production robots policy');
+const sitemap=await readFile(path.join(root,'sitemap.xml'),'utf8');const sitemapUrls=[...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(match=>match[1]);
+assert(sitemapUrls.every(url=>/^https:\/\/[^/]+\/(en|es)\//.test(url)),'Localized sitemap URLs');
+assert.equal(new Set(sitemapUrls).size,sitemapUrls.length,'Unique sitemap URLs');
+assert.deepEqual(new Set(sitemapUrls),new Set(canonicalUrls),'Sitemap matches public canonical pages');
+for(const locale of SITE.locales)for(const tool of ['data-workflow','csv-to-darwin-core','date-normalizer','duplicate-finder'])assert(sitemapUrls.includes(`${SITE.origin}/${locale}/tools/${tool}/`),`Tool indexed in sitemap: ${locale}/${tool}`);
 console.log(`Checked ${pages} localized pages and ${references} local references; ${failures.length} findings.`);
 assert.equal(failures.length,0,failures.join('\n'));
 console.log(`OK: ${pages} localized pages, ${references} local references, ${Object.values(catalogs).reduce((sum,items)=>sum+items.length,0)} localized articles, shared menus, About actions, profile, fonts and SEO.`);
