@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="260" height="48" viewBox="0 0 260 48" role="img" aria-label="Darwin Core Protocol">
-  <circle cx="24" cy="24" r="18" fill="#2F7D4F"/>
-  <path d="M24 12c-8 4-10 12-6 20 8-1 14-8 6-20z" fill="#ffffff"/>
+  <circle cx="24" cy="24" r="18" fill="#53642F"/>
+  <path d="M24 12c-8 4-10 12-6 20 8-1 14-8 6-20z" fill="#F8F9F2"/>
   <text x="52" y="31" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="600" fill="#14281D">Darwin Core Protocol</text>
 </svg>
