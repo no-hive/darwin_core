@@ -13,7 +13,7 @@ export async function prepareReactApp(document,locale,route){
   manifest??=JSON.parse(await readFile(path.join(root,'.migration/app/manifest.json'),'utf8'));
   const main=document.querySelector('main');
   const visibleArticleIds=new Set(localizedArticles(locale).map(article=>article.id));
-  const articles=localizedArticles('en').filter(article=>visibleArticleIds.has(article.id)).map(({id,slug,title,dek,isoDate,image,alt,tags,groupIds})=>({id,slug,title,dek,isoDate,image,alt,tags,groupIds:[...new Set([DEFAULT_GROUP_ID,...(groupIds||[])])]}));
+  const articles=localizedArticles('en').filter(article=>visibleArticleIds.has(article.id)).map(({id,slug,title,dek,isoDate,image,alt,width,height,tags,groupIds})=>({id,slug,title,dek,isoDate,image,alt,width,height,tags,groupIds:[...new Set([DEFAULT_GROUP_ID,...(groupIds||[])])]}));
   const bootstrap={locale,route,now:new Date().toISOString(),articles};
   main.dataset.appReact='';
   main.className='mantine-app';main.setAttribute('data-mantine-color-scheme','dark');
