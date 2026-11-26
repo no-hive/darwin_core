@@ -1,0 +1,62 @@
+---
+title: "For developers"
+description: "How to contribute code"
+---
+
+Darwin Core Protocol is a **monorepo**. Everything lives in one repository, and every merged pull request feeds the automated [changelog](/changelog), so a clear pull request title matters.
+
+The rules are light on purpose. We care about one thing: **one branch, one module**.
+
+## Modules and scopes
+
+The scope in a pull request title is the name of the module you changed.
+
+| Scope | Where it lives |
+|---|---|
+| `protocol` | recording findings |
+| `voting` | Agora and LiquidDAO |
+| `hook` | link between protocol and voting |
+| `registry-l1` | Ethereum registry and adapters |
+| `app` | the application |
+| `docs` | this documentation |
+| `tools` | free tools |
+| `brand` | logos, backgrounds, fonts, palettes |
+
+Chores in the repository root (scripts, CI) go in their own pull request with the scope `repo`.
+
+## How to contribute
+
+1. **Create a branch for one module**, named `scope/short-description`, for example `protocol/add-supersedes`.
+2. **Commit as you like.** Commit messages inside your branch can be rough.
+3. **Open a pull request into `main`** with a title in Conventional Commits form and one scope: `type(scope): what changed`.
+4. **We squash-merge.** The title becomes the commit message and the line in the public [changelog](/changelog).
+
+If your change needs two modules, open two pull requests. A bot warns about pull requests that touch more than one module. It never blocks them, but we may ask you to split.
+
+## Tests
+
+Tests run only for the module your pull request changes. A change in the voting module runs the voting tests and nothing else. A full run of every module happens once a week, to catch breakage between modules. Please add or update tests in the same module as your change.
+
+## Pull request titles
+
+| Type | Meaning | Changelog section |
+|---|---|---|
+| `feat` | something new | Added |
+| `change`, `refactor`, `perf` | an existing thing behaves or looks different | Changed |
+| `fix` | a bug is fixed | Fixed |
+| `remove` | something is gone | Removed |
+| `docs`, `chore`, `ci`, `test`, `build`, `style` | housekeeping | not shown |
+
+Add `!` after the scope for a breaking change, for example `feat(protocol)!: new record format`.
+
+Write the description in plain words for a person, because it appears in the changelog and a reader outside Web3 should understand it. Good: `feat(app): invite new people to a group that matches their interests`. Not good: `feat(app): add GroupInvite util and fix hook`.
+
+## Free tools
+
+If you have an idea for a good free tool, build it and we will add it to the site. Please note that credentials on the site are **not** offered for code or free tools.
+
+## Security reports
+
+While the project is on a testnet, report problems as a GitHub issue. Do not post private keys or anyone's personal data.
+
+{/* Note: TODO: local setup, review process details, code of conduct. */}

@@ -1,0 +1,43 @@
+---
+title: "Project State"
+description: "Honest status of the project: what is live, what is planned"
+---
+
+<Warning>
+The project is at a **very early stage of development**. Use it for experiments only.
+</Warning>
+
+## What exists today
+
+The project is on **Ethereum Sepolia Testnet**. Voting, the protocol and the link between them are implemented there, in a **very raw, test format**:
+
+1. **A protocol for recording findings** using the Darwin Core system.
+2. **A DAO voting system**, built on the basis of [Agora](https://github.com/voteagora) and [LiquidDAO](/concept/liquid-dao). The LiquidDAO design is described in the [whitepaper](https://no-hive.github.io/liquid_dao_v1).
+3. **The link between the two**, a [hook](/technical/hook) that connects the protocol and the voting.
+
+Raw means that things work as a test, not as a finished product: expect rough edges, changes and resets.
+
+## Main limitations
+
+- **Testnet only.** Everything runs on a test network.
+- **No audit.**
+- **Constant, active rework.** The project is being actively reworked all the time, and this may **reset previously recorded findings**.
+- **No privacy yet.** Everything you upload is public.
+
+## How to use the protocol safely
+
+- Use the protocol **for experiments only**.
+- **Do not upload data you are afraid to lose.**
+- **Do not upload sensitive data.** There is no privacy, so anything sensitive would be exposed.
+- To try the protocol, **use the "Not a real finding" flag** and write anything you like. The system accepts it. This lets you try the protocol with no real data until it becomes stable. Such findings go into a **separate group and a separate journal**, clearly marked as not real.
+
+## Planned, not built yet
+
+These parts of the vision are **not** part of the current prototype:
+
+- **Move to Base**: day-to-day life of the project (findings, discussions, verification, voting) on Base, with the permanent registry on Ethereum mainnet. The prototype runs on Ethereum Sepolia first, and moving to Base is the next step.
+- **App rework**: simpler groups, and an invitation to the group that best matches a new person's interests.
+- **Funding**: crowdfunding and retrofunding for groups.
+- **Connection to research**: linking findings to scientific publications.
+- **Physical device**: hardware-based verification.
+- **Privacy**: hiding data without losing it.

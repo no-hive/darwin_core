@@ -1,0 +1,32 @@
+---
+title: "Technical state"
+description: "What is implemented right now"
+---
+
+The project runs in **alpha on Ethereum Sepolia Testnet**.
+
+## Implemented in the current launch
+
+- LiquidDAO logic
+- Recording findings
+- All voting logic
+- The [hook](/technical/hook) between the protocol and the voting
+
+All of it is in a very raw, test format on Sepolia.
+
+## Not implemented yet
+
+- Funding
+- Connection to research
+- Physical device
+- Privacy
+
+## Planned architecture
+
+Live work happens on **Base**: findings, discussions, verification and voting, with sponsored gas. The permanent registry of verified findings lives on **Ethereum mainnet** as a long-lasting backup. The prototype runs on Sepolia first, and moving to Base is the next step. Privacy is left for a later stage and does not block this design.
+
+## Structure
+
+The project is a **monorepo**. The voting stack and the protocol are separate elements connected through a [hook](/technical/hook).
+
+{/* Note: TODO: repositories, deployed contracts, versions. */}

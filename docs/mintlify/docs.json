@@ -1,0 +1,59 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Darwin Core Protocol",
+  "colors": {
+    "primary": "#1F5C3A",
+    "light": "#4FB477",
+    "dark": "#2F7D4F"
+  },
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
+  },
+  "favicon": "/favicon.svg",
+  "navigation": {
+    "groups": [
+      {
+        "group": "Start here",
+        "pages": ["index", "project-state", "team"]
+      },
+      {
+        "group": "Concept",
+        "pages": [
+          "concept/what-sets-us-apart",
+          "concept/philosophy",
+          "concept/what-is-darwin-core",
+          "concept/privacy",
+          "concept/research-link",
+          "concept/public-profile",
+          "concept/community",
+          "concept/liquid-dao",
+          "concept/future"
+        ]
+      },
+      {
+        "group": "Technical",
+        "pages": [
+          "technical/state",
+          "technical/voting-stack",
+          "technical/protocol",
+          "technical/hook",
+          "technical/free-tools"
+        ]
+      },
+      {
+        "group": "Safety",
+        "pages": ["security"]
+      },
+      {
+        "group": "Contribute",
+        "pages": ["contribute", "contribute/developers", "contribute/authors"]
+      },
+      {
+        "group": "More",
+        "pages": ["changelog", "partners", "brand-kit"]
+      }
+    ]
+  }
+}
