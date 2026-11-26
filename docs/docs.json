@@ -19,28 +19,12 @@
         "pages": ["index", "project-state", "team"]
       },
       {
-        "group": "Concept",
-        "pages": [
-          "concept/what-sets-us-apart",
-          "concept/philosophy",
-          "concept/what-is-darwin-core",
-          "concept/privacy",
-          "concept/research-link",
-          "concept/public-profile",
-          "concept/community",
-          "concept/liquid-dao",
-          "concept/future"
-        ]
+        "group": "Vision",
+        "pages": ["vision", "concept/liquid-dao"]
       },
       {
-        "group": "Technical",
-        "pages": [
-          "technical/state",
-          "technical/voting-stack",
-          "technical/protocol",
-          "technical/hook",
-          "technical/free-tools"
-        ]
+        "group": "How It Works",
+        "pages": ["how-it-works"]
       },
       {
         "group": "Safety",
@@ -48,12 +32,28 @@
       },
       {
         "group": "Contribute",
-        "pages": ["contribute", "contribute/developers", "contribute/authors"]
+        "pages": ["contribute"]
       },
       {
         "group": "More",
         "pages": ["changelog", "partners", "brand-kit"]
       }
     ]
-  }
+  },
+  "redirects": [
+    { "source": "/concept/community", "destination": "/vision" },
+    { "source": "/concept/future", "destination": "/vision" },
+    { "source": "/concept/philosophy", "destination": "/vision" },
+    { "source": "/concept/public-profile", "destination": "/vision" },
+    { "source": "/concept/research-link", "destination": "/vision" },
+    { "source": "/concept/what-is-darwin-core", "destination": "/vision" },
+    { "source": "/concept/what-sets-us-apart", "destination": "/vision" },
+    { "source": "/technical/state", "destination": "/how-it-works" },
+    { "source": "/technical/voting-stack", "destination": "/how-it-works" },
+    { "source": "/technical/protocol", "destination": "/how-it-works" },
+    { "source": "/technical/hook", "destination": "/how-it-works" },
+    { "source": "/technical/free-tools", "destination": "/how-it-works" },
+    { "source": "/contribute/developers", "destination": "/contribute" },
+    { "source": "/contribute/authors", "destination": "/contribute" }
+  ]
 }

@@ -1,15 +1,27 @@
 ---
 title: "Contribute"
-description: "Ways to help: code and writing"
+description: "How to contribute code, documentation and ideas"
 ---
 
-There are two ways to contribute.
+Darwin Core Protocol is an open source monorepo. Contributions should be clear, focused and written in English. The repository's full contribution guide is in [`CONTRIBUTING.md`](https://github.com/no-hive/darwin_core/blob/main/CONTRIBUTING.md).
 
-<CardGroup cols={2}>
-  <Card title="For developers" href="/contribute/developers">
-    Monorepo, workflow and standards for contributing code and free tools.
-  </Card>
-  <Card title="For authors" href="/contribute/authors">
-    Write for us and get published on our site.
-  </Card>
-</CardGroup>
+## Code and documentation
+
+Keep each commit within one project scope. The supported scopes are `web`, `app`, `tools`, `studio`, `protocols`, `docs` and `repo`. If a task affects multiple scopes, split it into separate commits.
+
+Use Conventional Commits in the format `type(scope): description`, for example `fix(app): correct article preview`. The repository hook checks the message format and length. To enable the local hook and commit template after cloning, run:
+
+```sh
+git config --local core.hooksPath .githooks
+git config --local commit.template .gitmessage
+```
+
+Each project area has its own CI workflow. For local website setup, see the [web development guide](https://github.com/no-hive/darwin_core/blob/main/frontend/web/README-LOCAL.md).
+
+Code is distributed under the [MIT License](https://github.com/no-hive/darwin_core/blob/main/LICENSE). Original project images use a separate [image license](https://github.com/no-hive/darwin_core/blob/main/IMAGE-LICENSE.md); third-party assets retain their own licenses.
+
+## Articles and other ways to help
+
+Sharing the project on social media is welcome. Public article submissions are not open yet. The existing project blog is managed by the project team in Sanity; article content is not stored in this repository.
+
+You can also help by reporting issues or suggesting free tools. Do not include private keys or personal data in public reports. See [Security](/security) for the project's current security status.
