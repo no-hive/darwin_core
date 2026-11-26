@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Darwin Core Date Normalizer | Darwin Core Protocol</title>
+<meta name="description" content="Normalize dates and intervals, flag ambiguous values and keep original dates. Import CSV, TSV or XLSX and download the result for free.">
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="https://example.com/en/tools/date-normalizer/">
+<link rel="alternate" hreflang="en" href="https://example.com/en/tools/date-normalizer/">
+<link rel="alternate" hreflang="es" href="https://example.com/es/tools/date-normalizer/">
+<link rel="alternate" hreflang="x-default" href="https://example.com/en/tools/date-normalizer/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Darwin Core Date Normalizer">
+<meta property="og:description" content="Normalize dates and intervals, flag ambiguous values and keep original dates. Import CSV, TSV or XLSX and download the result for free.">
+<meta property="og:url" content="https://example.com/en/tools/date-normalizer/">
+<meta property="og:site_name" content="Darwin Core Protocol">
+<meta property="og:image" content="https://example.com/assets/social-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Biodiversity data tools, guides and provenance.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Darwin Core Date Normalizer">
+<meta name="twitter:description" content="Normalize dates and intervals, flag ambiguous values and keep original dates. Import CSV, TSV or XLSX and download the result for free.">
+<meta name="twitter:image" content="https://example.com/assets/social-en.png">
+<meta name="twitter:image:alt" content="Biodiversity data tools, guides and provenance.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/style.css">
+
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "WebSite", "@id": "https://example.com/en/#website", "name": "Darwin Core Protocol", "url": "https://example.com/en/", "inLanguage": "en"}, {"@context": "https://schema.org", "@type": "Organization", "@id": "https://example.com/#organization", "name": "Darwin Core Protocol", "url": "https://example.com/"}, {"@context": "https://schema.org", "@type": "WebPage", "@id": "https://example.com/en/tools/date-normalizer/#webpage", "name": "Darwin Core Date Normalizer", "description": "Normalize dates and intervals, flag ambiguous values and keep original dates. Import CSV, TSV or XLSX and download the result for free.", "url": "https://example.com/en/tools/date-normalizer/", "inLanguage": "en", "isPartOf": {"@id": "https://example.com/en/#website"}}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://example.com/en/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://example.com/en/tools/"}, {"@type": "ListItem", "position": 3, "name": "Darwin Core Date Normalizer", "item": "https://example.com/en/tools/date-normalizer/"}]}, {"@context": "https://schema.org", "@type": "WebApplication", "name": "Darwin Core Date Normalizer", "url": "https://example.com/en/tools/date-normalizer/", "description": "Normalize dates and intervals, flag ambiguous values and keep original dates. Import CSV, TSV or XLSX and download the result for free.", "applicationCategory": "ScienceApplication", "browserRequirements": "Requires JavaScript, Web Workers and HTTPS or localhost", "isAccessibleForFree": true, "inLanguage": "en"}]</script>
+<script defer src="/assets/site.js">
+</script>
+<script defer src="/metrics.js"></script>
+
+<script defer src="/assets/vendor/jszip.min.js">
+</script>
+<script defer src="/assets/processing-core.js">
+</script>
+<script defer src="/assets/workbench-i18n.js">
+</script>
+<script defer src="/assets/workbench.js">
+</script>
+</head>
+<body class="tool-detail-page">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header tool-header">
+<a class="site-mark" href="/concept/" aria-label="Darwin Core Protocol home"><span>Darwin Core Protocol</span>
+</a>
+<nav class="site-nav" aria-label="Primary navigation">
+<div class="nav-dropdown">
+<a class="nav-trigger" href="/concept/">About</a>
+<div class="nav-menu">
+<a href="/concept/">Concept</a>
+<a href="/community/">Community</a>
+<a href="/en/future/">Future</a>
+</div>
+</div>
+<a class="active" href="/tools/" aria-current="page">Tools</a>
+<a href="/blog/">Blog</a>
+<a href="/support/">Donate</a>
+<a class="app-link" href="/app/">App</a>
+<div class="lang-dropdown">
+<button class="lang-trigger" type="button" aria-haspopup="true" aria-label="Change language">
+<svg viewBox="0 0 24 24" aria-hidden="true">
+<circle cx="12" cy="12" r="8.5">
+</circle>
+<path d="M3.8 12h16.4M12 3.5c2.2 2.3 3.3 5.1 3.3 8.5S14.2 18.2 12 20.5M12 3.5C9.8 5.8 8.7 8.6 8.7 12s1.1 6.2 3.3 8.5">
+</path>
+</svg>
+</button>
+<div class="lang-menu">
+<a class="selected" href="/en/tools/date-normalizer/" lang="en" hreflang="en" aria-current="true">English ✓</a>
+<a data-language="es" href="/es/tools/date-normalizer/" lang="es" hreflang="es">Español</a>
+</div>
+</div>
+</nav>
+</header>
+<main id="main">
+<nav class="crumbs" aria-label="Breadcrumb">
+<ol>
+<li>
+<a href="/concept/">Home</a>
+</li>
+<li>
+<a href="/tools/">Tools</a>
+</li>
+<li>
+<span aria-current="page">Darwin Core Date Normalizer</span>
+</li>
+</ol>
+</nav>
+<section class="tool-page-heading">
+<h1>Darwin Core Date Normalizer</h1>
+<p class="lead">Normalize numeric dates, ISO dates and intervals. Ambiguous values are flagged, not guessed, and original values remain available.</p>
+</section>
+<details class="tool-how">
+<summary>
+<span>How it works</span>
+<i aria-hidden="true">+</i>
+</summary>
+<div class="tool-how-body">
+<ol>
+<li>Choose a local file, paste a table or try the synthetic sample.</li>
+<li>Review the settings and run processing.</li>
+<li>Inspect the result, then download CSV, XLSX, a report or a recipe.</li>
+</ol>
+<h3>Privacy and limits</h3>
+<p>Data stay in this browser session. There is no account, subscription, upload endpoint or publication flow. A standard page request may still be logged by the host.</p>
+<p>Supports CSV, TSV and one XLSX worksheet at a time. Legacy XLS, macros, scientific verification and taxonomic matching are outside this release.</p>
+</div>
+</details>
+<div id="tool-app" class="tool-app" data-mode="dates">
+<noscript>
+<p>Enable JavaScript to process files locally in your browser.</p>
+</noscript>
+</div>
+<div class="section-head">
+<h2>Related Blog Materials</h2>
+</div>
+<div class="grid">
+<a class="card article-card" href="/blog/">
+<img class="article-card-image" src="/assets/fern.webp" alt="">
+<div class="card-top">
+<span class="eyebrow">Prepare</span>
+<span class="badge">Example article</span>
+</div>
+<h3>How to convert Excel or CSV to Darwin Core</h3>
+<p>Start by explaining what each row represents, then map columns, review values and choose an export profile. A file extension alone does not establish Darwin Core compliance.</p>
+<span class="card-link">Read the guide ↗</span>
+</a>
+<a class="card article-card" href="/blog/">
+<img class="article-card-image" src="/assets/frog-woodland.png" alt="">
+<div class="card-top">
+<span class="eyebrow">Prepare</span>
+<span class="badge">Editorial draft</span>
+</div>
+<h3>How to format eventDate: dates, intervals and uncertainty</h3>
+<p>Preserve the precision supported by the source. Ambiguous dates require review; a missing day should not silently become the first day of a month.</p>
+<span class="card-link">Read the outline ↗</span>
+</a>
+<a class="card article-card" href="/blog/">
+<img class="article-card-image" src="/assets/newt.webp" alt="">
+<div class="card-top">
+<span class="eyebrow">Publishing</span>
+<span class="badge">Editorial draft</span>
+</div>
+<h3>Automate a Specify export to Darwin Core: workflow planning</h3>
+<p>Separate extraction, transformation, validation and publication. A repeatable recipe should preserve stable identifiers and stop publication when important checks fail.</p>
+<span class="card-link">Read the outline ↗</span>
+</a>
+</div>
+</main>
+<footer>
+<span>Darwin Core Protocol</span>
+<span>
+<a href="/concept/">About this preview</a> · <a href="/support/">Data &amp; privacy</a>
+</span>
+</footer>
+</body>
+</html>

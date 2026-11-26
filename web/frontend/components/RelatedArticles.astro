@@ -1,0 +1,21 @@
+---
+import { recommendArticles } from '../../src/lib/article-recommendations.mjs';
+import type { Article, Locale } from '../content/contracts';
+import { findingNouns as text } from '../../src/lib/wording.mjs';
+import { ARTICLE_UI } from '../../src/locales/articles.mjs';
+interface Props { article: Article; catalog: readonly Article[]; locale: Locale }
+const { article, catalog, locale } = Astro.props;
+const matches = article.relatedArticles?.map(id => catalog.find(item => item.id === id)).filter(Boolean).map(item => ({article: item!})) ?? recommendArticles(article, [...catalog]);
+const labels = ARTICLE_UI[locale];
+---
+{matches.length > 0 && (
+  <section class="article-related" aria-labelledby="related-articles-heading">
+    <h2 id="related-articles-heading">{labels.related}</h2>
+    <div class="related-grid">{matches.map(({ article: related }) => (
+      <a class="related-card" href={`/${locale}/blog/${related.slug}/`}>
+        <span class="related-kind">{labels.kinds[related.type]}</span>
+        <h3>{text(related.title)}</h3><p>{text(related.dek)}</p><b aria-hidden="true">↗</b>
+      </a>
+    ))}</div>
+  </section>
+)}

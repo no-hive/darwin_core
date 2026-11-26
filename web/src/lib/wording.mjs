@@ -1,0 +1,12 @@
+// Keep the verb record; use findings for the product's nouns.
+export function findingNouns(value){return String(value).replace(/\b(?:records?|registros?)\b/gi,(word,index,source)=>{
+ const key=word.toLowerCase(),previous=source.slice(0,index).match(/([a-z]+)\s*$/i)?.[1]?.toLowerCase(),next=source.slice(index+word.length).match(/^\s+([a-z]+)/i)?.[1]?.toLowerCase();
+ if(key==='records'&&['that','which','it','device','hardware','box','module'].includes(previous)&&['how','what','where','when','the','a','an','data','observations'].includes(next))return word;
+ if(key==='record'&&(['to','can','you','we','they','i','must','should','will'].includes(previous)||['your','a','an','shared','data','observations','how','where','when','what'].includes(next)&&!['a','the','this','that','each','every','your','own','shared','original','field','specimen','new','verified','plain','useful','careful','local','single','photographic','its'].includes(previous)))return word;
+ const result=key.startsWith('registro')?(key==='registros'?'hallazgos':'hallazgo'):(key==='records'?'findings':'finding');return word===word.toUpperCase()?result.toUpperCase():word[0]===word[0].toUpperCase()?result[0].toUpperCase()+result.slice(1):result;
+});}
+export function applyFindingWording(document,{preserveAppContent=false}={}){
+ const visit=node=>{if(node.nodeType===3){node.textContent=findingNouns(node.textContent);return;}if(['SCRIPT','STYLE'].includes(node.tagName)||node.hasAttribute?.('data-object-content')||(preserveAppContent&&['MAIN','TITLE'].includes(node.tagName)))return;for(const child of [...node.childNodes])visit(child);};visit(document.documentElement);
+ for(const node of document.querySelectorAll('[alt],[aria-label],[placeholder],meta[name="description"],meta[property$="description"]'))for(const attr of ['alt','aria-label','placeholder','content'])if(!node.closest('[data-object-content]')&&!(preserveAppContent&&(node.closest('main')||node.tagName==='META'))&&node.hasAttribute(attr))node.setAttribute(attr,findingNouns(node.getAttribute(attr)));
+ for(const node of preserveAppContent?[]:document.querySelectorAll('script[type="application/ld+json"]')){const update=value=>Array.isArray(value)?value.map(update):value&&typeof value==='object'?Object.fromEntries(Object.entries(value).map(([key,item])=>[key,['name','description','headline'].includes(key)&&typeof item==='string'?findingNouns(item):update(item)])):value;node.textContent=JSON.stringify(update(JSON.parse(node.textContent))).replaceAll('<','\\u003c');}
+}

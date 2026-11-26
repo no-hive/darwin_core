@@ -1,0 +1,11 @@
+@media(max-width:940px) and (min-width:601px){.site-nav>a,.site-nav>.nav-dropdown,.site-nav>.lang-dropdown{width:88px;flex-basis:88px}.site-nav>a[data-nav-width="2"]{width:176px;flex-basis:176px}.site-nav.app-nav>a.app-wide-link{width:150px;flex-basis:150px}}
+@media(max-width:760px){.profile-view{grid-template-columns:1fr}.profile-column{position:static}.activity-card{height:auto;min-height:0;overflow:visible}.activity-list{overflow:visible}}
+@media(max-width:700px){.about-scroll-page .scroll-visual{position:sticky;top:calc(var(--nav-edge) + 60px);height:36svh;padding:2vh 6vw;background:var(--bg);z-index:1}.about-scroll-page .scroll-content{min-height:80svh;padding:7vh 8vw 12vh;gap:16.667vh}.about-scroll-page .scroll-section{min-height:auto}.about-scroll-page .scroll-copy h2{font-size:36px}}
+@media(max-width:600px){
+ body .site-header{margin-top:0;height:52px;min-height:52px}body .site-header .site-nav{height:52px;width:calc(100vw - 2 * var(--nav-edge))}
+ .site-nav>a,.site-nav>.nav-dropdown,.site-nav>.lang-dropdown{width:calc((100vw - 2 * var(--nav-edge) - 38px) / 6);flex:0 0 calc((100vw - 2 * var(--nav-edge) - 38px) / 6)}
+ .site-nav .nav-trigger,.site-nav .lang-trigger,.site-nav>a{font-size:9px;padding:0 3px;letter-spacing:0}
+ .site-nav.app-nav>a,.site-nav.app-nav>a.app-wide-link,.site-nav.app-nav>.nav-dropdown,.site-nav.app-nav>.lang-dropdown{width:calc((100vw - 2 * var(--nav-edge) - 38px) / 6);flex-basis:calc((100vw - 2 * var(--nav-edge) - 38px) / 6)}
+ body .site-header .site-nav.is-collapsed{width:38px}.site-nav .nav-menu,.site-nav .lang-menu{min-width:110px}.site-nav .lang-menu{left:auto;right:0}
+ .tools-panel>h1{font-size:36px}.tool-links{grid-auto-rows:150px}.tool-links>a{height:100%;min-height:0;max-height:none}.tool-links h2{white-space:normal}.tool-links>a p{white-space:normal}h1{font-size:36px}
+}

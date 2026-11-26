@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+first_line=$(head -n 1 "$1")
+pattern='^(feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert)\((web|app|tools|studio|protocols|docs|repo)\)!?: .+$'
+
+if [[ ! "$first_line" =~ $pattern ]] || (( ${#first_line} > 72 )); then
+  echo 'Commit message must follow type(scope): description (maximum 72 characters).' >&2
+  echo 'Scopes: web, app, tools, studio, protocols, docs, repo.' >&2
+  echo 'See CONTRIBUTING.md.' >&2
+  exit 1
+fi

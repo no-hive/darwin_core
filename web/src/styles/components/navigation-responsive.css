@@ -1,0 +1,16 @@
+/* App navigation accommodates Governance without clipping its dropdown. */
+@media(min-width:601px) and (max-width:1100px){
+ body .site-header .site-nav.app-nav{width:calc(100vw - 2 * var(--nav-edge))}
+ .site-nav.app-nav>a,.site-nav.app-nav>a.app-wide-link,.site-nav.app-nav>.nav-dropdown,.site-nav.app-nav>.lang-dropdown{width:auto;min-width:0;flex:1 1 0}
+ .app-header .site-mark span{visibility:hidden}
+}
+@media(max-width:600px){
+ body .site-header.app-header{height:94px;min-height:94px}
+ body .site-header .site-nav.app-nav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(2,47px);width:calc(100vw - 2 * var(--nav-edge));height:94px;padding-right:38px;overflow:visible}
+ .site-nav.app-nav>a,.site-nav.app-nav>a.app-wide-link,.site-nav.app-nav>.nav-dropdown,.site-nav.app-nav>.lang-dropdown{width:auto;min-width:0;height:47px}
+ body .site-header .site-nav.app-nav.is-collapsed{width:38px;padding:0}
+}
+/* Findings actions share the regular navigation and touch controls. */
+.site-nav .records-dropdown>.nav-trigger{padding-left:0;padding-right:0}
+.site-nav .records-dropdown .nav-menu{width:200%;min-width:0;max-width:none;box-sizing:border-box}
+@media(max-width:600px){.site-nav .records-dropdown .nav-menu{left:auto;right:0}}

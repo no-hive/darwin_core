@@ -1,0 +1,14 @@
+{
+  "name": "darwin-core-content-delivery",
+  "main": "worker.mjs",
+  "compatibility_date": "2026-11-15",
+  "d1_databases": [{
+    "binding": "DELIVERY_DB",
+    "database_name": "darwin-core-content-delivery"
+    // Add the real database_id after provisioning; none is invented here.
+  }],
+  "vars": {
+    "SANITY_PROJECT_ID": "",
+    "SANITY_DATASET": ""
+  }
+}

@@ -1,0 +1,21 @@
+---
+import { SITE } from '../../src/config/site.mjs';
+import SiteHead from '../components/SiteHead.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import type { pageMetadata } from '../../src/lib/page-metadata.mjs';
+import type { Locale } from '../content/contracts';
+interface Props { locale: Locale; route: string; bodyClass: string; metadata: ReturnType<typeof pageMetadata> }
+const { locale, route, bodyClass, metadata } = Astro.props;
+---
+<!doctype html>
+<html lang={locale}>
+  <head><SiteHead metadata={metadata} /></head>
+  <body class={bodyClass} data-metrics-endpoint={SITE.metricsEndpoint || undefined}>
+    <SiteHeader locale={locale} route={route} availableLocales={metadata.alternates.filter(item => item.lang !== 'x-default').map(item => item.lang as Locale)} />
+    <slot />
+    <script is:inline src="/metrics.js"></script>
+    <SiteFooter locale={locale} />
+    <script is:inline defer src="/i18n.js"></script>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+{
+  "name": "darwin-core-protocol-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node src/build-site.mjs",
+    "check": "node src/check.mjs",
+    "verify": "npm run check && node src/verify-behavior.mjs && node src/verify-runtime.mjs && node src/verify-prototype.mjs && node src/verify-tools.mjs && node src/verify-profiles.mjs && node src/verify-recent.mjs && node src/verify-article-recommendations.mjs",
+    "qa:check": "npm run build && npm run verify && npm run qa:react && npm run qa:tools && npm run qa:preservation && node --test qa/artifacts.test.mjs && node qa/artifacts.mjs check",
+    "qa:browser": "node qa/run-browser.mjs",
+    "qa:browser:record": "node qa/run-browser.mjs record-initial",
+    "qa:coverage": "node qa/coverage.mjs",
+    "qa:full": "npm run qa:check && npm run qa:browser",
+    "build:astro": "astro build",
+    "cms:studio": "npm --prefix cms/studio run dev",
+    "cms:studio:build": "npm --prefix cms/studio run build",
+    "cms:preview:build": "node cms/scripts/build-preview.mjs",
+    "cms:preview:serve": "node cms/scripts/serve-preview.mjs",
+    "cms:delivery:build": "node cms/scripts/build-delivery.mjs",
+    "cms:delivery:record-publication": "node cms/scripts/delivery-manifest.mjs record-publication",
+    "qa:delivery": "node --test qa/delivery-regression.test.mjs",
+    "qa:react": "node --test qa/react-regression.test.mjs",
+    "api:build": "node backend/scripts/build.mjs",
+    "api:migrate": "node backend/scripts/migrate.mjs",
+    "api:index": "node backend/scripts/index-once.mjs",
+    "api:index:maintenance": "node backend/scripts/index-maintenance.mjs",
+    "api:sync-articles": "node backend/scripts/sync-article-search.mjs",
+    "build:tools": "node src/build-tools.mjs",
+    "qa:tools": "node --test qa/tools-regression.test.mjs",
+    "qa:preservation": "node qa/style-preservation.mjs && node qa/markup-preservation.mjs && node qa/tools-view-preservation.mjs"
+  },
+  "devDependencies": {
+    "@mantine/core": "9.8.1",
+    "@mantine/hooks": "9.8.1",
+    "@neondatabase/serverless": "1.2.0",
+    "@playwright/test": "^1.56.1",
+    "@sanity/client": "8.16.0",
+    "@sanity/webhook": "4.0.4",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "astro": "7.4.12",
+    "esbuild": "0.28.2",
+    "html-react-parser": "6.1.9",
+    "jsdom": "31.0.1",
+    "linkedom": "^0.18.15",
+    "pako": "3.0.2",
+    "postcss": "^8.5.32",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "sax": "1.6.1",
+    "typescript": "7.0.2"
+  },
+  "engines": {
+    "node": ">=22.23.4"
+  },
+  "dependencies": {
+    "@portabletext/to-html": "^6.0.0",
+    "@sanity/image-url": "^2.2.0",
+    "highlight.js": "^11.12.0"
+  }
+}

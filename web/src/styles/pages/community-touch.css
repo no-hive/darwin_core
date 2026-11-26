@@ -1,0 +1,9 @@
+.about-scroll-page .scroll-content{padding-bottom:max(12vh,var(--about-release-space,0px))}
+@media(max-width:700px), (max-width:1000px) and (pointer:coarse){
+  .community-page .scroll-section:first-child{display:flex;flex-direction:column;gap:32px;min-height:0;margin:0;padding:0 20px 44px}
+  .community-page .scroll-section:first-child .scroll-visual{position:static;top:auto;z-index:auto;align-self:stretch;width:100%;max-width:none;height:auto;margin:0;padding:0;background:transparent}
+  .community-page .scroll-section:first-child .scroll-visual img{display:block;width:100%;height:auto;max-height:none;object-fit:contain}
+  .community-page .scroll-section:first-child .scroll-content{width:100%;min-height:0;margin:0;padding:0;gap:48px}
+  .community-page .scroll-section:first-child .scroll-copy{max-width:none}
+  .community-page .concept-explainer-body{position:static;inset:auto;max-height:none;overflow:visible;margin-top:0;border:0;border-top:1px solid var(--line);background:transparent}
+}

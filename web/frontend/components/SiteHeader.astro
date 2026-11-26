@@ -1,0 +1,8 @@
+---
+import { renderHeader } from '../../src/layouts/chrome.mjs';
+import type { Locale } from '../content/contracts';
+interface Props { locale: Locale; route: string; availableLocales?: Locale[] }
+const { locale, route, availableLocales } = Astro.props;
+// Trusted shared chrome renderer; no CMS HTML and no DOM replacement pass.
+---
+<Fragment set:html={renderHeader(locale, route, availableLocales)} />

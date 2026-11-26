@@ -1,0 +1,26 @@
+---
+import type { ArticleBlock } from '../content/contracts';
+import ContentImage from './ContentImage.astro';
+import { findingNouns as text } from '../../src/lib/wording.mjs';
+import {renderBody} from '../content/sanity-post.mjs';
+import 'highlight.js/styles/github-dark.css';
+interface Props { blocks: readonly ArticleBlock[]; body?: unknown[] }
+const { blocks, body } = Astro.props;
+---
+{body ? <div class="article-body sanity-body" set:html={renderBody(body)} /> : <div class="article-body">{blocks.map(block => (
+  block.kind === 'quote'
+    ? <blockquote class="article-quote">{text(block.quote)}</blockquote>
+    : block.kind === 'image'
+      ? <figure class="article-inline-media"><ContentImage file={block.image} alt={block.alt} width={block.width} height={block.height} /></figure>
+      : <section><h2>{text(block.heading)}</h2><p>{text(block.text)}</p></section>
+))}</div>}
+<style>
+  .sanity-body :global(figure) {margin: 2rem 0;}
+  .sanity-body :global(img) {display: block; width: 100%; height: auto;}
+  .sanity-body :global(figcaption) {margin-top: .5rem; font-size: .875rem;}
+  .sanity-body :global(.sanity-pullquote) {text-align: center; font-size: 1.5em;}
+  .sanity-body :global(pre), .sanity-body :global(.sanity-table) {overflow-x: auto; max-width: 100%;}
+  .sanity-body :global(pre) {padding: 1rem; background: #0d1117; color: #e6edf3;}
+  .sanity-body :global(table) {border-collapse: collapse; min-width: 100%;}
+  .sanity-body :global(td) {border: 1px solid currentColor; padding: .5rem;}
+</style>

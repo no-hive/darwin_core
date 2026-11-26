@@ -1,0 +1,7 @@
+---
+import { renderFooter } from '../../src/layouts/chrome.mjs';
+import type { Locale } from '../content/contracts';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+---
+<Fragment set:html={renderFooter(locale)} />

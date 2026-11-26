@@ -1,0 +1,11 @@
+---
+import SiteLayout from './SiteLayout.astro';
+import { pageMetadata } from '../../src/lib/page-metadata.mjs';
+import { articleRoute } from '../../src/lib/routes.mjs';
+import type { Article, Locale } from '../content/contracts';
+interface Props { article: Article; locale: Locale }
+const { locale, article } = Astro.props;
+const route = articleRoute(article.slug);
+const metadata = pageMetadata({locale, route, article, classes: ['article-page']});
+---
+<SiteLayout locale={locale} route={route} bodyClass="article-page" metadata={metadata}><slot /></SiteLayout>

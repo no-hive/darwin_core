@@ -1,0 +1,108 @@
+/* Contain the header's top margin so About's body paints the top gutter too.
+   The inline html first-paint color must not show through a collapsed margin. */
+body.about-scroll-page{display:flow-root}
+:is(.concept-page,.community-page,.future-page) .about-section-divider{width:40%;height:0;margin:0 auto;padding:0;border:0;border-top:1px solid var(--line)}
+.about-scroll-page .scroll-section{min-height:133.333svh}.about-scroll-page .scroll-visual{top:calc(var(--nav-edge) + 78px);height:calc(100svh - var(--nav-edge) - 94px)}
+.about-scroll-page .scroll-visual img{object-fit:contain}.about-scroll-page .scroll-content{min-height:133.333svh;gap:8vh}
+/* Two images occupy the same existing portrait frame; swapping adds no height. */
+.about-scroll-page .about-visual-stage{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,1fr);width:100%;height:100%}
+.about-scroll-page .about-swap-layer{display:block;grid-area:1/1;min-width:0;min-height:0;width:100%;height:100%;transition:opacity .4s ease}
+.about-scroll-page [data-about-swap-layer="next"]{opacity:0}
+.about-scroll-page .is-next-visible [data-about-swap-layer="base"]{opacity:0}
+.about-scroll-page .is-next-visible [data-about-swap-layer="next"]{opacity:1}
+.about-scroll-page .about-mobile-scene{display:none}
+@media(prefers-reduced-motion:reduce){.about-scroll-page .about-swap-layer{transition:none}}
+@media(max-width:700px), (max-width:1000px) and (pointer:coarse){
+  .about-scroll-page .scroll-section[data-about-scene]{display:flex;flex-direction:column;gap:32px;min-height:0;margin:0;padding:0 20px 44px}
+  .about-scroll-page [data-about-scene]>.scroll-content{display:contents;min-height:0;padding:0;margin:0}
+  .about-scroll-page [data-about-scene]>.scroll-visual{position:static;top:auto;z-index:auto;width:100%;height:auto;padding:0;margin:0;background:transparent}
+  .about-scroll-page [data-about-scene] .about-visual-stage,.about-scroll-page [data-about-scene] .about-swap-layer,.about-scroll-page [data-about-scene] .about-image-fade{height:auto}
+  .about-scroll-page [data-about-scene] [data-about-swap-layer="next"]{display:none}
+  .about-scroll-page [data-about-scene] .scroll-visual img{display:block;width:100%;height:auto;max-height:none;object-fit:contain}
+  .about-scroll-page [data-about-scene] .about-mobile-scene{display:block;width:100%;margin:0}
+  .about-scroll-page .about-mobile-scene img{display:block;width:100%;height:auto;object-fit:contain}
+}
+/* First portraits share equal tracks and the common .scroll-visual sizing.
+   Image layers must not introduce independent intrinsic-size frame limits. */
+:is(.concept-page,.community-page,.future-page) .scroll-section:first-child{grid-template-columns:repeat(2,minmax(0,1fr))}
+:is(.concept-page,.community-page,.future-page) .scroll-section:first-child>.scroll-visual,:is(.concept-page,.community-page,.future-page) .scroll-section:first-child>.scroll-content{min-width:0}
+.community-page .scroll-visual,.community-page .scroll-visual img{background:transparent}
+/* Fit the bitmap at its natural ratio before fading its actual edges into the
+   page background. No solid backing panel or change to the source pixels. */
+.about-image-fade{display:flex;align-items:center;justify-content:center;width:100%;height:100%;min-width:0;min-height:0}
+.about-scroll-page .about-image-fade img{display:block;flex:none;width:auto;height:auto;max-width:100%;max-height:100%;background:transparent;mask-image:linear-gradient(to right,rgb(0 0 0 / 25%) 0%,var(--dwc-color-black) 32%,var(--dwc-color-black) 68%,rgb(0 0 0 / 25%) 100%);-webkit-mask-image:linear-gradient(to right,rgb(0 0 0 / 25%) 0%,var(--dwc-color-black) 32%,var(--dwc-color-black) 68%,rgb(0 0 0 / 25%) 100%)}
+.about-visual-placeholder{display:grid;place-items:center;width:100%;height:100%;border:1px solid var(--line);background:color-mix(in srgb,var(--accent) 3%,var(--bg))}
+.about-visual-placeholder svg{width:36px;height:36px;fill:none;stroke:var(--muted);stroke-width:1;opacity:.65}
+.concept-page .scroll-section:first-child{min-height:133.333svh}
+.concept-page .scroll-content.concept-intro-content,.concept-page .scroll-content.concept-middle-content,.concept-page .scroll-content.concept-final-content,:is(.community-page,.future-page) .scroll-content.about-modular-content{justify-content:flex-start;min-height:133.333svh;gap:clamp(160px,40svh,480px)}
+.concept-page .scroll-copy>p+p{margin-top:24px}
+.about-modular-content .scroll-copy>p+p{margin-top:24px}
+@media(min-width:701px){
+  /* The text block and image share a center line; include the text's height
+     instead of aligning its top edge with the middle of the picture. */
+  .about-scroll-page:is(.concept-page,.community-page,.future-page) .scroll-content{padding-top:var(--about-text-start,max(0px,calc((100svh - var(--nav-edge) - 94px - var(--about-first-block-height,0px))/2)))}
+}
+.concept-privacy>.concept-explainer+p{margin-top:24px}
+.audience-image-placeholder{display:grid;place-items:center;box-sizing:border-box;width:var(--audience-image-width,100%);max-width:100%;height:var(--audience-image-height,66px);margin-top:28px;border:1px solid var(--line);background:color-mix(in srgb,var(--accent) 3%,var(--bg));overflow:hidden}
+.audience-image-placeholder img{display:block;width:100%;height:100%;min-width:0;min-height:0;object-fit:cover;object-position:50% 42%;opacity:.8}
+@media(max-width:700px){.audience-image-placeholder{height:var(--audience-image-height,62px)}}
+.concept-explainer{position:relative;margin-top:32px;border:1px solid var(--line);background:color-mix(in srgb,var(--accent) 3%,var(--bg))}
+.concept-explainer summary{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px 21px;list-style:none;cursor:pointer}
+.concept-explainer summary::-webkit-details-marker{display:none}
+.concept-explainer summary span{font:400 var(--type-body)/1.618 var(--body);letter-spacing:normal}
+.concept-explainer summary i{display:grid;place-items:center;flex:0 0 28px;width:28px;height:28px;border:1px solid var(--line);color:var(--muted);font:400 16px/1 var(--body);font-style:normal;transition:transform .18s}
+.concept-explainer[open] summary i{transform:rotate(45deg)}
+.concept-explainer summary:hover,.concept-explainer summary:focus-visible{color:var(--accent)}
+.concept-explainer summary:focus-visible{outline:1px solid var(--accent);outline-offset:3px}
+.about-scroll-page .scroll-story{overflow-anchor:none}
+.concept-explainer-body{position:static;max-height:none;overflow:visible;padding:23px 24px 27px;border-top:1px solid var(--line);background:var(--bg)}
+.concept-page .concept-explainer-body p{font-size:16px;line-height:1.65}
+.community-page .concept-explainer-body p{font-size:16px;line-height:1.65}
+.story-explainers{position:relative;margin-top:32px}
+.story-explainers>.concept-explainer{position:static;margin-top:16px}
+.story-explainers>.concept-explainer:first-child{margin-top:0}
+.about-story-followup{margin-top:24px}
+.scroll-copy.has-followup{position:relative}
+.scroll-copy.has-followup>.concept-explainer{position:static}
+.concept-explainer-body p+p{margin-top:16px}
+@media(max-width:700px){.concept-page .scroll-section:first-child{min-height:auto}.concept-page .scroll-content.concept-intro-content,.concept-page .scroll-content.concept-middle-content,.concept-page .scroll-content.concept-final-content,:is(.community-page,.future-page) .scroll-content.about-modular-content{min-height:auto;gap:30svh}.concept-explainer summary{padding:16px}.concept-explainer-body{padding:19px 17px 22px}}
+@media(prefers-reduced-motion:reduce){.concept-explainer summary i{transition:none}}
+.about-actions{display:grid;grid-template-columns:1fr;gap:12px;width:100%;max-width:560px;margin:0}
+.about-action{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:68px;padding:18px 22px;border:1px solid var(--line);font:500 16px/1.3 var(--body);color:var(--ink)}
+.about-action:hover{border-color:var(--ink)}
+:is(.concept-page,.community-page,.future-page) .about-actions{gap:16px;grid-auto-rows:1fr}
+:is(.concept-page,.community-page,.future-page) .about-action{display:flex;align-items:center;height:132px;min-height:132px;padding:18px 24px;border:1px solid var(--line);border-radius:0;background:var(--bg);color:var(--ink);text-transform:none;box-shadow:none}
+:is(.concept-page,.community-page,.future-page) .about-action::before,:is(.concept-page,.community-page,.future-page) .about-action::after{content:none}
+:is(.concept-page,.community-page,.future-page) .cta-copy{display:grid;gap:14px;min-width:0}
+:is(.concept-page,.community-page,.future-page) .cta-title{font-family:var(--headline);font-size:clamp(28px,2.8vw,38px);font-weight:400;line-height:1.2;letter-spacing:-.025em;text-wrap:balance}
+:is(.concept-page,.community-page,.future-page) .about-action:hover{border-color:var(--ink)}
+:is(.concept-page,.community-page,.future-page) .about-action:focus-visible{outline:1px solid var(--accent);outline-offset:5px}
+@media(max-width:700px){:is(.concept-page,.community-page,.future-page) .about-action{height:112px;min-height:112px;padding:16px 20px}:is(.concept-page,.community-page,.future-page) .cta-title{font-size:clamp(22px,7vw,28px)}}
+.article-back{display:inline-flex;gap:8px;color:var(--muted);font-size:12px}.article-main{width:min(720px,90%)}.article-body{width:100%}.article-inline-media{margin:40px 0}.article-inline-media img{display:block;width:100%;height:auto;max-height:480px;object-fit:contain}
+
+/* Match Tools card interaction while retaining the About CTA palettes. */
+:is(.concept-page,.community-page,.future-page) .about-action{transition:background .2s,border-color .2s,transform .2s}
+:is(.concept-page,.community-page,.future-page) .about-action:hover,:is(.concept-page,.community-page,.future-page) .about-action:focus-visible{transform:translateX(-6px);border-color:var(--ink);background:color-mix(in srgb,var(--ink) 5%,var(--bg))}
+@media(prefers-reduced-motion:reduce){:is(.concept-page,.community-page,.future-page) .about-action{transition:none}:is(.concept-page,.community-page,.future-page) .about-action:hover,:is(.concept-page,.community-page,.future-page) .about-action:focus-visible{transform:none}}
+
+/* Both CTA variants share the same neutral styling and broad shaftless chevron. */
+:is(.concept-page,.community-page,.future-page) .cta-copy{flex:1}
+:is(.concept-page,.community-page,.future-page) .cta-chevron{display:block;flex:0 0 40px;width:40px;height:32px;color:var(--line);transition:color .2s}
+@media(max-width:700px){:is(.concept-page,.community-page,.future-page) .cta-chevron{flex-basis:32px;width:32px;height:28px}}
+
+:is(.concept-page,.community-page,.future-page) .about-action:hover .cta-chevron,:is(.concept-page,.community-page,.future-page) .about-action:focus-visible .cta-chevron{color:var(--ink)}
+@media(prefers-reduced-motion:reduce){:is(.concept-page,.community-page,.future-page) .cta-chevron{transition:none}}
+
+/* Image is independent from the readable label and chevron. */
+:is(.concept-page,.community-page,.future-page) .about-action{position:relative;isolation:isolate;overflow:hidden;width:100%;flex-shrink:0}
+:is(.concept-page,.community-page,.future-page) .about-action[data-cta-image]::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:var(--cta-image);background-size:cover;background-position:var(--cta-image-position,center);opacity:0;transition:opacity .2s}
+:is(.concept-page,.community-page,.future-page) .about-action[data-cta-image="app"]{--cta-image:url('/assets/search-fern-data-mosaic.png')}
+:is(.concept-page,.community-page,.future-page) .about-action[data-cta-image="community"]{--cta-image:url('/assets/community-mushrooms-amber-v2.png');--cta-image-position:50% 30%}
+:is(.concept-page,.community-page,.future-page) .about-action[data-cta-image="blog"]{--cta-image:url('/assets/blog-bird.webp')}
+:is(.concept-page,.community-page,.future-page) .about-action[data-cta-image]:hover::before,:is(.concept-page,.community-page,.future-page) .about-action[data-cta-image]:focus-visible::before{opacity:.7}
+@media(prefers-reduced-motion:reduce){:is(.concept-page,.community-page,.future-page) .about-action[data-cta-image]::before{transition:none}}
+
+.future-page .scroll-visual,.future-page .scroll-visual img{background:transparent}
+.future-page .scroll-copy h2{font-size:clamp(30px,3vw,44px);line-height:1.08;letter-spacing:-.035em}
+.future-page .scroll-copy p{font-size:var(--type-body);line-height:1.65}
+:is(.concept-page,.community-page,.future-page) .about-action[data-cta-image="future"]{--cta-image:url('/assets/future-digital-fish.png');--cta-image-position:50% 56%}

@@ -1,0 +1,11 @@
+footer.site-footer{margin-top:110px}.tools-page footer.site-footer{margin-top:0}
+footer.site-footer{border-top:1px solid color-mix(in srgb,var(--accent) 42%,var(--line))}
+.site-footer .newsletter-signup input{color:#f2f4ed;-webkit-text-fill-color:#f2f4ed}
+.site-footer .newsletter-mirror-ready input{color:transparent;-webkit-text-fill-color:transparent}
+.site-footer .newsletter-mirror i{flex:none;background:var(--dwc-color-neon);color:var(--dwc-color-footer-bg)}
+.site-footer .newsletter-signup input::selection{background:#f2f4ed;color:var(--dwc-color-footer-bg);-webkit-text-fill-color:var(--dwc-color-footer-bg)}
+.site-footer .newsletter-signup input::placeholder{-webkit-text-fill-color:#737973}
+.newsletter-signup .newsletter-status:not(:empty){visibility:visible;position:static;margin:10px 0 0;padding:0;background:transparent;border:0;color:var(--muted);font-size:12px}
+
+/* Tool detail's scoped legacy footer width must not constrain shared chrome. */
+.tool-detail-page footer.site-footer{width:100%;max-width:none;margin-inline:0;box-sizing:border-box}

@@ -1,0 +1,16 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "darwin-core-protocol",
+  "main": "cloudflare/worker.js",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*"]
+  },
+  "d1_databases": [{
+    "binding": "METRICS_DB",
+    "database_name": "darwin-core-metrics",
+    "database_id": "REPLACE_WITH_D1_DATABASE_ID"
+  }]
+}

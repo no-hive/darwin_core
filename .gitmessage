@@ -1,0 +1,7 @@
+# <type>(<scope>): <short summary>
+#
+# Explain what changed and why when additional context is useful.
+#
+# Types: feat fix docs style refactor perf test build ci chore revert
+# Scopes: web app tools studio protocols docs repo
+# Each commit covers one scope; see CONTRIBUTING.md.

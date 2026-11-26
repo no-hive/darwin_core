@@ -1,0 +1,16 @@
+import {recommendArticles} from '../lib/article-recommendations.mjs';
+const renderSources=(article,lang)=>article.sources?.length?`<section class="article-body article-sources"><h2>${lang==='es'?'Fuentes':'Sources'}</h2><ul>${article.sources.map(source=>`<li><a href="${esc(source.url)}">${esc(source.label)}</a></li>`).join('')}</ul></section>`:'';
+const esc = value => String(value).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
+const block = item => item.quote ? `<blockquote class="article-quote">${esc(item.quote)}</blockquote>` : item.image ? `<figure class="article-inline-media"><img src="../../assets/${esc(item.image)}" alt="${esc(item.alt)}"></figure>` : `<section><h2>${esc(item.heading)}</h2><p>${esc(item.text)}</p></section>`;
+
+function renderRelated(article,catalog,lang){
+  const matches=recommendArticles(article,catalog);
+  if(!matches.length)return '';
+  const kinds=lang==='es'?{Article:'Artículo',Guide:'Guía',News:'Noticias'}:{};
+  return `<section class="article-related" aria-labelledby="related-articles-heading"><h2 id="related-articles-heading">${lang==='es'?'Artículos relacionados':'Related articles'}</h2><div class="related-grid">${matches.map(({article:related})=>`<a class="related-card" href="/${lang}/blog/${esc(related.slug)}/"><span class="related-kind">${esc(kinds[related.type]||related.type)}</span><h3>${esc(related.title)}</h3><p>${esc(related.dek)}</p><b aria-hidden="true">↗</b></a>`).join('')}</div></section>`;
+}
+
+export function renderArticle(article,catalog=[],lang='en'){
+  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#08150d"><meta name="description" content="${esc(article.dek)}"><title>${esc(article.title)} — Darwin Core Protocol</title><link rel="stylesheet" href="../../style.css"></head><body class="article-page"><header class="site-header"><a class="site-mark" href="/${lang}/concept/" aria-label="Darwin Core Protocol home"><span>Darwin Core Protocol</span></a><nav class="site-nav" aria-label="Primary navigation"><div class="nav-dropdown"><a class="nav-trigger" href="/${lang}/concept/">About</a><div class="nav-menu"><a href="/${lang}/concept/">Concept</a><a href="/${lang}/community/">Community</a><a href="/${lang}/future/">Future</a></div></div><a href="../../tools/">Tools</a><a class="active" href="../" aria-current="page">Blog</a><a href="../../support/">Donate</a><a class="app-link" href="../../app/">App</a></nav></header><main class="article-main"><a class="article-back" href="../">← Back to Blog</a><article><header class="article-header"><div class="article-meta"><span class="article-type">${esc(article.type)}</span><time class="article-date" datetime="${esc(article.isoDate)}">${esc(article.date)}</time></div><h1>${esc(article.title)}</h1><p class="article-dek">${esc(article.dek)}</p></header><figure class="article-hero"><img src="../../assets/${esc(article.image)}" alt="${esc(article.alt)}"></figure><div class="article-body">${article.blocks.map(block).join('')}</div>${renderSources(article,lang)}</article>${renderRelated(article,catalog,lang)}</main><script src="../../i18n.js"></script><script src="../../metrics.js"></script></body></html>`;
+}
+

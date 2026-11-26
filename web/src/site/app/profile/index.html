@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#020f08">
+  <meta name="description" content="A Darwin Core Protocol profile."><title>Profile — Darwin Core Protocol</title>
+  <link rel="stylesheet" href="../../style.css"><style>html,body{background:#020f08}</style>
+</head>
+<body class="app-page profile-page">
+  <header class="site-header"><a class="site-mark" href="/concept/" aria-label="Darwin Core Protocol home"><span>Darwin Core Protocol</span></a><nav class="site-nav app-nav" aria-label="App navigation">
+    <a class="app-wide-link" href="../contribute/">Contribute</a><a class="app-wide-link" href="../">Coordinate</a><a class="groups-link" href="../groups/">Groups</a><a class="profile-link active" href="./" aria-current="page">Profile</a>
+  </nav></header>
+  <main class="profile-main">
+    <section class="profile-view" id="profile-view">
+      <section class="profile-column" aria-label="Profile details">
+        <article class="profile-card identity-card"><div class="profile-avatar" id="profile-avatar" aria-label="Avatar initials">AL</div><div class="identity-copy"><div class="identity-heading"><h2 id="profile-name" data-object-content translate="no">Alan Li</h2><button class="profile-edit profile-settings" type="button" data-action="edit" aria-label="Edit profile" title="Edit profile">⚙</button></div><div class="protocol-id"><span id="protocol-id" data-object-content translate="no">alan-li.darwincore.ath</span><button type="button" data-action="copy">Copy</button></div><dl class="profile-meta"><div><dt>Occupation</dt><dd id="profile-job" data-object-content translate="no">Marine biologist, deep-sea sampling</dd></div><div><dt>Age</dt><dd id="profile-age">29</dd></div></dl></div></article>
+        <article class="profile-card radar-card"><div class="radar-visual" id="radar-view"></div><div class="profile-verdict" id="profile-verdict"></div></article>
+      </section>
+      <article class="profile-card activity-card"><h2>Recent activity</h2><ul class="activity-list" id="activity-list"></ul></article>
+    </section>
+    <section class="profile-edit-panel" id="profile-editor" hidden>
+      <div class="edit-grid"><article class="profile-card"><h2>Edit profile</h2><label>Name<input id="edit-name" type="text"></label><label>Protocol name<input id="edit-id" type="text" readonly></label><label>Occupation<input id="edit-job" type="text"></label><div class="edit-pair"><label>Birth month<select id="edit-month"></select></label><label>Birth year<select id="edit-year"></select></label></div></article><article class="profile-card focus-card"><div class="radar-visual" id="radar-edit"></div><div class="profile-verdict" id="editor-verdict"></div><div class="focus-sliders" id="focus-sliders"></div></article></div>
+      <div class="editor-actions"><button class="profile-edit ghost" type="button" data-action="cancel">Cancel</button><button class="profile-edit" type="button" data-action="save">Save changes</button></div>
+    </section>
+  </main>
+  <div class="profile-toast" id="profile-toast" role="status" aria-live="polite"></div>
+  <script src="../../i18n.js"></script><script src="../../metrics.js"></script><script type="module" src="profile.js"></script>
+</body>
+</html>

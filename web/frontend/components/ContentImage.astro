@@ -1,0 +1,8 @@
+---
+import { localImage } from '../../src/lib/presentation.mjs';
+import { findingNouns } from '../../src/lib/wording.mjs';
+interface Props { file: string; alt: string; width?: number; height?: number; priority?: boolean }
+const { file, alt, width, height, priority = false } = Astro.props;
+const image = await localImage(file, {width,height});
+---
+<img {...image} sizes={image.srcset ? '(max-width: 800px) 88vw, 720px' : undefined} alt={findingNouns(alt)} loading={priority?'eager':'lazy'} fetchpriority={priority?'high':undefined} decoding="async" />

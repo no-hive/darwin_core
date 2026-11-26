@@ -1,0 +1,51 @@
+/* Brand Kit owns its palette and grids; shared chrome keeps its existing layout. */
+body.brand-assets-page{--bg:#101114;--ink:#f2f4ed;--muted:#a5acbb;--accent:#627eea;--line:#30343d;color-scheme:dark;background:var(--bg)}
+body.brand-assets-page:before{display:none}
+.brand-assets-page main.brand-assets{width:100%;max-width:none;margin:0;padding:0;color:var(--ink);font-family:var(--body)}
+.brand-assets .brand-kit-wrap{max-width:1240px;margin:0 auto;padding:76px 32px 0}
+.brand-assets .brand-kit-intro{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px;height:auto;padding:0;max-width:none}
+.brand-assets .brand-kicker{margin:0 0 18px;color:#aab8ff;font:500 12px/1.4 var(--body);letter-spacing:.14em}
+.brand-assets h1{margin:0;color:var(--ink);font:400 clamp(48px,7vw,80px)/1.08 var(--headline);letter-spacing:-.035em}
+.brand-assets .brand-download-all{display:inline-flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px 24px;min-height:52px;margin-left:auto;padding:15px 20px;border:1px solid #bdc8ff;background:#bdc8ff;color:#101114;font-size:15px;font-weight:600;line-height:1.4}
+.brand-assets .brand-download-all span{font-size:12px;font-weight:500;white-space:nowrap}
+.brand-assets .brand-download-all:hover{background:#d4dcff;border-color:#d4dcff;color:#101114}
+.brand-assets .brand-kit-section{margin-top:76px}
+.brand-assets .brand-kit-social{margin-top:24px}
+.brand-assets .brand-guidelines h2{margin:0;color:var(--ink);font:400 30px/1.2 var(--headline);letter-spacing:-.025em}
+.brand-assets .brand-core-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));gap:24px}
+.brand-assets .brand-card--wordmark{grid-column:1/span 2;grid-row:1}
+.brand-assets .brand-card--lockup{grid-column:1/span 2;grid-row:2}
+.brand-assets .brand-card--mark{grid-column:3;grid-row:1/span 2}
+.brand-assets .brand-card--framed-mark{grid-column:4;grid-row:1/span 2}
+.brand-assets .brand-core-grid .brand-card--wide .brand-preview{aspect-ratio:auto;flex:1;min-height:70px}
+.brand-assets .brand-core-grid .brand-card--square .brand-preview{aspect-ratio:1;flex:none}
+.brand-assets .brand-core-grid .brand-card--square figcaption{margin-top:auto}
+.brand-assets .brand-social-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.brand-assets .brand-card{display:flex;flex-direction:column;min-width:0;margin:0;border:1px solid var(--line);background:#191b21}
+.brand-assets .brand-preview{aspect-ratio:16/9;overflow:hidden;background:#000}
+.brand-assets .brand-preview img{display:block;width:100%;height:100%;object-fit:contain}
+.brand-assets .brand-card figcaption{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 18px 16px;border-top:1px solid var(--line)}
+.brand-assets .brand-card figcaption>div{min-width:0}
+.brand-assets .brand-card h3{margin:0 0 6px;color:var(--ink);font:500 14px/1.35 var(--body);letter-spacing:0}
+.brand-assets .brand-card figcaption p{margin:0;color:var(--muted);font:400 12px/1.5 var(--body);letter-spacing:.02em}
+.brand-assets .brand-card-actions{display:flex;flex:none;gap:8px}
+.brand-assets .brand-card-control{display:grid;place-items:center;flex:none;width:40px;height:40px;padding:0;border:1px solid #5668af;border-radius:8px;background:transparent;color:#c7d1ff;cursor:pointer}
+.brand-assets .brand-card-control svg{display:block;width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.brand-assets .brand-card-control:hover{background:#252e4d;border-color:#aab8ff;color:#e2e7ff}
+.brand-assets .brand-card-control:disabled{opacity:.5;cursor:progress}
+.brand-assets .brand-copy-status{position:fixed;z-index:500;bottom:24px;left:50%;transform:translateX(-50%);width:max-content;max-width:calc(100vw - 40px);margin:0;padding:14px 18px;border:1px solid #627eea;background:#191b21;color:#f2f4ed;font:400 14px/1.5 var(--body);box-shadow:0 8px 28px #0006}
+.brand-assets .brand-copy-status[hidden]{display:none}
+.brand-assets .brand-guidelines{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:76px;padding-top:36px;border-top:1px solid var(--line)}
+.brand-assets .brand-guidelines p:not(.brand-kicker){max-width:480px;margin:20px 0 0;color:var(--muted);font-size:16px;line-height:1.75}
+.brand-assets .brand-guidelines dl{margin:0}
+.brand-assets .brand-guidelines dl>div{padding:0 0 20px;margin:0 0 20px;border-bottom:1px solid var(--line)}
+.brand-assets .brand-guidelines dt{margin:0 0 8px;color:var(--muted);font-size:13px;line-height:1.5}
+.brand-assets .brand-guidelines dd{display:flex;align-items:center;gap:10px;margin:0;color:var(--ink);font-size:15px;line-height:1.7}
+.brand-assets .brand-color-chip{display:inline-block;flex:none;width:16px;height:16px;background:var(--brand-swatch,#627eea)}
+.brand-assets .brand-guidelines dd.brand-palette{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.brand-assets .brand-color-option{display:flex;align-items:center;gap:10px;min-width:0;font-size:14px;line-height:1.5}
+.brand-assets .brand-color-code{display:block;color:var(--muted);font-size:12px}
+.brand-assets .brand-guidelines p a{color:#bdc8ff;text-decoration:underline;text-underline-offset:3px}
+.brand-assets a:focus-visible,.brand-assets button:focus-visible{outline:2px solid #bdc8ff;outline-offset:4px}
+@media(max-width:960px){.brand-assets .brand-core-grid,.brand-assets .brand-social-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.brand-assets .brand-core-grid{grid-template-rows:none}.brand-assets .brand-card--wide{grid-column:1/-1;grid-row:auto}.brand-assets .brand-card--square{grid-column:auto;grid-row:auto}.brand-assets .brand-core-grid .brand-card--wide .brand-preview{aspect-ratio:6/1;flex:none}}
+@media(max-width:600px){.brand-assets .brand-kit-wrap{padding:44px 20px 0}.brand-assets .brand-core-grid,.brand-assets .brand-social-grid,.brand-assets .brand-guidelines{grid-template-columns:minmax(0,1fr)}.brand-assets .brand-kit-section:not(.brand-kit-social),.brand-assets .brand-guidelines{margin-top:52px}.brand-assets .brand-guidelines{gap:30px}.brand-assets .brand-kit-intro{flex-wrap:nowrap;gap:16px}.brand-assets h1{min-width:0;font-size:clamp(30px,7vw,42px)}.brand-assets .brand-download-all{max-width:50%;min-height:44px;padding:10px 12px;font-size:12px;flex:none}.brand-assets .brand-download-all span{display:none}.brand-assets .brand-card-control{width:44px;height:44px}.brand-assets .brand-guidelines h2{font-size:28px}}

@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Constructor de flujos Darwin Core | Darwin Core Protocol</title>
+<meta name="description" content="Combina asignación de columnas, normalización de fechas y revisión de duplicados en cualquier orden. Procesa localmente y exporta una receta.">
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="https://example.com/es/tools/data-workflow/">
+<link rel="alternate" hreflang="en" href="https://example.com/en/tools/data-workflow/">
+<link rel="alternate" hreflang="es" href="https://example.com/es/tools/data-workflow/">
+<link rel="alternate" hreflang="x-default" href="https://example.com/en/tools/data-workflow/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Constructor de flujos Darwin Core">
+<meta property="og:description" content="Combina asignación de columnas, normalización de fechas y revisión de duplicados en cualquier orden. Procesa localmente y exporta una receta.">
+<meta property="og:url" content="https://example.com/es/tools/data-workflow/">
+<meta property="og:site_name" content="Darwin Core Protocol">
+<meta property="og:image" content="https://example.com/assets/social-es.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Herramientas, guías y procedencia de datos de biodiversidad.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Constructor de flujos Darwin Core">
+<meta name="twitter:description" content="Combina asignación de columnas, normalización de fechas y revisión de duplicados en cualquier orden. Procesa localmente y exporta una receta.">
+<meta name="twitter:image" content="https://example.com/assets/social-es.png">
+<meta name="twitter:image:alt" content="Herramientas, guías y procedencia de datos de biodiversidad.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/style.css">
+
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "WebSite", "@id": "https://example.com/es/#website", "name": "Darwin Core Protocol", "url": "https://example.com/es/", "inLanguage": "es"}, {"@context": "https://schema.org", "@type": "Organization", "@id": "https://example.com/#organization", "name": "Darwin Core Protocol", "url": "https://example.com/"}, {"@context": "https://schema.org", "@type": "WebPage", "@id": "https://example.com/es/tools/data-workflow/#webpage", "name": "Constructor de flujos Darwin Core", "description": "Combina asignaci\u00f3n de columnas, normalizaci\u00f3n de fechas y revisi\u00f3n de duplicados en cualquier orden. Procesa localmente y exporta una receta.", "url": "https://example.com/es/tools/data-workflow/", "inLanguage": "es", "isPartOf": {"@id": "https://example.com/es/#website"}}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://example.com/es/"}, {"@type": "ListItem", "position": 2, "name": "Herramientas", "item": "https://example.com/es/tools/"}, {"@type": "ListItem", "position": 3, "name": "Constructor de flujos Darwin Core", "item": "https://example.com/es/tools/data-workflow/"}]}, {"@context": "https://schema.org", "@type": "WebApplication", "name": "Constructor de flujos Darwin Core", "url": "https://example.com/es/tools/data-workflow/", "description": "Combina asignaci\u00f3n de columnas, normalizaci\u00f3n de fechas y revisi\u00f3n de duplicados en cualquier orden. Procesa localmente y exporta una receta.", "applicationCategory": "ScienceApplication", "browserRequirements": "Requires JavaScript, Web Workers and HTTPS or localhost", "isAccessibleForFree": true, "inLanguage": "es"}]</script>
+<script defer src="/assets/site.js">
+</script>
+<script defer src="/metrics.js"></script>
+
+<script defer src="/assets/vendor/jszip.min.js">
+</script>
+<script defer src="/assets/processing-core.js">
+</script>
+<script defer src="/assets/workbench-i18n.js">
+</script>
+<script defer src="/assets/workbench.js">
+</script>
+</head>
+<body class="tool-detail-page">
+<a class="skip" href="#main">Saltar al contenido</a>
+<header class="site-header tool-header">
+<a class="site-mark" href="/concept/" aria-label="Darwin Core Protocol home"><span>Darwin Core Protocol</span>
+</a>
+<nav class="site-nav" aria-label="Navegación principal">
+<div class="nav-dropdown">
+<a class="nav-trigger" href="/concept/">Acerca de</a>
+<div class="nav-menu">
+<a href="/concept/">Concepto</a>
+<a href="/community/">Comunidad</a>
+<a href="/es/future/">Futuro</a>
+</div>
+</div>
+<a class="active" href="/tools/" aria-current="page">Herramientas</a>
+<a href="/blog/">Blog</a>
+<a href="/support/">Donar</a>
+<a class="app-link" href="/app/">App</a>
+<div class="lang-dropdown">
+<button class="lang-trigger" type="button" aria-haspopup="true" aria-label="Cambiar idioma">
+<svg viewBox="0 0 24 24" aria-hidden="true">
+<circle cx="12" cy="12" r="8.5">
+</circle>
+<path d="M3.8 12h16.4M12 3.5c2.2 2.3 3.3 5.1 3.3 8.5S14.2 18.2 12 20.5M12 3.5C9.8 5.8 8.7 8.6 8.7 12s1.1 6.2 3.3 8.5">
+</path>
+</svg>
+</button>
+<div class="lang-menu">
+<a class="selected" href="/es/tools/data-workflow/" lang="es" hreflang="es" aria-current="true">Español ✓</a>
+<a data-language="en" href="/en/tools/data-workflow/" lang="en" hreflang="en">English</a>
+</div>
+</div>
+</nav>
+</header>
+<main id="main">
+<nav class="crumbs" aria-label="Ruta de navegación">
+<ol>
+<li>
+<a href="/concept/">Inicio</a>
+</li>
+<li>
+<a href="/tools/">Herramientas</a>
+</li>
+<li>
+<span aria-current="page">Constructor de flujos Darwin Core</span>
+</li>
+</ol>
+</nav>
+<section class="tool-page-heading">
+<h1>Constructor de flujos Darwin Core</h1>
+<p class="lead">Combina asignación de columnas, normalización de fechas y revisión de duplicados en cualquier orden. Añade o repite pasos y exporta una receta reutilizable.</p>
+</section>
+<details class="tool-how">
+<summary>
+<span>Cómo funciona</span>
+<i aria-hidden="true">+</i>
+</summary>
+<div class="tool-how-body">
+<ol>
+<li>Elige un archivo local, pega una tabla o prueba el ejemplo sintético.</li>
+<li>Revisa los ajustes y ejecuta el procesamiento.</li>
+<li>Inspecciona el resultado y descarga CSV, XLSX, un informe o una receta.</li>
+</ol>
+<h3>Privacidad y límites</h3>
+<p>Los datos permanecen en esta sesión del navegador. No hay cuentas, suscripciones, cargas al servidor ni publicación. El alojamiento puede registrar las solicitudes habituales de páginas.</p>
+<p>Admite CSV, TSV y una hoja XLSX cada vez. Esta versión no incluye XLS antiguos, macros, verificación científica ni correspondencias taxonómicas.</p>
+</div>
+</details>
+<div id="tool-app" class="tool-app" data-mode="workflow">
+<noscript>
+<p>Activa JavaScript para procesar archivos localmente en tu navegador.</p>
+</noscript>
+</div>
+<div class="section-head">
+<h2>Materiales relacionados del blog</h2>
+</div>
+<div class="grid">
+<a class="card article-card" href="/blog/">
+<img class="article-card-image" src="/assets/blog-bird.webp" alt="">
+<div class="card-top">
+<span class="eyebrow">Preparar</span>
+<span class="badge">Artículo de ejemplo</span>
+</div>
+<h3>Cómo convertir Excel o CSV a Darwin Core</h3>
+<p>Empieza por explicar qué representa cada fila. Después asigna las columnas, revisa los valores y elige un perfil de exportación. La extensión del archivo no demuestra su conformidad con Darwin Core.</p>
+<span class="card-link">Leer la guía ↗</span>
+</a>
+</div>
+</main>
+<footer>
+<span>Darwin Core Protocol · Prototipo</span>
+<span>
+<a href="/concept/">Acerca de esta vista previa</a> · <a href="/support/">Datos y privacidad</a>
+</span>
+</footer>
+</body>
+</html>

@@ -1,4 +1,17 @@
 AGENTS.md
+discussion/
+node_modules/
+web/dist/
+web/.astro/
+web/.migration/
+web/.sites-runtime/
+web/qa/results/
+web/cms/exports/
+web/cms/studio/dist/
+web/cms/studio/.sanity/
+.agents/
+.claude/
+skills-lock.json
 .env
 .env.*
 !.env.example

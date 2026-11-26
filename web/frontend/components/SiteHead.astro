@@ -1,0 +1,28 @@
+---
+import { SITE } from '../../src/config/site.mjs';
+import { stylesheetURL } from '../../src/lib/presentation.mjs';
+import type { pageMetadata } from '../../src/lib/page-metadata.mjs';
+interface Props { metadata: ReturnType<typeof pageMetadata> }
+const { metadata: model } = Astro.props;
+const css = await stylesheetURL();
+const privatePreview = process.env.DWC_BUILD_TARGET === 'preview';
+const structured = JSON.stringify(model.structured).replaceAll('<', '\\u003c');
+---
+<meta charset="utf-8" />
+<meta name="color-scheme" content={model.paint.scheme} />
+<meta name="theme-color" content={model.paint.background} />
+<style is:inline id="initial-paint" set:html={model.paint.css} />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="description" content={model.description} />
+{privatePreview && <meta name="robots" content="noindex,nofollow,noarchive" />}
+<title>{model.title}</title>
+<link rel="stylesheet" href={css} />
+<link rel="icon" href={`/favicon.ico?v=${SITE.faviconVersion}`} sizes="16x16 32x32 48x48 64x64" />
+<link rel="icon" type="image/png" sizes="32x32" href={`/assets/favicon-32.png?v=${SITE.faviconVersion}`} />
+<link rel="icon" type="image/png" sizes="96x96" href={`/assets/favicon-96.png?v=${SITE.faviconVersion}`} />
+<link rel="apple-touch-icon" sizes="180x180" href={`/assets/apple-touch-icon.png?v=${SITE.touchIconVersion}`} />
+{Object.entries(model.openGraph).map(([key, value]) => <meta property={`og:${key}`} content={value} />)}
+{Object.entries(model.twitter).map(([key, value]) => <meta name={`twitter:${key}`} content={value} />)}
+<script is:inline type="application/ld+json" set:html={structured} />
+<link rel="canonical" href={model.url} />
+{model.alternates.map(alternate => <link rel="alternate" hreflang={alternate.lang} href={alternate.href} />)}

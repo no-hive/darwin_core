@@ -1,0 +1,4 @@
+:root{color-scheme:dark;--bg:#08150d;--ink:#e3e6d5;--muted:#9ba78c;--accent:#bacb79;--line:#243321}
+:root{--headline:"Nanum Myeongjo",Georgia,serif;--body:"Albert Sans","Helvetica Neue",Arial,sans-serif;--display:var(--headline);--serif:var(--headline);--mono:"Albert Sans","Helvetica Neue",Arial,sans-serif}
+:root{--nav-edge:27px}
+:root{--type-micro:.75rem;--type-body:1rem;--type-subhead:1.625rem;--type-section:1.625rem;--type-display:3rem;--type-hero:3rem}

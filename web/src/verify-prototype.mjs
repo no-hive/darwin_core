@@ -1,0 +1,74 @@
+import fs from 'node:fs';import vm from 'node:vm';import assert from 'node:assert/strict';import {parseHTML} from 'linkedom';
+import {PROTOTYPE} from './content/prototype.mjs';
+import {createPrototype,text,STORAGE_KEY} from './site/app/prototype-core.mjs';
+import {renderPrototype,renderContribution,esc} from './site/app/prototype-render.mjs';
+import {COPY} from './site/app/prototype-copy.mjs';
+assert.equal(PROTOTYPE.groups.length,2);assert.equal(PROTOTYPE.profiles.length,4);assert.equal(PROTOTYPE.records.length,4);
+assert.deepEqual(PROTOTYPE.groups.map(g=>g.members.length),[4,2]);
+for(const p of PROTOTYPE.profiles)assert.equal(PROTOTYPE.records.filter(r=>r.authorId===p.key).length,1);
+for(const r of PROTOTYPE.records){assert(PROTOTYPE.profiles.some(p=>p.key===r.authorId));r.groupIds.forEach(id=>assert(PROTOTYPE.groups.some(g=>g.id===id)));r.researchIds.forEach(id=>assert(PROTOTYPE.research.some(p=>p.id===id)));}
+let saved=null;const app=createPrototype(PROTOTYPE,null,state=>{saved=structuredClone(state);});
+assert.deepEqual(app.search({categories:['groups'],scope:'mine'}).map(g=>g.id),['pacific']);assert.equal(app.search({categories:['groups'],scope:'discover'}).length,1);
+assert.equal(app.search({categories:['records'],scope:'mine'}).length,1);assert.equal(app.search({categories:['profiles'],groupId:'pacific'}).length,4);assert.equal(app.search({categories:['profiles'],groupId:'mollusks'}).length,2);
+assert.equal(app.search({q:'ines',categories:['profiles']})[0].name,'Inés Soler');
+assert(app.feed().every(e=>e.groupId==='pacific'));assert.throws(()=>app.vote('specimen-review','for'));
+app.join('mollusks');assert.equal(app.groups()[1].members.length,3);assert.equal(app.search({categories:['groups'],scope:'discover'}).length,0);assert(app.feed().some(e=>e.groupId==='mollusks'));
+app.attach('abyssal-skate','mollusks');assert(app.records()[0].groupIds.includes('mollusks'));assert.equal(app.records()[0].authorId,'alan-li');assert.throws(()=>app.attach('reef-coral','pacific'));
+app.vote('specimen-review','for');const p=PROTOTYPE.proposals.find(p=>p.id==='specimen-review');assert.equal(app.totals(p).for,22);app.vote(p.id,'against');assert.equal(app.totals(p).for,10);assert.equal(app.totals(p).against,12);assert.throws(()=>app.vote('evidence-format','for'));
+const input={title:'My new sample',scientificName:'Testus example',description:'A synthetic observation',date:'2026-11-14',location:'Pacific sample sector',evidence:'Field notebook demo',groupId:'mollusks',researchId:'mollusk-atlas'};
+const id=app.addRecord(input);assert.equal(app.records().length,5);assert.equal(app.search({q:'My new sample',categories:['records']}).length,1);assert(app.feed().some(e=>e.recordId===id));assert(app.activities('alan-li','en').some(e=>e.href.includes(id)));
+app.updateProfile({...app.profile('alan-li'),name:'Alan Example',job:'Updated focus'});assert.equal(app.search({q:'Alan Example',categories:['profiles']}).length,1);assert.throws(()=>app.updateProfile({...app.profile('maya'),name:'Not mine'}));
+const restored=createPrototype(PROTOTYPE,saved);assert(restored.member('mollusks'));assert.equal(restored.records().length,5);assert.equal(restored.profile('alan-li').name,'Alan Example');assert.equal(restored.state.votes[p.id],'against');restored.leave('mollusks');assert(restored.feed().every(e=>e.groupId==='pacific'));assert.throws(()=>restored.vote('specimen-review','for'));
+app.reset();assert.deepEqual(app.groups().map(g=>g.members.length),[4,2]);assert.equal(app.records().length,4);assert.equal(app.profile('alan-li').name,'Alan Li');assert.equal(Object.keys(app.state.votes).length,0);
+for(const bad of [null,{},[],{version:1,records:[null,{},7,{...input,id:'bad',authorId:'maya'}],memberships:{pacific:'yes'},votes:{'evidence-format':'for'}}])assert.equal(createPrototype(PROTOTYPE,bad).records().length,4);
+const denied=createPrototype(PROTOTYPE,null,()=>{throw Error('quota');});denied.join('mollusks');assert(!denied.storageAvailable);
+const browserScript=fs.readFileSync('src/site/app/prototype-app.js','utf8').replace(/^import.*;$/gm,'');
+function fixture(lang,path='app/',query=''){
+ const {document,window:domWindow}=parseHTML(fs.readFileSync(`dist/${lang}/${path}index.html`,'utf8'));
+ const location=new URL(`https://example.test/${lang}/${path}${query}`),events={};let state;
+ const current=createPrototype(PROTOTYPE,null,value=>state=value);
+ const dialogPrototype=document.createElement('dialog').constructor.prototype;dialogPrototype.showModal=function(){this.setAttribute('open','');};dialogPrototype.close=function(){this.removeAttribute('open');};
+ const history={pushState:(_s,_t,url)=>{location.href=new URL(url,location).href;}};
+ vm.runInNewContext(browserScript,{app:current,renderPrototype,renderContribution,esc,COPY,text,document,location,history,URL,window:{addEventListener:(type,fn)=>events[type]=fn}});
+ return {document,location,app:current,events,event:(type,node)=>node.dispatchEvent(new domWindow.Event(type,{bubbles:true,cancelable:true})),saved:()=>state};
+}
+for(const lang of ['en','es']){
+ const f=fixture(lang,'app/groups/'),d=f.document;
+ assert.equal(d.querySelectorAll('[data-entity="groups"]').length,2);assert.equal(d.querySelectorAll('[data-action="join"]').length,1);
+ d.querySelector('[data-action="join"]').click();assert.equal(f.app.groups()[1].members.length,3);assert.equal(d.querySelectorAll('[data-action="join"]').length,0);
+ d.querySelector('[data-action="reset"]').click();assert(d.querySelector('#reset-dialog').hasAttribute('open'));d.querySelector('[data-action="confirm-reset"]').click();assert.equal(f.app.groups()[1].members.length,2);
+ const group=fixture(lang,'app/groups/mollusks/','?tab=members');assert.equal(group.document.querySelectorAll('[data-entity="profiles"]').length,2);
+ const connected=fixture(lang,'app/groups/mollusks/','?tab=records');connected.document.querySelector('[data-action="join"]').click();
+ const attachment=connected.document.querySelector('[data-attach-form]');Object.defineProperty(attachment.querySelector('[name="record"]'),'value',{value:'abyssal-skate'});connected.event('submit',attachment);assert(connected.app.records()[0].groupIds.includes('mollusks'));
+ const memberSearch=fixture(lang,'app/groups/mollusks/','?tab=members&q=maya');const global=new URL(memberSearch.document.querySelector('.proto-search .proto-link').href,'https://example.test');assert.equal(global.searchParams.get('group'),'mollusks');assert.equal(global.searchParams.get('q'),'maya');assert.equal(global.searchParams.get('types'),'profiles');
+ const proposals=fixture(lang,'app/groups/pacific/proposals/expedition-fund/');const form=proposals.document.querySelector('[data-vote-form]');form.querySelector('[value="for"]').setAttribute('checked','');proposals.event('submit',form);assert.equal(proposals.app.state.votes['expedition-fund'],'for');assert.equal(proposals.document.querySelector('[data-total="for"]').textContent,'30');
+ const record=fixture(lang,'app/records/new/');
+ const rf=record.document.querySelector('[data-record-form]');for(const [name,val] of Object.entries({...input,groupId:'pacific',researchId:'pacific-atlas'})){const node=rf.querySelector(`[name="${name}"]`);if(node.localName==='select')Object.defineProperty(node,'value',{value:val,writable:true});else node.value=val;}record.event('submit',rf);assert.equal(record.app.records().length,5);assert(record.location.href.includes('record=local-'));
+ const live=fixture(lang,'app/search/'),liveInput=live.document.querySelector('[data-scan-query]');
+ assert(live.document.querySelector('#scan-suggestions').hidden);
+ liveInput.value='maya';live.event('input',liveInput);assert(!live.document.querySelector('#scan-suggestions').hidden);
+ assert.equal(live.document.querySelectorAll('[data-suggestion]').length,2,'Typing immediately suggests both a person and their record');
+ const widgets=[...live.document.querySelectorAll('[data-suggestion-widget]')];assert.equal(widgets.length,2,'Recommendations group people and findings into widgets');assert.notEqual(widgets[0].getAttribute('style'),widgets[1].getAttribute('style'),'Recommendation widgets have different widths');assert(widgets.every(widget=>widget.querySelector('[data-suggestion]')));
+ assert.equal(live.location.search,'','Typing does not submit a query or change browser history');assert(!live.document.querySelector('.scan-results'));
+ assert.equal(live.document.querySelector('[data-scan-query]'),liveInput,'Typing preserves the input and focus');
+ let focused=false;live.document.querySelector('[data-suggestion]').focus=()=>focused=true;
+ const down=new live.document.defaultView.Event('keydown',{bubbles:true,cancelable:true});down.key='ArrowDown';liveInput.dispatchEvent(down);assert(focused,'ArrowDown enters suggestions');
+ const escape=new live.document.defaultView.Event('keydown',{bubbles:true,cancelable:true});escape.key='Escape';liveInput.dispatchEvent(escape);assert(live.document.querySelector('#scan-suggestions').hidden);
+ liveInput.value='a';live.event('input',liveInput);assert.equal(live.document.querySelectorAll('[data-suggestion]').length,6,'Only the first six recommendations are shown');
+ liveInput.value='<script>no such record</script>';live.event('input',liveInput);assert.equal(live.document.querySelectorAll('[data-suggestion]').length,0);assert(!live.document.querySelector('#scan-suggestions script'));
+ liveInput.value='';live.event('input',liveInput);assert(live.document.querySelector('#scan-suggestions').hidden);
+ liveInput.value='maya';live.event('input',liveInput);live.document.querySelector('[data-action="scan-show-all"]').click();assert.equal(live.location.searchParams.get('q'),'maya');assert(live.document.querySelector('.scan-results'));assert(live.document.querySelector('#scan-suggestions').hidden);
+ const scoped=fixture(lang,'app/search/','?types=profiles');const scopedInput=scoped.document.querySelector('[data-scan-query]');scopedInput.value='maya';scoped.event('input',scopedInput);assert.equal(scoped.document.querySelectorAll('[data-suggestion]').length,1);assert.equal(scoped.document.querySelector('[data-suggestion]').dataset.suggestionType,'profiles','Category filters apply to live suggestions');
+ const scanHome=fixture(lang,'app/search/');assert(scanHome.document.querySelector('[data-scan-start]'));assert.equal(scanHome.document.querySelectorAll('[data-entity]').length,0,'DarwinScan starts with search and categories, not an open catalog');assert(!scanHome.document.querySelector('.scan-results'));
+ const homeSearch=scanHome.document.querySelector('[data-search-form]');homeSearch.querySelector('[name="q"]').value='   ';scanHome.event('submit',homeSearch);assert.equal(scanHome.document.querySelectorAll('[data-entity]').length,0,'A blank search does not dump the catalog');
+ const category=scanHome.document.querySelector('[data-category="groups"]');category.setAttribute('checked','');scanHome.event('change',category);assert.equal(scanHome.document.querySelectorAll('[data-entity="groups"]').length,2,'Choosing a category opens that category');
+ scanHome.document.querySelector('[data-category="groups"]').removeAttribute('checked');scanHome.event('change',scanHome.document.querySelector('[data-category="groups"]'));assert(!scanHome.document.querySelector('.scan-results'),'Clearing the last category restores the initial screen');
+ const globalQuery=fixture(lang,'app/search/','?q=maya');assert(globalQuery.document.querySelector('[data-entity="profiles"]'));assert(globalQuery.document.querySelector('[data-entity="records"]'),'A submitted query searches across categories');
+ const scan=fixture(lang,'app/search/','?types=profiles&q=ines');assert.equal(scan.document.querySelectorAll('[data-entity="profiles"]').length,1);assert.equal(scan.document.querySelectorAll('[data-entity="records"]').length,0);
+ const search=scan.document.querySelector('[data-search-form]');search.querySelector('[name="q"]').value='maya';scan.event('submit',search);assert.equal(scan.location.searchParams.get('q'),'maya');assert.equal(scan.document.querySelector('[data-entity="profiles"] h3').textContent,'Maya Rivers');
+ assert([...scan.document.querySelectorAll('.lang-menu a')].every(a=>a.href.includes('q=maya')));
+ for(const r of PROTOTYPE.records){const file=`dist/${lang}/app/records/${r.id}/index.html`;assert(fs.existsSync(file));const html=fs.readFileSync(file,'utf8');assert(html.includes(text(r.title,lang)));}
+ for(const g of PROTOTYPE.groups)assert(fs.readFileSync(`dist/${lang}/app/groups/${g.id}/index.html`,'utf8').includes(g.name));
+ const html=fs.readFileSync(`dist/${lang}/app/records/index.html`,'utf8');const controller=html.includes('data-app-react')?'src="/assets/app/connected-':'src="/app/prototype-app.js"';assert(html.indexOf('id="app-prototype-data"')<html.indexOf(controller));
+}
+console.log('OK: connected 2-group/4-person/4-record prototype, shared search, membership, scoped votes, contributions, persistence, redirects and reset.');

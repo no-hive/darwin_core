@@ -1,0 +1,11 @@
+{
+  "name": "Darwin Core published content",
+  "url": "<deployed delivery worker>/webhooks/sanity",
+  "dataset": "<real dataset>",
+  "httpMethod": "POST",
+  "on": ["create", "update", "delete"],
+  "filter": "coalesce(after()._type,before()._type) in ['dwcArticle','dwcTag','dwcAuthor','sanity.imageAsset'] && !(coalesce(after()._id,before()._id) in path('drafts.**')) && !(coalesce(after()._id,before()._id) in path('versions.**'))",
+  "projection": "{ 'projectId': '<real project id>', 'dataset': sanity::dataset(), 'documentId': coalesce(after()._id,before()._id), 'documentType': coalesce(after()._type,before()._type), 'revision': coalesce(after()._rev,before()._rev), 'operation': delta::operation() }",
+  "includeDrafts": false,
+  "secret": "<set through secure configuration; never commit a real secret>"
+}

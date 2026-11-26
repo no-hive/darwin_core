@@ -1,0 +1,506 @@
+[
+  {
+    "source": "src/site/app/groups/index.html",
+    "target": "src/site/app/index.html"
+  },
+  {
+    "source": "src/site/app/groups/index.html",
+    "target": "src/site/app/records/index.html"
+  },
+  {
+    "source": "src/site/app/groups/index.html",
+    "target": "src/site/app/records/view/index.html"
+  },
+  {
+    "source": "src/site/app/groups/index.html",
+    "target": "src/site/app/search/index.html"
+  },
+  {
+    "source": "src/site/assets/community-hardware.png",
+    "target": "src/site/assets/future-hardware-stylized.png"
+  },
+  {
+    "source": "src/site/AGENTS.md",
+    "target": "dist/AGENTS.md"
+  },
+  {
+    "source": "src/site/about-scroll.js",
+    "target": "dist/about-scroll.js"
+  },
+  {
+    "source": "src/site/assets/apple-touch-icon.png",
+    "target": "dist/assets/apple-touch-icon.png"
+  },
+  {
+    "source": "src/site/assets/blog-bird.webp",
+    "target": "dist/assets/blog-bird.webp"
+  },
+  {
+    "source": "src/site/assets/blog-deer.webp",
+    "target": "dist/assets/blog-deer.webp"
+  },
+  {
+    "source": "src/site/assets/blog-mushrooms.webp",
+    "target": "dist/assets/blog-mushrooms.webp"
+  },
+  {
+    "source": "src/site/assets/brand-kit/IMAGE-LICENSE.txt",
+    "target": "dist/assets/brand-kit/IMAGE-LICENSE.txt"
+  },
+  {
+    "source": "src/site/assets/brand-kit/core/darwin-core-protocol-framed-mark-1000x1000.png",
+    "target": "dist/assets/brand-kit/core/darwin-core-protocol-framed-mark-1000x1000.png"
+  },
+  {
+    "source": "src/site/assets/brand-kit/core/darwin-core-protocol-lockup-2400x400.png",
+    "target": "dist/assets/brand-kit/core/darwin-core-protocol-lockup-2400x400.png"
+  },
+  {
+    "source": "src/site/assets/brand-kit/core/darwin-core-protocol-lockup-2400x900.png",
+    "target": "dist/assets/brand-kit/core/darwin-core-protocol-lockup-2400x900.png"
+  },
+  {
+    "source": "src/site/assets/brand-kit/core/darwin-core-protocol-mark-1000x1000.png",
+    "target": "dist/assets/brand-kit/core/darwin-core-protocol-mark-1000x1000.png"
+  },
+  {
+    "source": "src/site/assets/brand-kit/core/darwin-core-protocol-wordmark-2400x400.png",
+    "target": "dist/assets/brand-kit/core/darwin-core-protocol-wordmark-2400x400.png"
+  },
+  {
+    "source": "src/site/assets/brand-kit/darwin-core-protocol-brand-kit.zip",
+    "target": "dist/assets/brand-kit/darwin-core-protocol-brand-kit.zip"
+  },
+  {
+    "source": "src/site/assets/brand-kit/social/darwin-core-protocol-app-1200x600.png",
+    "target": "dist/assets/brand-kit/social/darwin-core-protocol-app-1200x600.png"
+  },
+  {
+    "source": "src/site/assets/brand-kit/social/darwin-core-protocol-app-1600x900.png",
+    "target": "dist/assets/brand-kit/social/darwin-core-protocol-app-1600x900.png"
+  },
+  {
+    "source": "src/site/assets/brand-kit/social/darwin-core-protocol-community-1200x600.png",
+    "target": "dist/assets/brand-kit/social/darwin-core-protocol-community-1200x600.png"
+  },
+  {
+    "source": "src/site/assets/brand-kit/social/darwin-core-protocol-community-1600x900.png",
+    "target": "dist/assets/brand-kit/social/darwin-core-protocol-community-1600x900.png"
+  },
+  {
+    "source": "src/site/assets/brand-kit/social/darwin-core-protocol-concept-1200x600.png",
+    "target": "dist/assets/brand-kit/social/darwin-core-protocol-concept-1200x600.png"
+  },
+  {
+    "source": "src/site/assets/brand-kit/social/darwin-core-protocol-concept-1600x900.png",
+    "target": "dist/assets/brand-kit/social/darwin-core-protocol-concept-1600x900.png"
+  },
+  {
+    "source": "src/site/assets/brand-kit/social/darwin-core-protocol-ethereum-1200x600.png",
+    "target": "dist/assets/brand-kit/social/darwin-core-protocol-ethereum-1200x600.png"
+  },
+  {
+    "source": "src/site/assets/brand-kit/social/darwin-core-protocol-ethereum-1600x900.png",
+    "target": "dist/assets/brand-kit/social/darwin-core-protocol-ethereum-1600x900.png"
+  },
+  {
+    "source": "src/site/assets/brand-kit/social/darwin-core-protocol-future-1200x600.png",
+    "target": "dist/assets/brand-kit/social/darwin-core-protocol-future-1200x600.png"
+  },
+  {
+    "source": "src/site/assets/brand-kit/social/darwin-core-protocol-future-1600x900.png",
+    "target": "dist/assets/brand-kit/social/darwin-core-protocol-future-1600x900.png"
+  },
+  {
+    "source": "src/site/assets/brand-kit/social/darwin-core-protocol-monochrome-1200x600.png",
+    "target": "dist/assets/brand-kit/social/darwin-core-protocol-monochrome-1200x600.png"
+  },
+  {
+    "source": "src/site/assets/brand-kit/social/darwin-core-protocol-monochrome-1600x900.png",
+    "target": "dist/assets/brand-kit/social/darwin-core-protocol-monochrome-1600x900.png"
+  },
+  {
+    "source": "src/site/assets/brand-logo-1-approved.png",
+    "target": "dist/assets/brand-logo-1-approved.png"
+  },
+  {
+    "source": "src/site/assets/community-birds.png",
+    "target": "dist/assets/community-birds.png"
+  },
+  {
+    "source": "src/site/assets/community-governance-transparent.png",
+    "target": "dist/assets/community-governance-transparent.png"
+  },
+  {
+    "source": "src/site/assets/community-governance.webp",
+    "target": "dist/assets/community-governance.webp"
+  },
+  {
+    "source": "src/site/assets/community-hardware.png",
+    "target": "dist/assets/community-hardware.png"
+  },
+  {
+    "source": "src/site/assets/community-liquid-banner.png",
+    "target": "dist/assets/community-liquid-banner.png"
+  },
+  {
+    "source": "src/site/assets/community-liquid-expanded.png",
+    "target": "dist/assets/community-liquid-expanded.png"
+  },
+  {
+    "source": "src/site/assets/community-liquid-pixel-mosaic.png",
+    "target": "dist/assets/community-liquid-pixel-mosaic.png"
+  },
+  {
+    "source": "src/site/assets/community-mountain-researcher-goat.png",
+    "target": "dist/assets/community-mountain-researcher-goat.png"
+  },
+  {
+    "source": "src/site/assets/community-mushroom.webp",
+    "target": "dist/assets/community-mushroom.webp"
+  },
+  {
+    "source": "src/site/assets/community-mushrooms-amber-v2.png",
+    "target": "dist/assets/community-mushrooms-amber-v2.png"
+  },
+  {
+    "source": "src/site/assets/community-researcher-goat.png",
+    "target": "dist/assets/community-researcher-goat.png"
+  },
+  {
+    "source": "src/site/assets/community-silhouettes-textured.png",
+    "target": "dist/assets/community-silhouettes-textured.png"
+  },
+  {
+    "source": "src/site/assets/concept-field-researcher.png",
+    "target": "dist/assets/concept-field-researcher.png"
+  },
+  {
+    "source": "src/site/assets/donate/LICENSE-cryptocurrency-icons.md",
+    "target": "dist/assets/donate/LICENSE-cryptocurrency-icons.md"
+  },
+  {
+    "source": "src/site/assets/donate/LICENSE-trustwallet.txt",
+    "target": "dist/assets/donate/LICENSE-trustwallet.txt"
+  },
+  {
+    "source": "src/site/assets/donate/SOURCES.md",
+    "target": "dist/assets/donate/SOURCES.md"
+  },
+  {
+    "source": "src/site/assets/donate/arbitrum.png",
+    "target": "dist/assets/donate/arbitrum.png"
+  },
+  {
+    "source": "src/site/assets/donate/base.png",
+    "target": "dist/assets/donate/base.png"
+  },
+  {
+    "source": "src/site/assets/donate/bnb.png",
+    "target": "dist/assets/donate/bnb.png"
+  },
+  {
+    "source": "src/site/assets/donate/btc.png",
+    "target": "dist/assets/donate/btc.png"
+  },
+  {
+    "source": "src/site/assets/donate/eth.png",
+    "target": "dist/assets/donate/eth.png"
+  },
+  {
+    "source": "src/site/assets/donate/ltc.png",
+    "target": "dist/assets/donate/ltc.png"
+  },
+  {
+    "source": "src/site/assets/donate/sol.png",
+    "target": "dist/assets/donate/sol.png"
+  },
+  {
+    "source": "src/site/assets/donate/ton.png",
+    "target": "dist/assets/donate/ton.png"
+  },
+  {
+    "source": "src/site/assets/donate/trx.png",
+    "target": "dist/assets/donate/trx.png"
+  },
+  {
+    "source": "src/site/assets/donate/usdc.png",
+    "target": "dist/assets/donate/usdc.png"
+  },
+  {
+    "source": "src/site/assets/donate/usdt.png",
+    "target": "dist/assets/donate/usdt.png"
+  },
+  {
+    "source": "src/site/assets/dwc-crab-crystal-tonal-cropped.svg",
+    "target": "dist/assets/dwc-crab-crystal-tonal-cropped.svg"
+  },
+  {
+    "source": "src/site/assets/dwc-crab-crystal-tonal.png",
+    "target": "dist/assets/dwc-crab-crystal-tonal.png"
+  },
+  {
+    "source": "src/site/assets/dwc-crab-crystal-v2.png",
+    "target": "dist/assets/dwc-crab-crystal-v2.png"
+  },
+  {
+    "source": "src/site/assets/dwc-crab-cylinder.png",
+    "target": "dist/assets/dwc-crab-cylinder.png"
+  },
+  {
+    "source": "src/site/assets/dwc-crab-feelers-mask.png",
+    "target": "dist/assets/dwc-crab-feelers-mask.png"
+  },
+  {
+    "source": "src/site/assets/dwc-crab-logo-black-cropped.png",
+    "target": "dist/assets/dwc-crab-logo-black-cropped.png"
+  },
+  {
+    "source": "src/site/assets/dwc-crab-logo-black.png",
+    "target": "dist/assets/dwc-crab-logo-black.png"
+  },
+  {
+    "source": "src/site/assets/dwc-crab-logo.png",
+    "target": "dist/assets/dwc-crab-logo.png"
+  },
+  {
+    "source": "src/site/assets/dwc-crab-outline-mask.png",
+    "target": "dist/assets/dwc-crab-outline-mask.png"
+  },
+  {
+    "source": "src/site/assets/favicon-32.png",
+    "target": "dist/assets/favicon-32.png"
+  },
+  {
+    "source": "src/site/assets/favicon-96.png",
+    "target": "dist/assets/favicon-96.png"
+  },
+  {
+    "source": "src/site/assets/fern.webp",
+    "target": "dist/assets/fern.webp"
+  },
+  {
+    "source": "src/site/assets/fonts/Cinzel-OFL.txt",
+    "target": "dist/assets/fonts/Cinzel-OFL.txt"
+  },
+  {
+    "source": "src/site/assets/fonts/CormorantGaramond-OFL.txt",
+    "target": "dist/assets/fonts/CormorantGaramond-OFL.txt"
+  },
+  {
+    "source": "src/site/assets/fonts/albert-sans-400.woff2",
+    "target": "dist/assets/fonts/albert-sans-400.woff2"
+  },
+  {
+    "source": "src/site/assets/fonts/albert-sans-500.woff2",
+    "target": "dist/assets/fonts/albert-sans-500.woff2"
+  },
+  {
+    "source": "src/site/assets/fonts/albert-sans-600.woff2",
+    "target": "dist/assets/fonts/albert-sans-600.woff2"
+  },
+  {
+    "source": "src/site/assets/fonts/cinzel-500.woff",
+    "target": "dist/assets/fonts/cinzel-500.woff"
+  },
+  {
+    "source": "src/site/assets/fonts/cormorant-garamond-400.woff2",
+    "target": "dist/assets/fonts/cormorant-garamond-400.woff2"
+  },
+  {
+    "source": "src/site/assets/fonts/cormorant-garamond-600.woff",
+    "target": "dist/assets/fonts/cormorant-garamond-600.woff"
+  },
+  {
+    "source": "src/site/assets/fonts/fraunces-italic.woff2",
+    "target": "dist/assets/fonts/fraunces-italic.woff2"
+  },
+  {
+    "source": "src/site/assets/fonts/fraunces.woff2",
+    "target": "dist/assets/fonts/fraunces.woff2"
+  },
+  {
+    "source": "src/site/assets/fonts/manrope.woff2",
+    "target": "dist/assets/fonts/manrope.woff2"
+  },
+  {
+    "source": "src/site/assets/fonts/nanum-myeongjo-400.woff2",
+    "target": "dist/assets/fonts/nanum-myeongjo-400.woff2"
+  },
+  {
+    "source": "src/site/assets/fonts/nimbus-sans.woff2",
+    "target": "dist/assets/fonts/nimbus-sans.woff2"
+  },
+  {
+    "source": "src/site/assets/footer-mascot-frame.png",
+    "target": "dist/assets/footer-mascot-frame.png"
+  },
+  {
+    "source": "src/site/assets/frog-woodland.png",
+    "target": "dist/assets/frog-woodland.png"
+  },
+  {
+    "source": "src/site/assets/future-digital-fish.png",
+    "target": "dist/assets/future-digital-fish.png"
+  },
+  {
+    "source": "src/site/assets/future-diving-whale.png",
+    "target": "dist/assets/future-diving-whale.png"
+  },
+  {
+    "source": "src/site/assets/future-golden-eye.webp",
+    "target": "dist/assets/future-golden-eye.webp"
+  },
+  {
+    "source": "src/site/assets/community-hardware.png",
+    "target": "dist/assets/future-hardware-stylized.png"
+  },
+  {
+    "source": "src/site/assets/future-jellyfish.png",
+    "target": "dist/assets/future-jellyfish.png"
+  },
+  {
+    "source": "src/site/assets/future-luminous-earth.png",
+    "target": "dist/assets/future-luminous-earth.png"
+  },
+  {
+    "source": "src/site/assets/future-whales.png",
+    "target": "dist/assets/future-whales.png"
+  },
+  {
+    "source": "src/site/assets/future-yellow-submersible.png",
+    "target": "dist/assets/future-yellow-submersible.png"
+  },
+  {
+    "source": "src/site/assets/jellyfish.webp",
+    "target": "dist/assets/jellyfish.webp"
+  },
+  {
+    "source": "src/site/assets/newt.webp",
+    "target": "dist/assets/newt.webp"
+  },
+  {
+    "source": "dist/assets/og/en-71f0b38e232b6be0.png",
+    "target": "dist/assets/og/es-01668e2703523b09.png"
+  },
+  {
+    "source": "dist/assets/og/en-f772ad296f95d00a.png",
+    "target": "dist/assets/og/es-08a833bba118be64.png"
+  },
+  {
+    "source": "dist/assets/og/en-4cca964304c34c0f.png",
+    "target": "dist/assets/og/es-288604f4b48b1c19.png"
+  },
+  {
+    "source": "dist/assets/og/en-7a7953ef09d1f0e5.png",
+    "target": "dist/assets/og/es-3720dc292213e61a.png"
+  },
+  {
+    "source": "dist/assets/og/en-22b68039028cf355.png",
+    "target": "dist/assets/og/es-37c0a059fb13fb56.png"
+  },
+  {
+    "source": "dist/assets/og/en-fd3712884d45a6e1.png",
+    "target": "dist/assets/og/es-4bea0050776d69d3.png"
+  },
+  {
+    "source": "dist/assets/og/en-06da41f7f87cad21.png",
+    "target": "dist/assets/og/es-57e57466422076a6.png"
+  },
+  {
+    "source": "dist/assets/og/en-b2fb89363169c2e3.png",
+    "target": "dist/assets/og/es-60c51b2af0fad884.png"
+  },
+  {
+    "source": "dist/assets/og/en-8ed167da66ec34c5.png",
+    "target": "dist/assets/og/es-6161a7fc3275a217.png"
+  },
+  {
+    "source": "dist/assets/og/en-2c21b164b3fdfcc3.png",
+    "target": "dist/assets/og/es-970db296c3c62afe.png"
+  },
+  {
+    "source": "dist/assets/og/en-392b4826faa487a9.png",
+    "target": "dist/assets/og/es-97474905d5784f31.png"
+  },
+  {
+    "source": "dist/assets/og/en-c9642a71755bf2a2.png",
+    "target": "dist/assets/og/es-add8fa13f4a9e74a.png"
+  },
+  {
+    "source": "dist/assets/og/en-e2444702ebf479f6.png",
+    "target": "dist/assets/og/es-d016f2dca8e1521e.png"
+  },
+  {
+    "source": "dist/assets/og/en-33ba16f5bd376209.png",
+    "target": "dist/assets/og/es-dffe38ec3923da71.png"
+  },
+  {
+    "source": "dist/assets/processing-core-9b78fe0a51854abee18d.js",
+    "target": "dist/assets/processing-core.js"
+  },
+  {
+    "source": "src/site/assets/rhino-tools.webp",
+    "target": "dist/assets/rhino-tools.webp"
+  },
+  {
+    "source": "src/site/assets/search-fern-data-mosaic.png",
+    "target": "dist/assets/search-fern-data-mosaic.png"
+  },
+  {
+    "source": "src/site/assets/search-shadowed-ferns.png",
+    "target": "dist/assets/search-shadowed-ferns.png"
+  },
+  {
+    "source": "src/site/assets/vendor/JSZIP-LICENSE.md",
+    "target": "dist/assets/vendor/JSZIP-LICENSE.md"
+  },
+  {
+    "source": "src/site/assets/vendor/PAKO-LICENSE.txt",
+    "target": "dist/assets/vendor/PAKO-LICENSE.txt"
+  },
+  {
+    "source": "src/site/assets/vendor/jszip.min.js",
+    "target": "dist/assets/vendor/jszip.min.js"
+  },
+  {
+    "source": "src/site/assets/vendor/tools-runtime-LICENSES.txt",
+    "target": "dist/assets/vendor/tools-runtime-LICENSES.txt"
+  },
+  {
+    "source": "src/site/blog/blog.js",
+    "target": "dist/blog/blog.js"
+  },
+  {
+    "source": "src/site/brand-kit.js",
+    "target": "dist/brand-kit.js"
+  },
+  {
+    "source": "src/site/favicon.ico",
+    "target": "dist/favicon.ico"
+  },
+  {
+    "source": "src/site/favicon.svg",
+    "target": "dist/favicon.svg"
+  },
+  {
+    "source": "src/site/i18n.js",
+    "target": "dist/i18n.js"
+  },
+  {
+    "source": "dist/en/index.html",
+    "target": "dist/index.html"
+  },
+  {
+    "source": "src/site/metrics.js",
+    "target": "dist/metrics.js"
+  },
+  {
+    "source": "src/site/stats/stats.css",
+    "target": "dist/stats/stats.css"
+  },
+  {
+    "source": "src/site/stats/stats.js",
+    "target": "dist/stats/stats.js"
+  }
+]

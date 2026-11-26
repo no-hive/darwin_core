@@ -1,0 +1,308 @@
+/* Content only. The site's header, navigation and footer stay outside this root. */
+.mantine-app{width:min(1680px,calc(100% - 54px));margin:28px auto 36px;padding:28px clamp(18px,3vw,44px) 44px;min-height:72svh;background:#020f08;color:#efffe8;color-scheme:dark;border-radius:16px;font:400 15px/1.6 'Albert Sans',system-ui,sans-serif;--bg:#020f08;--ink:#efffe8;--muted:#83a68d;--accent:#c7ff00;--line:#1d5033;overflow:visible}
+.mantine-app-content{min-width:0}.mantine-app .authored{white-space:pre-wrap;overflow-wrap:anywhere;text-transform:none;letter-spacing:normal}
+.mantine-app .app-page-heading{margin-bottom:30px}.mantine-app .app-page-heading h1{font-size:clamp(27px,3.1vw,40px);line-height:1.2;letter-spacing:-.035em;max-width:850px}
+.mantine-app .app-columns{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:24px;align-items:start}
+.mantine-app .context-panel{display:grid;gap:20px;position:sticky;top:112px}
+.mantine-app .feed-item{display:grid;grid-template-columns:38px minmax(0,1fr) 20px;gap:16px;padding:24px;border-top:1px solid #1d5033}
+.mantine-app .feed-title{font-size:17px;line-height:1.4;font-weight:600;color:#efffe8}
+.mantine-app .entity-icon{display:flex;align-items:center;justify-content:center;flex:none;width:32px;height:32px;border:1px solid var(--line);border-radius:8px;background:#0b2115;color:#c7ff00}
+.mantine-app .app-empty{text-align:center;background:#06190e;color:#83a68d;min-height:160px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.mantine-app .finding-list{overflow-x:auto}.mantine-app .finding-list th{font-size:11px;font-weight:500;color:#83a68d;background:#06190e}.mantine-app .finding-list tbody tr[data-selected]{background:#0b2115}
+.mantine-app .text-link{padding:0;background:none;border:0;text-align:left;color:#c7ff00;font-size:14px;font-weight:600;line-height:1.5;cursor:pointer}
+.mantine-app .finding-name{font-family:inherit}.mantine-app .finding-tile{display:flex;flex-direction:column;min-height:190px}.mantine-app .finding-tile>button:last-child,.mantine-app .finding-tile>a:last-child{align-self:flex-start;margin-top:auto;padding-top:16px}
+.mantine-app .findings-with-detail{display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,38%);gap:20px;align-items:start}
+.mantine-app .finding-peek{position:sticky;top:110px;max-height:calc(100svh - 140px);overflow:auto}
+.mantine-app .finding-properties{margin:0}.mantine-app .finding-properties>div{display:grid;grid-template-columns:minmax(140px,30%) minmax(0,1fr);gap:16px;padding:15px 0;border-bottom:1px solid #1d5033}.mantine-app .finding-properties>div:last-child{border:0}.mantine-app .finding-properties dd{margin:0;font-size:14px;overflow-wrap:anywhere}
+.mantine-app .finding-peek .finding-properties>div{grid-template-columns:1fr;gap:6px}
+.mantine-app .group-tile{position:relative;display:flex;flex-direction:column;min-height:190px}
+.mantine-app .group-tile-link::after{content:"";position:absolute;inset:0;border-radius:inherit}
+.mantine-app .group-tile .mantine-Button-root{position:relative;z-index:1}
+.mantine-app .group-tile:has(.group-tile-link:focus-visible){outline:2px solid var(--accent);outline-offset:3px}
+.mantine-app .group-tile:hover{border-color:#83a68d}.mantine-app .group-tile>.mantine-Group-root:last-child{margin-top:auto;padding-top:12px}
+.mantine-app .group-search-tile{min-height:190px;display:flex;flex-direction:column;text-decoration:none;color:inherit;border-style:dashed;background:#06190e}.mantine-app .group-search-tile:hover{border-color:#c7ff00;background:#0b2115}
+.mantine-app .research-row{display:grid;grid-template-columns:40px minmax(0,1fr) 20px;gap:16px;align-items:center;padding:20px 0;border-bottom:1px solid #1d5033}
+.mantine-app .explorer-banner{aspect-ratio:4/1;box-sizing:border-box;position:relative;isolation:isolate;border-radius:12px;background:#020f08;display:flex;flex-direction:column;justify-content:center;padding:clamp(16px,3vw,40px);color:#efffe8}
+.mantine-app .explorer-banner:before{content:'';position:absolute;inset:0;border-radius:inherit;background:url('/assets/search-fern-data-mosaic.png') center/cover no-repeat;opacity:.7;z-index:-1;pointer-events:none}
+.mantine-app .explorer-copy h1{font-size:clamp(28px,3.5vw,44px);letter-spacing:-.04em;color:#efffe8}.mantine-app .explorer-copy p{color:#83a68d;margin:8px 0 22px;font-size:14px}.mantine-app .explorer-search{position:relative;width:min(100%,820px)}
+.mantine-app .explorer-search input{background:#06190e;border:0;color:#efffe8}.mantine-app .search-suggestion-panel{position:absolute;z-index:140;top:calc(100% + 8px);left:0;right:0;background:#06190e;color:#efffe8;max-height:420px;overflow:auto}
+.mantine-app .suggestion-item{display:grid;grid-template-columns:34px minmax(0,1fr);gap:10px;align-items:center;padding:12px 16px;text-decoration:none;color:inherit}.mantine-app .suggestion-item:hover{background:#0b2115}
+.mantine-app .category-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:20px}.mantine-app .category-choice{display:flex;align-items:center;gap:10px;border:1px solid #1d5033;border-radius:9px;background:#06190e;padding:14px 16px;cursor:pointer;color:#83a68d;font:500 14px/1.4 'Albert Sans',sans-serif}.mantine-app .category-choice>span:nth-child(2){flex:1;min-width:0;text-align:left}.mantine-app .category-choice[data-active]{background:#143321;border-color:#c7ff00;color:#c7ff00}
+.mantine-app .search-idle{text-align:center;padding:64px 20px;color:#83a68d}.mantine-app .search-result-row{display:grid;grid-template-columns:140px minmax(160px,1fr) minmax(120px,1fr) 32px;gap:12px;align-items:center;padding:12px 16px;border-bottom:1px solid #1d5033}.mantine-app .search-result-row:last-child{border:0}
+.mantine-app .finding-form-layout{display:grid;grid-template-columns:215px minmax(0,1fr);gap:28px;align-items:start}.mantine-app .form-section-nav{position:sticky;top:112px;padding-top:8px}.mantine-app .form-section-nav>button{display:flex;justify-content:space-between;width:100%;padding:11px 14px;margin-bottom:3px;border:0;border-radius:7px;background:none;color:#83a68d;font:500 14px/1.4 'Albert Sans',sans-serif;text-align:left;cursor:pointer}.mantine-app .form-section-nav>button[data-active]{background:#143321;color:#c7ff00}.mantine-app .form-section-nav small{font-size:11px}
+.mantine-app .mantine-field-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 24px}.mantine-app .form-field-wide{grid-column:1/-1}.mantine-app .form-actions{border-top:1px solid #1d5033;padding-top:24px}
+.mantine-app .profile-finder{position:relative;width:260px}.mantine-app .profile-finder-results{position:absolute;top:calc(100% + 8px);right:0;width:320px;z-index:140;background:#06190e}.mantine-app .profile-body-grid{display:grid;grid-template-columns:360px minmax(0,1fr);gap:24px;margin-top:24px}.mantine-app .profile-edit-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}.mantine-app .mantine-radar{width:min(100%,340px);margin:20px auto 0}.mantine-app .mantine-radar svg{display:block;width:100%;height:auto;color:#c7ff00}.mantine-app .radar-ring{fill:none;stroke:#1d5033;stroke-width:1}.mantine-app .radar-axis{stroke:#1d5033;stroke-width:1}.mantine-app .radar-shape{fill:#c7ff0025;stroke:#c7ff00;stroke-width:1.5}.mantine-app .mantine-radar text{font:10px 'Albert Sans',sans-serif;fill:#83a68d}.mantine-app .focus-verdict strong,.mantine-app .focus-verdict span{display:block}.mantine-app .focus-verdict strong{font-size:14px;font-weight:600}.mantine-app .focus-verdict span{font-size:12px;color:#83a68d;margin-top:8px}.mantine-app .profile-activity-row{display:grid;grid-template-columns:38px minmax(0,1fr) 20px;gap:16px;align-items:center;padding:20px 24px;border-top:1px solid #1d5033}
+@media(min-width:1500px){.mantine-app .app-columns{grid-template-columns:minmax(0,1fr) 340px}}
+@media(max-width:1100px){.mantine-app .app-columns{grid-template-columns:minmax(0,1fr) 250px;gap:18px}.mantine-app .profile-body-grid{grid-template-columns:300px minmax(0,1fr)}.mantine-app .findings-with-detail{grid-template-columns:1fr}.mantine-app .finding-peek{position:static;max-height:none}.mantine-app .result-context{display:none}.mantine-app .search-result-row{grid-template-columns:140px minmax(0,1fr) 32px}}
+@media(max-width:800px){.mantine-app{width:calc(100% - 32px);margin-top:24px;padding:22px 18px 28px}.mantine-app .app-columns,.mantine-app .profile-body-grid,.mantine-app .profile-edit-grid{grid-template-columns:1fr}.mantine-app .context-panel{position:static;grid-template-columns:repeat(2,minmax(0,1fr))}.mantine-app .finding-form-layout{grid-template-columns:1fr}.mantine-app .form-section-nav{position:static;display:flex;gap:6px;overflow-x:auto;padding:0 0 8px}.mantine-app .form-section-nav>button{width:auto;white-space:nowrap;gap:12px}.mantine-app .form-section-nav>p,.mantine-app .form-section-nav>.mantine-Progress-root{display:none}.mantine-app .optional-column{display:none}.mantine-app .explorer-banner{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);align-items:center;gap:14px;padding:clamp(8px,2vw,16px)}.mantine-app .explorer-copy h1{font-size:clamp(18px,3.6vw,30px)}.mantine-app .explorer-copy p{font-size:clamp(9px,1.6vw,13px);line-height:1.3;margin:5px 0 0}.mantine-app .explorer-search input{height:38px;min-height:38px;font-size:16px}.mantine-app .explorer-search .mantine-Input-section{width:36px}}
+@media(max-width:600px){.mantine-app .app-page-heading{gap:16px}.mantine-app .app-page-heading h1{font-size:28px}.mantine-app .app-page-heading>.mantine-Group-root{width:100%}.mantine-app .category-strip{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.mantine-app .category-choice{padding:11px 10px;font-size:12px;gap:7px}.mantine-app .context-panel,.mantine-app .mantine-field-grid{grid-template-columns:1fr}.mantine-app .form-field-wide{grid-column:auto}.mantine-app .form-section-body{padding:18px}.mantine-app .profile-identity>.mantine-Group-root{flex-wrap:wrap}.mantine-app .profile-identity{padding:20px}.mantine-app .profile-finder{flex:1;width:180px}.mantine-app .profile-finder-results{width:min(320px,calc(100vw - 60px))}.mantine-app .finding-properties>div{grid-template-columns:1fr;gap:6px}.mantine-app .search-result-row{grid-template-columns:96px minmax(0,1fr) 32px;padding:12px 8px;gap:8px}.mantine-app .feed-item{padding:18px;gap:12px;grid-template-columns:32px minmax(0,1fr) 16px}.mantine-app .feed-item>.mantine-ThemeIcon-root{width:32px;height:32px}}
+
+/* Match the original App palette, including native controls and popup surfaces. */
+.mantine-app .mantine-Paper-root{--paper-bg:#06190e}
+.mantine-app .mantine-Input-input{background:#020f08;color:#efffe8;border-color:#1d5033}
+.mantine-app .mantine-Input-input::placeholder{color:#83a68d}
+.mantine-app .mantine-Input-input:focus,.mantine-app .mantine-Input-input:focus-within{border-color:#c7ff00}
+.mantine-app .mantine-Input-input:disabled{background:#0b2115;color:#83a68d}
+.mantine-app .mantine-Input-input option{background:#020f08;color:#efffe8}
+.mantine-app .mantine-Menu-dropdown,.mantine-app .mantine-Modal-content,.mantine-app .mantine-Modal-header{background:#06190e;color:#efffe8;border-color:#1d5033}
+.mantine-app .mantine-Table-tr[data-hover]:hover{background:#0b2115}
+.mantine-app .mantine-Tabs-tab[data-active]{color:#c7ff00}
+.mantine-app .mantine-Radio-radio:checked{background:#c7ff00;border-color:#c7ff00}
+.mantine-app .mantine-Radio-icon{color:#020f08}
+
+.mantine-app .mantine-ActionIcon-root{border:1px solid var(--line);min-width:32px;min-height:32px}
+.mantine-app .search-result-row>.mantine-Badge-root{height:auto;min-height:28px;padding-block:5px}.mantine-app .search-result-row .mantine-Badge-label{white-space:normal;overflow-wrap:anywhere}
+
+/* Main keeps a reading-width timeline and a single framed control panel. */
+.mantine-app .main-timeline{max-width:1068px;margin-inline:auto}
+.mantine-app .main-feed-layout{display:grid;grid-template-columns:minmax(0,720px) 320px;gap:28px;align-items:start}
+.mantine-app .main-timeline-column{min-width:0}
+.mantine-app .main-feed-sidebar{position:sticky;top:110px;min-width:0}
+.mantine-app .feed-controls-frame{border:1px solid #326347;overflow:hidden;background:#06190e}
+.mantine-app .feed-controls-section{padding:16px}
+.mantine-app .feed-controls-section h2{font-size:17px;line-height:1.4;margin-top:0}
+.mantine-app .feed-filter-set{border:0;padding:0;margin:0;min-width:0}
+.mantine-app .feed-filter-set legend{padding:0;margin-bottom:12px;font-size:12px;font-weight:500;color:var(--muted)}
+.mantine-app .feed-filter-chips{flex-wrap:wrap}
+.mantine-app .feed-filter-chips .mantine-Chip-label{background:#020f08;border:1px solid #326347;color:var(--ink);font-size:12px;min-height:36px}
+.mantine-app .feed-filter-chips .mantine-Chip-label:hover{background:#143321;border-color:#83a68d}
+.mantine-app .feed-filter-chips .mantine-Chip-label[data-checked]{background:var(--accent);border-color:var(--accent);color:var(--bg)}
+.mantine-app .feed-filter-chips .mantine-Chip-iconWrapper{color:inherit}
+.mantine-app .feed-filter-chips .mantine-Chip-input:focus-visible+.mantine-Chip-label{outline:2px solid var(--accent);outline-offset:3px}
+.mantine-app .main-event{display:grid;grid-template-columns:32px minmax(0,1fr) 32px;gap:12px;padding:16px;border:1px solid #326347;border-radius:14px;background:#020f08}
+.mantine-app .main-event-icon{flex:none;width:32px;height:32px;min-width:32px;border:1px solid var(--line)}
+.mantine-app .main-event-meta{color:var(--muted);font-size:12px}.mantine-app .main-event-meta a{margin-left:4px}
+.mantine-app .main-event-title{font-size:16px;line-height:1.6;font-weight:500;margin:0;color:var(--ink)}
+.mantine-app .main-event-title a{font-size:inherit;font-weight:600}.mantine-app .main-event-open{display:grid;place-items:center;width:32px;height:32px;border:1px solid var(--line);border-radius:6px}
+.mantine-app .main-voting-title,.mantine-app .main-article-title{display:block;line-height:1.5}
+.mantine-app .main-vote-summary{margin-top:22px}.mantine-app .main-vote-bar{height:9px;display:flex;overflow:hidden;border-radius:10px;background:#1d5033}
+.mantine-app .main-vote-bar>span{height:100%;transition:width .2s}.mantine-app .vote-for{background:#c7ff00}.mantine-app .vote-against{background:#e8a464}
+.mantine-app .vote-for-label{color:#c7ff00;margin-right:16px}.mantine-app .vote-against-label{color:#e8a464}
+.mantine-app .main-article-preview{display:grid;grid-template-columns:minmax(0,1fr);gap:14px;align-items:start;margin-top:12px}
+.mantine-app .main-article-preview[data-has-image]{grid-template-columns:128px minmax(0,1fr)}
+.mantine-app .main-article-title{margin:0;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;font-size:16px}
+.mantine-app .main-article-image{display:block;width:128px;max-width:128px;height:96px;max-height:96px;margin:0;overflow:hidden;border:1px solid #1d5033;border-radius:8px}
+.mantine-app .main-article-image img{display:block;width:100%;height:100%;max-width:100%;max-height:100%;aspect-ratio:auto;object-fit:cover}
+@media(max-width:600px){.mantine-app .main-article-preview[data-has-image]{grid-template-columns:72px minmax(0,1fr);gap:10px}.mantine-app .main-article-image{width:72px;max-width:72px;height:72px;max-height:72px}.mantine-app .main-article-title{font-size:14px}}
+.mantine-app .main-finding-media{display:block;max-width:100%;max-height:360px;object-fit:cover;margin-top:18px;border:1px solid #1d5033;border-radius:12px}
+.mantine-app .feed-group-choice .mantine-Checkbox-root{flex:none}
+.mantine-app .suggestions-all-results{padding:18px 20px;border-top:1px solid var(--line);margin-top:8px}
+.mantine-app .suggestions-all-results button{min-height:48px;padding:12px 24px;height:auto}
+@media(max-width:1150px){.mantine-app .main-feed-layout{grid-template-columns:minmax(0,1fr) 290px;gap:22px}.mantine-app .feed-controls-section{padding:20px}}
+@media(max-width:950px){.mantine-app .main-timeline{max-width:720px}.mantine-app .main-feed-layout{grid-template-columns:1fr}.mantine-app .main-feed-sidebar{position:static;grid-row:1}.mantine-app .feed-controls-frame{display:grid;grid-template-columns:1fr 1fr}.mantine-app .feed-controls-frame>.mantine-Divider-root{display:none}.mantine-app .feed-controls-section+.feed-controls-section,.mantine-app .feed-controls-section:last-child{border-left:1px solid #326347}}
+@media(max-width:600px){.mantine-app .main-event{grid-template-columns:32px minmax(0,1fr) 32px;padding:18px 14px;gap:10px}.mantine-app .main-event-icon{width:32px;height:32px;min-width:32px}.mantine-app .main-event-title{font-size:16px}.mantine-app .feed-controls-section{padding:18px 16px}}
+@media(max-width:480px){.mantine-app .feed-controls-frame{grid-template-columns:1fr}.mantine-app .feed-controls-frame>.mantine-Divider-root{display:block}.mantine-app .feed-controls-section:last-child{border-left:0}.mantine-app .main-event{grid-template-columns:30px minmax(0,1fr)}.mantine-app .main-event-icon{width:30px;height:30px;min-width:30px}.mantine-app .main-event-icon svg{width:17px;height:17px}.mantine-app .main-event-open{display:none}.mantine-app .suggestions-all-results{padding:18px 16px}}
+
+/* Groups: two equally prominent sections and individually framed cards. */
+.mantine-app .groups-directory>section+section{margin-top:48px}
+.mantine-app .groups-section-heading{margin-bottom:26px}
+.mantine-app .groups-section-heading h1,.mantine-app .groups-section-heading h2{margin:0;font-size:clamp(27px,3.1vw,40px);line-height:1.2;letter-spacing:-.035em;font-weight:600}
+.mantine-app .group-tile,.mantine-app .group-search-tile{border:1px solid #326347}
+.mantine-app .group-search-tile:hover{border-color:var(--accent)}
+@media(max-width:600px){.mantine-app .groups-directory>section+section{margin-top:36px}.mantine-app .groups-section-heading{margin-bottom:20px}.mantine-app .groups-section-heading h1,.mantine-app .groups-section-heading h2{font-size:28px}}
+
+/* Keep chip selection entirely in its color; retain native checked semantics. */
+.mantine-app .feed-filter-chips .mantine-Chip-iconWrapper{display:none}
+.mantine-app .feed-filter-chips .mantine-Chip-label[data-checked]{padding-inline:var(--chip-padding)}
+/* Match the hero/category gap to the existing navigation/hero gap. */
+.mantine-app{--search-section-gap:56px}
+.mantine-app .category-strip{margin-top:var(--search-section-gap)}
+@media(max-width:800px){.mantine-app{--search-section-gap:46px}}
+@media(max-width:600px){.mantine-app{--search-section-gap:calc(46px - var(--nav-edge))}}
+
+/* One creation form; optional scientific fields stay under one disclosure. */
+.mantine-app .finding-create-page{max-width:960px;margin-inline:auto}
+.mantine-app .finding-simple-form{border:1px solid #326347}
+.mantine-app .finding-advanced{margin-top:28px;border:1px solid #326347;border-radius:10px;overflow:hidden}
+.mantine-app .finding-advanced>summary{display:flex;align-items:center;justify-content:space-between;gap:16px;list-style:none;padding:18px 20px;cursor:pointer;font-size:15px;font-weight:600;color:var(--ink)}
+.mantine-app .finding-advanced>summary::-webkit-details-marker{display:none}
+.mantine-app .finding-advanced>summary svg{transform:rotate(90deg)}
+.mantine-app .finding-advanced[open]>summary svg{transform:rotate(-90deg)}
+.mantine-app .finding-advanced>summary:hover{background:#0b2115}
+.mantine-app .finding-advanced>summary:focus-visible{outline:2px solid var(--accent);outline-offset:-3px}
+.mantine-app .finding-advanced-content{padding:24px 20px;border-top:1px solid var(--line)}
+.mantine-app .finding-extra-section+.finding-extra-section{margin-top:32px;padding-top:28px;border-top:1px solid var(--line)}
+.mantine-app .finding-extra-section h2{margin-top:0}
+@media(max-width:600px){.mantine-app .finding-simple-form{padding:18px}.mantine-app .finding-advanced>summary{padding:16px}.mantine-app .finding-advanced-content{padding:20px 14px}.mantine-app .finding-simple-form .form-actions{gap:14px}}
+
+/* Group workspace, mock UI block 1. All styles remain inside the App root. */
+.mantine-app .group-workspace{max-width:1320px;margin-inline:auto}
+.mantine-app .group-back-link{display:inline-block;margin-bottom:24px;font-size:.875rem}
+.mantine-app .group-page-header{display:grid;grid-template-columns:52px minmax(180px,1fr) minmax(220px,1.4fr) auto;align-items:center;gap:16px;padding:16px;margin-bottom:16px;border:1px solid #326347;border-radius:12px}
+.mantine-app .group-header-identity{min-width:0}
+.mantine-app .group-header-description{margin:0;overflow-wrap:anywhere}
+.mantine-app .group-page-header>.mantine-Avatar-root{flex:none;font-size:1.65rem}
+.mantine-app .group-page-header h1{font-size:clamp(1.5rem,2.5vw,2rem);line-height:1.2;letter-spacing:-.035em;margin:0;overflow-wrap:anywhere}
+.mantine-app .group-page-header p{font-size:.875rem;line-height:1.5}
+.mantine-app .group-page-tabs>.mantine-Tabs-list{gap:12px;flex-wrap:nowrap;overflow-x:auto;border-color:#1d5033}
+.mantine-app .group-page-tabs .mantine-Tabs-tab{font-size:1rem;padding:16px 20px;white-space:nowrap;border-bottom-width:2px}
+.mantine-app .group-tab-content{padding-top:32px}
+.mantine-app .group-overview-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:14px;align-items:stretch}
+.mantine-app .group-widget{display:flex;flex-direction:column;min-width:0;padding:16px;border:1px solid #326347;background:#06190e;overflow:hidden;color:var(--ink);text-decoration:none}
+.mantine-app a.group-widget:hover{background:#0b2115;border-color:#83a68d}
+.mantine-app .group-widget-label{color:var(--muted);flex:none;min-height:24px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+.mantine-app .group-widget-label h2{font-size:.875rem;line-height:1.5;margin:0;letter-spacing:0}
+.mantine-app .group-metric{font-size:clamp(2rem,3vw,2.5rem);line-height:1.12;font-weight:500;letter-spacing:-.06em;margin:14px 0 12px}
+.mantine-app .group-widget-members{grid-column:span 4}
+.mantine-app .group-widget-findings{grid-column:span 5}
+.mantine-app .group-widget-age{grid-column:span 3;position:relative;background:radial-gradient(ellipse at 100% 100%,#c7ff0012,transparent 70%),#06190e}
+.mantine-app .group-widget-latest,.mantine-app .group-widget-activity,.mantine-app .group-widget-rules{grid-column:span 7}
+.mantine-app .group-widget-voting,.mantine-app .group-widget-participation,.mantine-app .group-widget-research{grid-column:span 5}
+.mantine-app .group-age-number{font-size:clamp(1.75rem,3vw,2.75rem);line-height:1.2;font-weight:500;letter-spacing:-.04em;margin:16px 0 12px}
+.mantine-app .group-age-mark{margin-top:auto;padding-top:12px;align-self:flex-end;color:#c7ff0066;pointer-events:none}
+.mantine-app .group-avatar-stack{margin-top:4px}
+.mantine-app .group-status-bar{display:flex;height:7px;overflow:hidden;border-radius:10px;background:#1d5033;margin:4px 0 16px}
+.mantine-app .group-status-bar>span{height:100%;flex:none}
+.mantine-app [data-status="verified"]{background-color:#c7ff00}
+.mantine-app [data-status="pending_verification"]{background-color:#e8a464}
+.mantine-app [data-status="not_verified"]{background-color:#52795d}
+.mantine-app .group-status-legend{display:grid;gap:9px}
+.mantine-app .group-status-legend>div{display:grid;grid-template-columns:7px minmax(0,1fr) auto;gap:10px;align-items:center}
+.mantine-app .group-status-dot{display:block;width:6px;height:6px;border-radius:50%}
+.mantine-app .group-latest-title{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;margin-top:14px;font-size:clamp(1rem,1.5vw,1.125rem);line-height:1.5;font-weight:500;color:var(--ink)}
+.mantine-app .group-latest-title:hover{color:var(--accent)}
+.mantine-app .group-vote-preview{display:block;padding:14px 0;border-top:1px solid #1d5033;color:var(--ink)}
+.mantine-app .group-vote-preview:hover{color:var(--accent)}
+.mantine-app .group-widget-voting>.mantine-Button-root{align-self:flex-start;padding-left:0;padding-right:0}
+.mantine-app .group-activity-chart{display:grid;grid-template-columns:repeat(30,minmax(0,1fr));gap:5px;align-items:end;height:88px;margin-top:16px}
+.mantine-app .group-activity-chart>span{display:block;border-radius:4px 4px 0 0;background:#c7ff00;min-height:4px}
+.mantine-app .group-activity-chart>span[data-empty]{background:#1d5033}
+.mantine-app .group-widget .mantine-Button-root{align-self:flex-start}
+.mantine-app .group-section-count{font-size:.875rem;font-weight:500;color:var(--muted);margin-left:10px;vertical-align:middle}
+.mantine-app .group-members-view h2,.mantine-app .group-voting-view h2,.mantine-app .group-rules-view h2{font-size:1.5rem;line-height:1.4;margin:0}
+.mantine-app .group-member-table{border:1px solid #326347;overflow:hidden}
+.mantine-app .group-member-table table{width:100%;table-layout:fixed}
+.mantine-app .group-member-table th{font-size:.875rem;font-weight:500;color:var(--muted)}
+.mantine-app .group-member-table th:first-child{width:55%}
+.mantine-app .group-member-table td{border-color:#1d5033;overflow-wrap:anywhere}
+.mantine-app .group-member-table .mantine-Avatar-root{flex:none}
+.mantine-app .group-member-table .mantine-Badge-root{font-size:.875rem;height:28px}
+.mantine-app .group-journal-layout{display:grid;grid-template-columns:minmax(0,720px) minmax(240px,300px);gap:28px;justify-content:center;align-items:start}
+.mantine-app .group-journal-timeline{min-width:0}
+.mantine-app .group-publish-card{display:flex;gap:14px;align-items:flex-start;padding:18px;border:1px solid #52795d;background:radial-gradient(ellipse at 100% 0,#c7ff0010,transparent 65%),#06190e}
+.mantine-app .group-publish-card>.mantine-ThemeIcon-root{flex:none}
+.mantine-app .group-publish-card h2{font-size:1.375rem;line-height:1.45;margin:0;letter-spacing:-.02em}
+.mantine-app .group-journal-aside{position:sticky;top:110px}
+.mantine-app .group-journal-aside>.mantine-Paper-root{border:1px solid #326347}
+.mantine-app .group-journal-controls{gap:14px}
+.mantine-app .group-journal-controls .mantine-Chip-label{font-size:.875rem}
+.mantine-app .group-voting-view{max-width:960px}
+.mantine-app .group-proposal-card{border:1px solid #326347}
+.mantine-app .group-vote-bar{margin-top:24px;max-width:none}
+.mantine-app .group-rule-statement{border:1px solid #326347;max-width:960px}
+.mantine-app .group-rule-statement h3,.mantine-app .group-policy-grid h3{font-size:1.125rem;line-height:1.5;margin:0}
+.mantine-app .group-policy-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:20px;max-width:1200px}
+.mantine-app .group-policy-grid>.mantine-Paper-root{border:1px solid #326347}
+@media(max-width:1100px){.mantine-app .group-overview-grid{gap:16px}.mantine-app .group-widget{padding:16px}.mantine-app .group-widget-members{grid-column:span 4}.mantine-app .group-widget-findings{grid-column:span 5}.mantine-app .group-widget-age{grid-column:span 3}.mantine-app .group-page-tabs .mantine-Tabs-tab{padding-inline:14px}.mantine-app .group-journal-layout{grid-template-columns:minmax(0,1fr) 250px;gap:20px}.mantine-app .group-widget-label{gap:8px}}
+@media(max-width:900px){.mantine-app .group-page-header{grid-template-columns:52px minmax(0,1fr) auto}.mantine-app .group-header-description{grid-column:2/-1;grid-row:2}.mantine-app .group-page-header>.mantine-Button-root{grid-column:3;grid-row:1}.mantine-app .group-overview-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.mantine-app .group-overview-grid>.group-widget{grid-column:auto}.mantine-app .group-widget-age{grid-column:1/-1!important;min-height:130px;padding-right:120px}.mantine-app .group-age-mark{position:absolute;right:26px;bottom:20px;padding:0}.mantine-app .group-journal-layout{grid-template-columns:1fr;max-width:720px;margin-inline:auto}.mantine-app .group-journal-aside{position:static}.mantine-app .group-policy-grid{grid-template-columns:1fr}.mantine-app .group-widget-research{scroll-margin-top:110px}}
+@media(max-width:600px){.mantine-app .group-page-header{grid-template-columns:52px minmax(0,1fr);gap:12px;padding:14px}.mantine-app .group-header-description{grid-column:1/-1}.mantine-app .group-page-header>.mantine-Button-root{grid-column:1/-1;grid-row:auto;justify-self:start}.mantine-app .group-page-header>.mantine-Avatar-root{width:52px;height:52px;min-width:52px;font-size:1rem}.mantine-app .group-page-header h1{font-size:1.75rem}.mantine-app .group-page-tabs>.mantine-Tabs-list{gap:4px}.mantine-app .group-page-tabs .mantine-Tabs-tab{font-size:.875rem;padding:14px 12px}.mantine-app .group-tab-content{padding-top:24px}.mantine-app .group-overview-grid{grid-template-columns:1fr;gap:14px}.mantine-app .group-widget{padding:16px}.mantine-app .group-widget-age{grid-column:auto!important}.mantine-app .group-widget-label h2{font-size:.875rem}.mantine-app .group-metric{font-size:2rem;margin-top:14px}.mantine-app .group-activity-chart{gap:3px}.mantine-app .group-members-view>.mantine-Group-root>.mantine-TextInput-root{width:100%}.mantine-app .group-member-table th,.mantine-app .group-member-table td{padding:14px 10px}.mantine-app .group-member-table th:first-child{width:52%}.mantine-app .group-member-table th:last-child{font-size:.75rem}.mantine-app .group-member-table .mantine-Avatar-root{display:none}.mantine-app .group-member-table .mantine-Badge-root{padding-inline:7px;font-size:.75rem}.mantine-app .group-publish-card{padding:22px 18px;gap:14px}.mantine-app .group-publish-card>.mantine-ThemeIcon-root{display:none}.mantine-app .group-publish-card h2{font-size:1.25rem}}
+
+/* Compact self-observation publication form. Mock UI only; shared chrome is untouched. */
+.mantine-app .finding-core-page{max-width:1160px}
+.mantine-app .finding-core-layout{display:grid;grid-template-columns:minmax(0,740px) minmax(280px,340px);gap:20px;align-items:start}
+.mantine-app .finding-core-layout>form{min-width:0}
+.mantine-app .finding-core-form{border-color:#326347;overflow:hidden}
+.mantine-app .finding-core-section{padding:20px;border-bottom:1px solid var(--line)}
+.mantine-app .finding-core-section:last-child{border:0}
+.mantine-app .finding-journal-section{background:#06190e}
+.mantine-app .finding-core-page .mantine-Input-input{font-size:1rem}
+.mantine-app .finding-core-page .mantine-InputWrapper-label{font-size:.875rem;font-weight:600;margin-bottom:7px}
+.mantine-app .finding-core-page .mantine-InputWrapper-description,.mantine-app .finding-core-page .mantine-InputWrapper-error{font-size:.875rem;line-height:1.5;margin-top:6px}
+.mantine-app .finding-core-page .mantine-InputWrapper-description{margin-bottom:8px}
+.mantine-app .finding-core-page .mantine-InputWrapper-required{display:none}
+.mantine-app .finding-test-badge{height:auto;min-height:24px;max-width:100%;font-size:12px;padding-block:4px}
+.mantine-app .finding-test-badge .mantine-Badge-label{white-space:normal}
+.mantine-app .finding-choice-list{margin-top:10px;padding:6px;border:1px solid var(--line);border-radius:10px;background:#06190e}
+.mantine-app .finding-choice-list>button:not(.mantine-Button-root){display:flex;width:100%;gap:14px;align-items:center;text-align:left;background:transparent;color:var(--ink);border:0;padding:12px;border-radius:6px;font:inherit;cursor:pointer}
+.mantine-app .finding-choice-list>button:hover{background:#143321}
+.mantine-app .finding-choice-list small{display:block;font-size:.875rem;color:var(--muted);margin-top:4px;overflow-wrap:anywhere}
+.mantine-app .finding-selected-taxon{padding:16px;margin-top:14px;background:#0b2115;border:1px solid #326347;border-radius:10px}
+.mantine-app .finding-time-fields,.mantine-app .finding-coordinate-fields,.mantine-app .finding-context-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:16px}
+.mantine-app .finding-context-grid{margin-top:0}
+/* Coordinates remain explicit and errors reveal the optional fields. */
+.mantine-app .finding-coordinates-panel{margin-top:12px;border:1px solid var(--line);border-radius:8px}
+.mantine-app .finding-coordinates-panel>summary{display:flex;justify-content:space-between;gap:12px;cursor:pointer;padding:10px 12px;font-size:14px}
+.mantine-app .finding-coordinates-panel>summary span:last-child{font-size:12px;color:var(--muted)}
+.mantine-app .finding-coordinates-panel>summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.mantine-app .finding-coordinates-body{padding:12px;border-top:1px solid var(--line)}
+.mantine-app .finding-file-input{display:none}
+.mantine-app .finding-materials{border:1px solid #326347;border-radius:8px;padding:12px;background:#06190e}
+.mantine-app .finding-materials[data-dragging]{border-color:var(--accent);background:#143321}
+.mantine-app .finding-upload-bar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.mantine-app .finding-upload-primary{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:6px;padding:8px 10px;background:#0b2115;color:var(--accent);font:inherit;cursor:pointer}
+.mantine-app .finding-upload-primary:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.mantine-app .finding-material-list{display:grid;gap:12px}
+.mantine-app .finding-material-item{display:grid;grid-template-columns:48px minmax(0,1fr) 32px;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line)}
+.mantine-app .finding-material-item:last-child{border:0}
+.mantine-app .finding-material-item>img,.mantine-app .finding-material-icon{width:48px;height:48px;object-fit:cover;border-radius:8px;background:#143321}
+.mantine-app .finding-material-icon{display:flex;align-items:center;justify-content:center;color:var(--accent)}
+.mantine-app .finding-link-entry{display:grid;gap:12px;padding:14px 0 20px}
+.mantine-app .finding-live-preview{position:sticky;top:112px;min-width:0}
+.mantine-app .finding-preview-card{padding:16px;border-color:#326347;background:#06190e}
+.mantine-app .finding-preview-title{font-size:1.5rem;line-height:1.3;font-weight:600;overflow-wrap:anywhere;margin:14px 0 0}
+.mantine-app .finding-preview-image,.mantine-app .finding-preview-placeholder{display:block;width:100%;height:144px;object-fit:cover;border-radius:8px;margin:16px 0;background:#0b2115}
+.mantine-app .finding-preview-placeholder{display:flex;flex-direction:column;gap:12px;align-items:center;justify-content:center;color:var(--accent)}
+.mantine-app .finding-preview-facts{display:grid;grid-template-columns:18px minmax(0,1fr);gap:12px;color:var(--muted);align-items:start}
+.mantine-app .finding-preview-toggle{display:none}
+.mantine-app .finding-local-attachments{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.mantine-app .finding-local-attachments img{display:block;width:100%;max-height:220px;object-fit:cover;border-radius:8px;margin-bottom:12px}
+.mantine-app .finding-local-attachments .mantine-Paper-root{min-width:0}
+@media(max-width:1050px){.mantine-app .finding-core-layout{grid-template-columns:minmax(0,1fr) 290px;gap:20px}.mantine-app .finding-core-section{padding:22px}.mantine-app .finding-preview-card{padding:20px}}
+@media(max-width:850px){.mantine-app .finding-core-layout{grid-template-columns:1fr}.mantine-app .finding-live-preview{position:static}.mantine-app .finding-preview-toggle{display:flex;justify-content:space-between;align-items:center;width:100%;border:1px solid #326347;border-radius:10px;padding:16px 20px;background:#06190e;color:var(--ink);font-family:inherit;font-size:1rem;font-weight:600;line-height:1.5;cursor:pointer}.mantine-app .finding-preview-card{display:none;margin-top:12px}.mantine-app .finding-preview-card[data-open]{display:block}.mantine-app .finding-preview-image,.mantine-app .finding-preview-placeholder{max-width:360px}}
+@media(max-width:550px){.mantine-app .finding-core-section{padding:20px 16px}.mantine-app .finding-time-fields,.mantine-app .finding-coordinate-fields,.mantine-app .finding-context-grid,.mantine-app .finding-local-attachments{grid-template-columns:1fr}.mantine-app .finding-materials{padding:16px 12px}.mantine-app .finding-materials>.mantine-Group-root{align-items:flex-start;gap:12px}.mantine-app .finding-material-item{grid-template-columns:48px minmax(0,1fr) 28px;gap:10px}.mantine-app .finding-material-item>img,.mantine-app .finding-material-icon{width:48px;height:48px}.mantine-app .finding-publish-section>.mantine-Group-root{align-items:stretch}.mantine-app .finding-publish-section>.mantine-Group-root>.mantine-Button-root:last-child{flex:1}}
+
+/* Remaining mock journal screens: tables, rules and verification. App-only scope. */
+.mantine-app .rulesets-panel,.mantine-app .proposal-detail{min-width:0}
+.mantine-app .rulesets-panel h3,.mantine-app .proposal-detail h3{font-size:1.2rem}
+.mantine-app .rules-control-grid,.mantine-app .rules-basis-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:22px;align-items:start}
+.mantine-app .rules-control{padding:12px;border:1px solid transparent;border-radius:8px;min-width:0}
+.mantine-app .rules-control[data-changed]{border-color:#85ab00;background:#0b2115}
+.mantine-app .rules-control .mantine-InputWrapper-label,.mantine-app .rules-control .mantine-Switch-label,.mantine-app .rules-basis-grid .mantine-Checkbox-label{font-size:.875rem;line-height:1.5}
+.mantine-app .rules-control .mantine-Input-input,.mantine-app .rulesets-panel textarea{font-size:1rem}
+.mantine-app .rules-control .mantine-Switch-body{align-items:center}
+.mantine-app .rules-mode-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:20px}
+.mantine-app .rules-mode-cards>button{display:flex;flex-direction:column;gap:12px;text-align:left;padding:20px;border:1px solid #326347;border-radius:12px;background:#06190e;color:var(--ink);font:inherit;cursor:pointer}
+.mantine-app .rules-mode-cards>button strong{font-size:1rem}
+.mantine-app .rules-mode-cards>button span{color:var(--muted);font-size:.875rem;line-height:1.6}
+.mantine-app .rules-mode-cards>button[data-selected]{border-color:#c7ff00;background:#0b2115}
+.mantine-app .rules-mode-cards>button:disabled{cursor:default}
+.mantine-app .rules-voting-section{margin-top:26px;padding-top:22px;border-top:1px solid var(--line)}
+.mantine-app .rules-voting-section h4{font-size:1rem}
+.mantine-app .rules-draft-actions{border-color:#85ab00}
+.mantine-app .rules-diff{overflow:auto;max-width:100%}
+.mantine-app .rules-diff table{min-width:480px;table-layout:fixed}
+.mantine-app .rules-diff th{font-size:.875rem;color:var(--muted)}
+.mantine-app .rules-diff td{font-size:.875rem;vertical-align:top;overflow-wrap:anywhere;white-space:pre-wrap}
+.mantine-app .rules-diff td:last-child{color:var(--accent)}
+.mantine-app .proposal-detail-layout{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:24px;align-items:start}
+.mantine-app .proposal-detail-layout>.mantine-Stack-root{min-width:0}
+.mantine-app .proposal-vote-aside{position:sticky;top:112px}
+.mantine-app .proposal-finding-preview{padding:20px;border-radius:12px;background:#06190e;border:1px solid var(--line);overflow-wrap:anywhere}
+.mantine-app .proposal-finding-preview .mantine-Anchor-root{overflow-wrap:anywhere}
+.mantine-app .governance-proposal{border-color:#326347}
+.mantine-app .voting-metrics{min-width:0}
+.mantine-app .mock-scenario{border-top:1px solid var(--line);padding-top:18px;margin-top:22px}
+.mantine-app .mock-scenario>summary{color:var(--muted);font-size:.875rem;cursor:pointer;line-height:1.5}
+.mantine-app .mock-scenario>summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+.mantine-app .membership-panel{min-width:0}
+.mantine-app .verification-badge{font-size:.875rem;height:auto;min-height:28px;max-width:100%;padding-block:5px;line-height:1.35;flex-shrink:0}
+.mantine-app .verification-badge .mantine-Badge-label{white-space:normal;line-height:1.35}
+.mantine-app .finding-core-list{overflow-x:auto}
+.mantine-app .finding-core-table{width:100%;min-width:680px;table-layout:fixed}
+.mantine-app .finding-core-table th,.mantine-app .finding-core-table td,.mantine-app .group-member-table th,.mantine-app .group-member-table td{border-color:var(--line);padding:10px 12px}
+.mantine-app .finding-core-table th{font-size:.875rem}
+.mantine-app .finding-core-table td{overflow-wrap:anywhere}
+.mantine-app .finding-col-name{width:24%}
+.mantine-app .finding-col-journal{width:24%}
+.mantine-app .finding-col-status{width:26%}
+.mantine-app .finding-col-date{width:18%}
+.mantine-app .finding-col-open{width:8%}
+.mantine-app .finding-core-table .finding-name{font-size:1rem;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+.mantine-app .finding-content-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:20px}
+.mantine-app .finding-peek .finding-content-facts{grid-template-columns:1fr}
+.mantine-app .finding-core-tile .verification-badge{max-width:calc(100% - 56px)}
+.mantine-app .finding-verification-panel{border-color:#326347}
+.mantine-app .finding-verification-panel .mantine-Anchor-root{font-size:.875rem}
+@media(max-width:1050px){.mantine-app .proposal-detail-layout{grid-template-columns:minmax(0,1fr) 285px;gap:20px}.mantine-app .finding-content-facts{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:850px){.mantine-app .proposal-detail-layout{grid-template-columns:1fr}.mantine-app .proposal-vote-aside{position:static}.mantine-app .rules-control-grid{gap:12px}.mantine-app .rules-control{padding:8px}}
+@media(max-width:600px){.mantine-app .rules-control-grid,.mantine-app .rules-basis-grid,.mantine-app .rules-mode-cards,.mantine-app .finding-content-facts{grid-template-columns:1fr}.mantine-app .rules-mode-cards>button{padding:18px}.mantine-app .finding-verification-panel>.mantine-Group-root{align-items:flex-start;gap:14px}.mantine-app .rulesets-panel>.mantine-Paper-root{padding:20px 16px}.mantine-app .rules-draft-actions>.mantine-Group-root{align-items:stretch}.mantine-app .rules-draft-actions>.mantine-Group-root>.mantine-Button-root{flex:1}.mantine-app .proposal-detail .app-page-heading{margin-top:18px}}

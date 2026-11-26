@@ -1,0 +1,39 @@
+name: Web
+
+on:
+  push:
+    paths: ['web/**', 'app/**', 'tools/**', '.github/workflows/web.yml']
+  pull_request:
+    paths: ['web/**', 'app/**', 'tools/**', '.github/workflows/web.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: web-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install Pillow==13.0.0
+      - run: npm ci --no-audit --no-fund
+      # The static build reads the public production Sanity dataset.
+      - run: npm run build
+      - run: npm run api:build
+      - run: node --test qa/third-series.test.mjs

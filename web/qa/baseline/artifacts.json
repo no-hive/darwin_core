@@ -1,0 +1,1016 @@
+{
+  "schema": 1,
+  "sourceCommit": "6e01f9a77e3c3b2e4a4d9705445de343cd26a606",
+  "createdAt": "2026-11-15T10:22:11.073Z",
+  "description": "Exact generated output before refactoring. This is not a screenshot baseline.",
+  "files": {
+    ".openai/hosting.json": {
+      "sha256": "e56fc7af1062269a8e8d004658046dacd0a9452af0de9ae954494f9428ea167d",
+      "bytes": 106
+    },
+    "dist/about-scroll.js": {
+      "sha256": "28219780677154886ab69cf78aa0801dc4f71949a727ce36b8aaa66f8faa73d0",
+      "bytes": 3306
+    },
+    "dist/app/app.js": {
+      "sha256": "0f06be32b66ee4f593bec1e2081acc02e59ca05a00a3608eb84c0c18cea3d40e",
+      "bytes": 3408
+    },
+    "dist/app/contribute/index.html": {
+      "sha256": "58b2f85782d0a830586817ec34d5e70aca896fe5f61ca5234b9e78151b803c62",
+      "bytes": 284
+    },
+    "dist/app/coordinate/index.html": {
+      "sha256": "ad13400d3a4b4c609a3b0a40017afcc09a90e1079945d87ae3b5d22d7d232566",
+      "bytes": 227
+    },
+    "dist/app/darwinscan/index.html": {
+      "sha256": "87b343937ad37ee15a90e336312f218c141a902d4da2d393b11e072413aea424",
+      "bytes": 248
+    },
+    "dist/app/governance/proposals/index.html": {
+      "sha256": "c11b3cee67464bd6f135d218c2b3bb20bde4051735330e743e986310a93234ca",
+      "bytes": 305
+    },
+    "dist/app/governance/voters/index.html": {
+      "sha256": "44d07661094fbe73709802a4d4a721313de6474f1d884bf76006144061d3105f",
+      "bytes": 293
+    },
+    "dist/app/groups/index.html": {
+      "sha256": "a4ac5a6d2dfbdd6222f5d954cc3a151520a1a4eb15b46eeecbe7d855d4971bf8",
+      "bytes": 315
+    },
+    "dist/app/groups/mollusks/index.html": {
+      "sha256": "054de106e044c36f15f70fb16b80a8459e3ece3716838e95165d02c0f8241b41",
+      "bytes": 342
+    },
+    "dist/app/groups/mollusks/proposals/specimen-review/index.html": {
+      "sha256": "a59df0871c49d4634eeb953248a97f380819c5d9394f43af3acb7098bc73dd5e",
+      "bytes": 420
+    },
+    "dist/app/groups/mollusks/proposals/universal-threshold/index.html": {
+      "sha256": "9dfa9b4783d03509e6bce24ca9f31cab162b2570a907339410fa726a19dae7bd",
+      "bytes": 432
+    },
+    "dist/app/groups/pacific/index.html": {
+      "sha256": "c0a0307e70c8dfe77625af399a66b72c327671c5f2a207425a638c9720acaa25",
+      "bytes": 339
+    },
+    "dist/app/groups/pacific/proposals/evidence-format/index.html": {
+      "sha256": "d7a6583057f7bf780f912846ab480c4f79caf1af35e131c4086efa0d36060ae0",
+      "bytes": 417
+    },
+    "dist/app/groups/pacific/proposals/expedition-fund/index.html": {
+      "sha256": "5d81b4b19f7b8bc50d29e3301c0862f352f000aef1766d5e74d6299d01ac2756",
+      "bytes": 417
+    },
+    "dist/app/index.html": {
+      "sha256": "c00a6aed7d7dd8ccc197baea20d10b346478c48993e4b27836cb567754b7ba95",
+      "bytes": 294
+    },
+    "dist/app/profile/index.html": {
+      "sha256": "0fbac078a265360d379c9d674d3e0abaf3b9d88c50acd193bdefea882794c314",
+      "bytes": 318
+    },
+    "dist/app/profile/profile.js": {
+      "sha256": "377337da6d492de467fb5b3903e4a502dfb1df6281b5ee675d679f30893a96ad",
+      "bytes": 10276
+    },
+    "dist/app/prototype-app.js": {
+      "sha256": "daf4393c8ff6f656ad0d2238076854373e3fe04696d8ce3de021767a2231760e",
+      "bytes": 9067
+    },
+    "dist/app/prototype-client.mjs": {
+      "sha256": "98bde49e3973d5d1658811089841f4402bb80b50c9d14a85eeb82adbacb9d94b",
+      "bytes": 337
+    },
+    "dist/app/prototype-copy.mjs": {
+      "sha256": "5651cd87ebdeac373fd1fc11fb438c68f34e26fae340fa936c08457cd56618ce",
+      "bytes": 7944
+    },
+    "dist/app/prototype-core.mjs": {
+      "sha256": "f47cb0112101d6bc69c16d14f0ba42c52bf520f62cd2dd51a16d29c93a5cbf4d",
+      "bytes": 9420
+    },
+    "dist/app/prototype-render.mjs": {
+      "sha256": "f0540580006b266f76565c93fa3be3d92f3911e412bc6dce4d93ec810a80c1a8",
+      "bytes": 18102
+    },
+    "dist/app/records/abyssal-skate/index.html": {
+      "sha256": "3d879c154b2cf15ccaeafd539f97ee2a3f8cb75223a7e25ca9b32b6bb2295cdc",
+      "bytes": 360
+    },
+    "dist/app/records/index.html": {
+      "sha256": "7c349e950e5036721612b9f44df581c22934f2fc218787b8f7ee8dccd1a74797",
+      "bytes": 318
+    },
+    "dist/app/records/nudibranch/index.html": {
+      "sha256": "b8544c37c9a3807154846322540973b0ebf97f989433d9835079ddec4e372013",
+      "bytes": 351
+    },
+    "dist/app/records/reef-coral/index.html": {
+      "sha256": "8400e8c37ab9a826abd899881556c1edfcd26a1b1a557016a143bc5c2e27c24c",
+      "bytes": 351
+    },
+    "dist/app/records/seagrass/index.html": {
+      "sha256": "13541dd2783a8875c4b386930febba296b2d69f7eead374aaba1b50001600d2d",
+      "bytes": 345
+    },
+    "dist/app/records/view/index.html": {
+      "sha256": "329ec16f7a1c7fe29d5250b06902ad1e295dac77764ff48b6464b30d8ae7b5f7",
+      "bytes": 333
+    },
+    "dist/app/research/mollusk-atlas/index.html": {
+      "sha256": "0bd1ddc8b364e54217f7b48e0aeefa36c11da369e34f5a0fbcdfa1fb015a9bbd",
+      "bytes": 363
+    },
+    "dist/app/research/pacific-atlas/index.html": {
+      "sha256": "caea1ad04609a5b774899c97a061a37d33757a1bcefd189a9ce7efe1447e8b54",
+      "bytes": 363
+    },
+    "dist/app/search/index.html": {
+      "sha256": "6baf36b0643e1edb9b1cde5f8504276f0b4cb27db654975eb61f8709d8867cb4",
+      "bytes": 315
+    },
+    "dist/app/tasks/index.html": {
+      "sha256": "c74227fba05197b4f7316d28c9243b374605a412fa36379c82cbe6f5b4ce2dce",
+      "bytes": 312
+    },
+    "dist/assets/apple-touch-icon.png": {
+      "sha256": "b74a1dc297447c2694714242797fc33d956e232998cf8fea66a0596643a85fbb",
+      "bytes": 14994
+    },
+    "dist/assets/blog-bird.webp": {
+      "sha256": "41ed61b22990c745aed3ced2f9f83be8e0cb0e9564b5f5a443edf140a533aa73",
+      "bytes": 96686
+    },
+    "dist/assets/blog-deer.webp": {
+      "sha256": "4db0bcb684bc01a612b52170d95d7fe845f7ec5406b391181cb927950d8c6f31",
+      "bytes": 119288
+    },
+    "dist/assets/blog-mushrooms.webp": {
+      "sha256": "5195361a6241f22d13647c842543ce39bd368e1478982e743f809b432c6a9b7b",
+      "bytes": 68238
+    },
+    "dist/assets/community-birds.png": {
+      "sha256": "f782efefc0d0b20a05c4d501a8307b4082989b61e50d006fb5a512cc9819f88e",
+      "bytes": 1614134
+    },
+    "dist/assets/community-governance-transparent.png": {
+      "sha256": "84475e2f54e6143f54546d9915dca15623731b3859d9b7ab39316e5b560fbd57",
+      "bytes": 1551738
+    },
+    "dist/assets/community-governance.webp": {
+      "sha256": "f3dfa2a6e503f2c74c23b3029234ffb7c3acc886f8138e0735b74ee860df3979",
+      "bytes": 1056056
+    },
+    "dist/assets/community-liquid-banner.png": {
+      "sha256": "ac135b45df5b96629c6a786e117d84882272317254bb74a5c684b07f01747b90",
+      "bytes": 1116323
+    },
+    "dist/assets/community-liquid-expanded.png": {
+      "sha256": "16cb5165fb14d0198b470b465f74b7a1952cd111a02d604fa14cd6237a4e34af",
+      "bytes": 1427063
+    },
+    "dist/assets/community-liquid-pixel-mosaic.png": {
+      "sha256": "e60aac0135c7cc0d7791714d0fc065385e11a81716e1c47ed4feda94910be56d",
+      "bytes": 2442331
+    },
+    "dist/assets/community-mushroom.webp": {
+      "sha256": "eed4779116197d039a20336cb3af36f71785ab7876d3189cc8dbc2c51feccc25",
+      "bytes": 2010582
+    },
+    "dist/assets/community-silhouettes-textured.png": {
+      "sha256": "f2ecf22ebf4def2cbf00d0e41552601564ffa02dd52dc5bb8e11a6d7f3975558",
+      "bytes": 930955
+    },
+    "dist/assets/dwc-crab-logo-black-cropped.png": {
+      "sha256": "ceffb6aa90e2111f2b2edd1e5842bdce30021fc8e73d718f56be5fa30985628a",
+      "bytes": 118015
+    },
+    "dist/assets/dwc-crab-logo-black.png": {
+      "sha256": "9e630d96962bbe1445bb45b0f08cb0ccb032a8749ca3d258658e533b9c1efa62",
+      "bytes": 118695
+    },
+    "dist/assets/dwc-crab-logo.png": {
+      "sha256": "735276b29a33c85d91c74c4ab36fcb4ff72e40c97b930b8e867f6548d7726894",
+      "bytes": 430439
+    },
+    "dist/assets/favicon-32.png": {
+      "sha256": "09558b937b61260db2152a1f9c7f80a6061b1210e012c0ff085942594db779a8",
+      "bytes": 1194
+    },
+    "dist/assets/favicon-96.png": {
+      "sha256": "9a7add592815ce316ac11faefe14a8b9fd71fe426ef330ef8a3908fe5c091ff6",
+      "bytes": 4795
+    },
+    "dist/assets/fern.webp": {
+      "sha256": "f026e7a044ae851ceea6a66b389d882418bada28651cca5e832817004919ea42",
+      "bytes": 161430
+    },
+    "dist/assets/fonts/albert-sans-400.woff2": {
+      "sha256": "7b6827e61591fae038aa4d9db5c008b22528c44fe23d8b0e326960ecd334af2b",
+      "bytes": 13288
+    },
+    "dist/assets/fonts/albert-sans-500.woff2": {
+      "sha256": "cd5c4df9b6539d535c7a68aaac5b26477d1141e6491eeb745335572918ad4d13",
+      "bytes": 13808
+    },
+    "dist/assets/fonts/albert-sans-600.woff2": {
+      "sha256": "a3e3161145f6701fd21e7c44b66e5f41c87b5e0b1fd885e44c5f8e9131ff2e8b",
+      "bytes": 13772
+    },
+    "dist/assets/fonts/cormorant-garamond-400.woff2": {
+      "sha256": "38619d5eaad564df67504775da1528a78080828a6f4e7b3eb2b65afb09f66d97",
+      "bytes": 31500
+    },
+    "dist/assets/fonts/fraunces-italic.woff2": {
+      "sha256": "86ecbdff4a6d11c6d78ba22b6588e957cf9574d42f2174658dffd247c6142657",
+      "bytes": 33716
+    },
+    "dist/assets/fonts/fraunces.woff2": {
+      "sha256": "8a645f5eb940123965b2d425532d0bb6c70a14d92e2b28e17aa6b18859b97c4c",
+      "bytes": 27340
+    },
+    "dist/assets/fonts/manrope.woff2": {
+      "sha256": "1e168fecfa6965fe8ad511f0d2b5bb0a6398a090a6701233ee82b184838f99ce",
+      "bytes": 19568
+    },
+    "dist/assets/fonts/nanum-myeongjo-400.woff2": {
+      "sha256": "1ca34cdc2109139d2e606ff684eacb2d318220f70df6cabf97f760e0d9d34a83",
+      "bytes": 25604
+    },
+    "dist/assets/fonts/nimbus-sans.woff2": {
+      "sha256": "56bce1c651414e33dfd57404f84241d67561143c2692087698f690339cf20913",
+      "bytes": 25792
+    },
+    "dist/assets/frog-woodland.png": {
+      "sha256": "ecc170df474781d370dec993215699532c62099297326d4e081c3a103126ab0f",
+      "bytes": 2457679
+    },
+    "dist/assets/future-golden-eye.webp": {
+      "sha256": "ac1703802aab2e4e1602540248653bdf1e34f4acfcf2249c6c168f6e37bf347e",
+      "bytes": 1107460
+    },
+    "dist/assets/future-hardware-banner.png": {
+      "sha256": "55c06365fd389a4ee8f2e1cfed3da14c2176a1fef2589b697c4112288270431b",
+      "bytes": 2007452
+    },
+    "dist/assets/future-hardware-stylized.png": {
+      "sha256": "a9176e7c29e20c151e12578aa8a446a772ed348f7d68660acbc74408d58405a8",
+      "bytes": 2839447
+    },
+    "dist/assets/future-jellyfish.png": {
+      "sha256": "385b35e65fb6e9405e80c1000bf96f95d00bf0137e8a9962dcdaded2dcadeb63",
+      "bytes": 1959410
+    },
+    "dist/assets/future-whales.png": {
+      "sha256": "a39970148614e386f6407fe3cb49e22276436a1f35533799222216421b25599f",
+      "bytes": 1718523
+    },
+    "dist/assets/jellyfish.webp": {
+      "sha256": "f6d090ed6f98995d842e86cf4ae6948ca3d9cebb9e109875f0f398fe334ae7e5",
+      "bytes": 172428
+    },
+    "dist/assets/newt.webp": {
+      "sha256": "aae567341a2ffc296eefbf46bd38a4aa3baec3a0f58f0b3f0b961ed02c13623f",
+      "bytes": 136138
+    },
+    "dist/assets/og/en-01d5cf5a72e13648.png": {
+      "sha256": "387d08dff10069bee70145b840a14cd28c297e720b79d79c95aa5ed9f073d88e",
+      "bytes": 36249
+    },
+    "dist/assets/og/en-08b8c7aa7a81a9c6.png": {
+      "sha256": "b2a3e21e97a52e83fe589d6ee9e0a8c48d6547bafa283d4f54c7cea04704349c",
+      "bytes": 43321
+    },
+    "dist/assets/og/en-13eb0ba9830c3bbc.png": {
+      "sha256": "2963a2ae9d0b34c93c63fa7d5571e5338396f0b6e11f2046cca70135704b62ae",
+      "bytes": 49294
+    },
+    "dist/assets/og/en-1684b89522b584f0.png": {
+      "sha256": "d0801c6adda50f59e8859e2916d5c1577dd7b3225807f0f4972402563eee444c",
+      "bytes": 44105
+    },
+    "dist/assets/og/en-2264fda5d8193669.png": {
+      "sha256": "47a0f8d34b6014cb7f739cec4e248c1b421ec8e8176576bdf643be7e06292851",
+      "bytes": 45826
+    },
+    "dist/assets/og/en-233114c5a11cfe07.png": {
+      "sha256": "80d571498fc7fc18b40183f1a9bbcb0d6f87770fabfa831abb8f202fbccfc5ce",
+      "bytes": 42395
+    },
+    "dist/assets/og/en-284f24d7cdfb5c19.png": {
+      "sha256": "975c66c4658705503135bfd04e424443c51cef694f170d6e9e546686ccc4a10b",
+      "bytes": 42883
+    },
+    "dist/assets/og/en-29085518ea2e204b.png": {
+      "sha256": "1e625819f11902d6da2423b800a61920c7470b4d74d0f1e75e92af218357e2fd",
+      "bytes": 40091
+    },
+    "dist/assets/og/en-304c5a06ea1cf220.png": {
+      "sha256": "7cff69642f947a82264724cdd313d8ce3721e69a232abecc779042debbe52733",
+      "bytes": 38841
+    },
+    "dist/assets/og/en-4036d5d4593c67c8.png": {
+      "sha256": "c02aeaf82e433623aa1b798021f7ff83fe19bb8c9b95f82b0e4466232a235b9c",
+      "bytes": 34801
+    },
+    "dist/assets/og/en-40e1a6548bc45103.png": {
+      "sha256": "36f467c49db6d28410e6d6935f6fdf4017ceaa8b6bb01f7d20f917d4f0f06d77",
+      "bytes": 42628
+    },
+    "dist/assets/og/en-4693c4c3384eaead.png": {
+      "sha256": "b6402fe137dc8df5a4571fc4a346e319095fec338628d0c9f0af2093310d0290",
+      "bytes": 45783
+    },
+    "dist/assets/og/en-4a220e2c8132ab81.png": {
+      "sha256": "fab8701df97b2cdd70e4d0b0a72819215753e748cc9ee543346e5a04464f2a43",
+      "bytes": 37311
+    },
+    "dist/assets/og/en-564bc3d400b9de35.png": {
+      "sha256": "cea393e39c24340ea5cd63fd9a66164e36f9cce5d1d14e2041ef7f5036662379",
+      "bytes": 42687
+    },
+    "dist/assets/og/en-5bf1cb956e0076e3.png": {
+      "sha256": "abe8b6bf0265bc85a20d4096c3f1ed8927d1cfb4b4908671c1654a2e93bd0a2d",
+      "bytes": 40787
+    },
+    "dist/assets/og/en-5fcae996f47bdddf.png": {
+      "sha256": "9aa0559e8ca3301f0d662507e4f557f7afa99ebc263bfa4420709adf782bc25a",
+      "bytes": 43446
+    },
+    "dist/assets/og/en-6666d39c8e2e6f7e.png": {
+      "sha256": "686b739379cbdffc1cd5ccb6ffacfd017a235437d17ce3f72adc59a86dda132b",
+      "bytes": 43879
+    },
+    "dist/assets/og/en-6a366f2a96b68fd3.png": {
+      "sha256": "1b48a6019df71d96dc56c6a781439573b0985ec5a78741734dbf581c9d12239c",
+      "bytes": 38015
+    },
+    "dist/assets/og/en-6c484f5ca8a02456.png": {
+      "sha256": "594f49fb3733f3f04037c7ee7ac8993005434f8b0be494e29fe4349deb0abce3",
+      "bytes": 40894
+    },
+    "dist/assets/og/en-6d9b5a9c4c005b4d.png": {
+      "sha256": "586dfd43a10ec6c0437aa3e0a8bdd6573a54f063352035971d2d148b96fe1edf",
+      "bytes": 45603
+    },
+    "dist/assets/og/en-72c586bb69db035b.png": {
+      "sha256": "c4a2329e29e49bace47f72f3936de098947be517d3e4d6bdfdb60c3889ef2ae3",
+      "bytes": 42782
+    },
+    "dist/assets/og/en-76bfc02030671bde.png": {
+      "sha256": "20b1fad144d0225544d434ebcb2b826354b6c9b087c6d85d1888c6f23dd24dc2",
+      "bytes": 35325
+    },
+    "dist/assets/og/en-7f1df3b69e624211.png": {
+      "sha256": "2930a2c56edd907397030fe2065db39bb8742145e94135df81589412f1fea563",
+      "bytes": 34250
+    },
+    "dist/assets/og/en-9a3a249789363def.png": {
+      "sha256": "4a5f332cedf98ed609ec140322db992b998ae519e5748309a6f2dfcd6473894b",
+      "bytes": 35229
+    },
+    "dist/assets/og/en-9ac691ddf7ecc7b1.png": {
+      "sha256": "7b6b16a2ec388b8b6a078daf756c2d45f093f3ba7b4bc105faf8c8502ae8a0b4",
+      "bytes": 38735
+    },
+    "dist/assets/og/en-9b2403b5a1674223.png": {
+      "sha256": "9cab5e0f05d15cd094e743fd171332f98731a0b8894eb4229f1c102894eff494",
+      "bytes": 45819
+    },
+    "dist/assets/og/en-a5080a1ea3409781.png": {
+      "sha256": "963fe9b479072696f0db1bf945bdcf117b97be7828c7961baf7e7c1810ea2e9b",
+      "bytes": 44612
+    },
+    "dist/assets/og/en-c273edf6c70041b3.png": {
+      "sha256": "170fae36579d36c18310151879a284f8753f8f78c4d08a8fd362b5dcc54e6508",
+      "bytes": 40125
+    },
+    "dist/assets/og/en-c2c404ae3ce7b733.png": {
+      "sha256": "c0d5caac846d22842ce6f6a165011a2930d660c3de9ab59b040ff7177646985d",
+      "bytes": 36351
+    },
+    "dist/assets/og/en-cb5490e7ffa17583.png": {
+      "sha256": "b3f2b1fdb44ab81980ce1f537293715efbaa9912b3801407077afc526cfa5995",
+      "bytes": 34142
+    },
+    "dist/assets/og/en-dbd65d868ab85fad.png": {
+      "sha256": "9d2077bfce08e9fec541e8242b8ba653dd67a6159ae69893aa7fef0f1a3e58ad",
+      "bytes": 40740
+    },
+    "dist/assets/og/en-de047b50605b90cb.png": {
+      "sha256": "f3d0ae64770255581a211a433cf16d8cc378969fe509a6f454c3fb49521cd6d5",
+      "bytes": 36455
+    },
+    "dist/assets/og/en-e2e2e2baf86b0e9a.png": {
+      "sha256": "3dcee98d4df968f876791f3e1f0184b94626de2e7c30b78f99fa5fe3e27a61d2",
+      "bytes": 43171
+    },
+    "dist/assets/og/en-e381cdfc4bbe488b.png": {
+      "sha256": "f0a8e7d76b1ee3f21f2648fb660fe3ff45dcb33c29c0cf731fdfd3b41b19515c",
+      "bytes": 44053
+    },
+    "dist/assets/og/en-ec48a6729b33e590.png": {
+      "sha256": "0b2d915099c6d2a18b4b6c97fe6931b186b375063289fcf1e335ed54ea84fef7",
+      "bytes": 42213
+    },
+    "dist/assets/og/es-07a7f15a53baa874.png": {
+      "sha256": "890f2fa9f9a65eee3365c03b5fa6468ebf80a9977fce49205d0550e36e5ef513",
+      "bytes": 42220
+    },
+    "dist/assets/og/es-0e413eec04c2765e.png": {
+      "sha256": "49d5b386b0577fd537ab33b4cfe3a08ee287d18b4924b19bf1a31af5d1d01df8",
+      "bytes": 42131
+    },
+    "dist/assets/og/es-0fbc08a722900fa6.png": {
+      "sha256": "e11b75f661b02a728e9de4ad4971b23dece20ca1c2342a38036918196e3437cb",
+      "bytes": 34087
+    },
+    "dist/assets/og/es-0ff038dfd7a7a7d8.png": {
+      "sha256": "0cb315a8045eeb30843fbdbb7da44309b26f3c8c924b0f1ae3da28b10daeddb5",
+      "bytes": 45510
+    },
+    "dist/assets/og/es-1a90e94eaca3bc20.png": {
+      "sha256": "3f8aa37eff6c843308c4b003af401461a9c94d970d03facfcb5a67b9cbbc0ab5",
+      "bytes": 43975
+    },
+    "dist/assets/og/es-1ce7e65b3ae4da9f.png": {
+      "sha256": "a33a6d4cb7560f00774da484f1a8ac10eebc1147ee5d934e1da80c210f29da29",
+      "bytes": 39324
+    },
+    "dist/assets/og/es-1cee37aa25628b85.png": {
+      "sha256": "f3ee66a023cffbf6bfa1c004acff8188e298baee8398b4a877f6f3a75dc009a8",
+      "bytes": 44659
+    },
+    "dist/assets/og/es-2d190e64909db3a3.png": {
+      "sha256": "ea45d31d9c5d25d07b7c04ef5e3ecfddaff1bb8cc4a56adb0694b93d7cd250fa",
+      "bytes": 41544
+    },
+    "dist/assets/og/es-33c46d4e9ed5620f.png": {
+      "sha256": "b93095c49e8d10b3a27322d0dfeacbf696c97cb41823f8838139cc08df399b56",
+      "bytes": 44477
+    },
+    "dist/assets/og/es-3461f84a7c43c9bb.png": {
+      "sha256": "8a8aaf4b5c8ad62e8944755d036fb3bb6f64a7b9b3d608ea17c4543d3ba34530",
+      "bytes": 35354
+    },
+    "dist/assets/og/es-373644dd7d2a9025.png": {
+      "sha256": "a3ac6ae5e5246a08eeea942cd2dae48ca675bb8b4fd9744fb74c863ba41d1855",
+      "bytes": 40221
+    },
+    "dist/assets/og/es-491249a393930c83.png": {
+      "sha256": "64e5e19584f6db711f2ef86bd4999917c566abd666396ba787166db41fab02ff",
+      "bytes": 43088
+    },
+    "dist/assets/og/es-4a8474aaab9d2cbb.png": {
+      "sha256": "632a7e6fd6cff1eae2efef97e71d6789d620aa74e5bceaa20a30e5c496b2fbad",
+      "bytes": 35989
+    },
+    "dist/assets/og/es-5357994902e8c999.png": {
+      "sha256": "a998d6fb9ae14582dc08b062563e72aa66279af19dfc90da0b1a62022a4deb01",
+      "bytes": 45885
+    },
+    "dist/assets/og/es-564ab32d58b8e7a5.png": {
+      "sha256": "1b03f9eb85bd0ac4a9a0a7b04acb6682a6758e56fe2c5306b5b6327e5f9a32b6",
+      "bytes": 33686
+    },
+    "dist/assets/og/es-5da927f3ff51a4e8.png": {
+      "sha256": "818de672d6252922815fb120ebc9b0666b168025851dd7eac6c062b56e531e10",
+      "bytes": 36396
+    },
+    "dist/assets/og/es-5e72b6f16618adf8.png": {
+      "sha256": "b2218b239aebc6805413dfbad62e131f327d0df2bfd56a287092692d7ef705a6",
+      "bytes": 41666
+    },
+    "dist/assets/og/es-67da86eb85dec7fd.png": {
+      "sha256": "1faf7df4642d9e88d34028930ad673dbcbe8179611a77dda5e7f2833cefedece",
+      "bytes": 44831
+    },
+    "dist/assets/og/es-694409adc741ce6a.png": {
+      "sha256": "b1035b8e511ad0c6ecc8208e7c3378384d98ad1806d003fcba04734d998a381e",
+      "bytes": 47469
+    },
+    "dist/assets/og/es-6b752dd11ee04368.png": {
+      "sha256": "343d7dcc9dc97b457a7be85fd765681a14e2235cf6bc6bfd7efc920b933dcdfc",
+      "bytes": 42550
+    },
+    "dist/assets/og/es-733861da6ff82550.png": {
+      "sha256": "2874152fe1c0233b5d761d2683c303f74d27eb72e861246a8ba7d541ce398e17",
+      "bytes": 45312
+    },
+    "dist/assets/og/es-74099133c17f57ef.png": {
+      "sha256": "828843dfa97ac6ef9e4af77c96996c6a509f96245df17ea40b90f58e1db6cde0",
+      "bytes": 39580
+    },
+    "dist/assets/og/es-756d2292d01a59e9.png": {
+      "sha256": "a8bd13c1215bc518c363c79dce4237f1225f67d66fb583e0868550e2ccf3c246",
+      "bytes": 45060
+    },
+    "dist/assets/og/es-7d0c8e5a19f18822.png": {
+      "sha256": "09d21b324c73b2ba9f1ca6d74195ebfc87850e481347aa90cfc59b02c3a61a8e",
+      "bytes": 44418
+    },
+    "dist/assets/og/es-82919039e5404b11.png": {
+      "sha256": "84231e7c44cbecaa2ea9098e8bc166a47edda1be8f699ca10ec57a4c4d47693d",
+      "bytes": 38674
+    },
+    "dist/assets/og/es-8366c1bf65b47d93.png": {
+      "sha256": "d54d7761ddaf0b9d70b203bda7079c1282510dfb3be3036e02e9d440f98e9529",
+      "bytes": 36451
+    },
+    "dist/assets/og/es-960946cef9749bb1.png": {
+      "sha256": "a87e64e91530e3e0f42fb25069277e22368f65a6e52a09f6916b88516fcc1d24",
+      "bytes": 37673
+    },
+    "dist/assets/og/es-ac9db7cb26450e1f.png": {
+      "sha256": "8b1bb1ffb4d5474833fce4a5b2d1e864a0b3d83c8903c20692243cd81b9adde4",
+      "bytes": 35433
+    },
+    "dist/assets/og/es-aedc43f236eee694.png": {
+      "sha256": "e2ab06ad92dff3561a51fa6ff8de02daaa56d096267088efa9f7b846e7f7ead1",
+      "bytes": 40476
+    },
+    "dist/assets/og/es-b558581fa22ad143.png": {
+      "sha256": "36f467c49db6d28410e6d6935f6fdf4017ceaa8b6bb01f7d20f917d4f0f06d77",
+      "bytes": 42628
+    },
+    "dist/assets/og/es-bd02539c429ff841.png": {
+      "sha256": "fab8701df97b2cdd70e4d0b0a72819215753e748cc9ee543346e5a04464f2a43",
+      "bytes": 37311
+    },
+    "dist/assets/og/es-c1d0d8f38f0d146e.png": {
+      "sha256": "9d2077bfce08e9fec541e8242b8ba653dd67a6159ae69893aa7fef0f1a3e58ad",
+      "bytes": 40740
+    },
+    "dist/assets/og/es-e4550dc139b4a649.png": {
+      "sha256": "7943998cb77cc62043efc851464ec22117f5c4d047e1d1a18415d9f3e83d0eb3",
+      "bytes": 40808
+    },
+    "dist/assets/og/es-e90dad0b776cea07.png": {
+      "sha256": "e99177598453eb143b15122c46fa3ae249f108e89608008d7d3c143c1acd5094",
+      "bytes": 41294
+    },
+    "dist/assets/og/es-ea2cf9b8991f5e54.png": {
+      "sha256": "c6a8305f94f5859115222611b7804143c6de126fa8cf97558990b243d3b4f394",
+      "bytes": 39950
+    },
+    "dist/assets/processing-core.js": {
+      "sha256": "8efb3f1d972d0c14f6f5dbe405d593a5640411bc89a2873e651d4a4213cc407c",
+      "bytes": 15258
+    },
+    "dist/assets/processing-worker.js": {
+      "sha256": "3525c433c791dc8d24b6b9531b885c96098802606ab25d6374160109d243cda7",
+      "bytes": 542
+    },
+    "dist/assets/rhino-tools.webp": {
+      "sha256": "7ee92ac2f4a8e19c00aa7333018d369c8bc964414741019aa0356d0b8632c7be",
+      "bytes": 142054
+    },
+    "dist/assets/vendor/JSZIP-LICENSE.md": {
+      "sha256": "566c953c6090b1218ca6217dd7359d45dde46581968586dc607d59a78af6a9c4",
+      "bytes": 33753
+    },
+    "dist/assets/vendor/PAKO-LICENSE.txt": {
+      "sha256": "a04665b3b2de56c66730c1f720f528175739e4104f79073614aa611da1e85539",
+      "bytes": 1104
+    },
+    "dist/assets/vendor/jszip.min.js": {
+      "sha256": "acc7e41455a80765b5fd9c7ee1b8078a6d160bbbca455aeae854de65c947d59e",
+      "bytes": 97630
+    },
+    "dist/assets/workbench-i18n.js": {
+      "sha256": "a9faedb47a73d05e9fdc3b084f69a6c0a91e09158ff665f0b9ecd56fd8d91fd2",
+      "bytes": 16113
+    },
+    "dist/assets/workbench.js": {
+      "sha256": "6af77a310f54ce3969f14bfc5a0831fca9c380e245320d407666d909b0916611",
+      "bytes": 36328
+    },
+    "dist/blog/a-small-flame-in-the-dark/index.html": {
+      "sha256": "cee080ab7b5c27123cfa61280575bc897192b911d29e9d228a9529cb0551fa5c",
+      "bytes": 375
+    },
+    "dist/blog/blog.js": {
+      "sha256": "bec5531945bdcd341bfdbbdfd0bab154116637e58dbc685245b129ef460f747b",
+      "bytes": 1201
+    },
+    "dist/blog/index.html": {
+      "sha256": "b471bc6af28fa57d99a07c356ccb707fa4fec74367f309a21c31ddb8cbba61ad",
+      "bytes": 297
+    },
+    "dist/blog/listening-for-the-shape-of-silence/index.html": {
+      "sha256": "3338e3df644b16bb3700d6c1b576e1c0e03fa4c3742334c7799c5dd0800ab7cc",
+      "bytes": 402
+    },
+    "dist/blog/philosophy-behind-darwin-core-protocol/index.html": {
+      "sha256": "f1c0375c8f217c794f280e7921451e877e84cba230201e15de957789349ecba3",
+      "bytes": 414
+    },
+    "dist/blog/reading-the-weather-in-a-leaf/index.html": {
+      "sha256": "5790fd76ddf829b54ef034a3c58b6553a9451bb2d67adf7772a01c2181f00761",
+      "bytes": 387
+    },
+    "dist/blog/the-slower-rhythm-below-the-surface/index.html": {
+      "sha256": "ae545680bc8667f44bcc769364917e8b03bf60d0ab0438d0fc6ca55951f7ccf7",
+      "bytes": 405
+    },
+    "dist/blog/why-shadows-make-a-place-feel-alive/index.html": {
+      "sha256": "a0a0432c14fc85077d6a7025568d7687db6be9da1539a69b110e2c02baadf6a3",
+      "bytes": 405
+    },
+    "dist/deeper/index.html": {
+      "sha256": "e30d50896f32ca021e71ad2e1dcfd1526e970e684f66bb6628c3e12111c22aa3",
+      "bytes": 303
+    },
+    "dist/en/app/contribute/index.html": {
+      "sha256": "1ec005c8b662a5aa8b23527919eae331250c947398b3bfe8a3f70791dfb969d7",
+      "bytes": 361
+    },
+    "dist/en/app/coordinate/index.html": {
+      "sha256": "bc7039562833b52d069c54cc45cdcf3c7cf30660841219be14330845363198b7",
+      "bytes": 379
+    },
+    "dist/en/app/darwinscan/index.html": {
+      "sha256": "fab03aa78e658a32a5885a1f19d39f9a0902b0434f2b50a6357f9bb59d8fcbb0",
+      "bytes": 407
+    },
+    "dist/en/app/governance/proposals/index.html": {
+      "sha256": "d7bb822f438a99d8fe05e8493991827ec9b30bd9024c5224a841a9fa32df8e43",
+      "bytes": 382
+    },
+    "dist/en/app/governance/voters/index.html": {
+      "sha256": "ca786d98bbeacbd168cec10730c8bbd1b578f3dd589bac174d226a1d2c337581",
+      "bytes": 370
+    },
+    "dist/en/app/groups/index.html": {
+      "sha256": "b550e8d7001089c0826615f2e7ac510fd7e4183043669b7703cb6d4b579692a5",
+      "bytes": 17137
+    },
+    "dist/en/app/groups/mollusks/index.html": {
+      "sha256": "5c76470972c4cee00245632132d2e6a992abbb1466180e42b0a3a3a3a7ebeca9",
+      "bytes": 17740
+    },
+    "dist/en/app/groups/mollusks/proposals/specimen-review/index.html": {
+      "sha256": "f221a2dd1613edaca9a06917cd215e908311991e794cfe8c998023288278e9ce",
+      "bytes": 16539
+    },
+    "dist/en/app/groups/mollusks/proposals/universal-threshold/index.html": {
+      "sha256": "544929c5c0c88e960017df714622bd1b290347231b7b74c870958e84f409c4ed",
+      "bytes": 16462
+    },
+    "dist/en/app/groups/pacific/index.html": {
+      "sha256": "a0ef2898a7de7a80868a860b792a4a759de9df42fef885b16adb405df77cfcc3",
+      "bytes": 17918
+    },
+    "dist/en/app/groups/pacific/proposals/evidence-format/index.html": {
+      "sha256": "4178612954da73ec22651cef22483b7f80d899792d537a6f936283b89406824e",
+      "bytes": 16516
+    },
+    "dist/en/app/groups/pacific/proposals/expedition-fund/index.html": {
+      "sha256": "7b27707e8c58e97ce0cbf8368f5eb4c79d97f39e9cde4cd207cd5d2ee533b2ce",
+      "bytes": 16883
+    },
+    "dist/en/app/index.html": {
+      "sha256": "4a8fe9670785006506953ccae22fcc156ac11267911dbf5d9c01844d65ec4894",
+      "bytes": 19693
+    },
+    "dist/en/app/profile/index.html": {
+      "sha256": "2039705a326bdb0a4e74f847c6127e2f7099f077b273b18e7147bac63458b37c",
+      "bytes": 21163
+    },
+    "dist/en/app/records/abyssal-skate/index.html": {
+      "sha256": "ffc57bb0193f145ed6433f2af08e874b4cf5e5fc8764a2561f08d0ec4e2ecb18",
+      "bytes": 16776
+    },
+    "dist/en/app/records/index.html": {
+      "sha256": "f23017d844b5907f9df667f1e5386c2c4db120923b720f33d708bf02d102a0c0",
+      "bytes": 16811
+    },
+    "dist/en/app/records/nudibranch/index.html": {
+      "sha256": "282c54ee4e46d23110d1bdd5095f8d15ceea321908a9ff0d872751f4d7404453",
+      "bytes": 16800
+    },
+    "dist/en/app/records/reef-coral/index.html": {
+      "sha256": "7382cd3899d05bbe38d49bf3b95c2bfaeaaaa8afb0ac11f79a35a811ab9d83fd",
+      "bytes": 17160
+    },
+    "dist/en/app/records/seagrass/index.html": {
+      "sha256": "b2af63890a74e8195c2eb63087fa5461f6d5a7501888d80a7a707c1db34b12b4",
+      "bytes": 16623
+    },
+    "dist/en/app/records/view/index.html": {
+      "sha256": "1153b4ad01bf94ceead014df53b70118062064944380098662adbc0e3658582a",
+      "bytes": 15595
+    },
+    "dist/en/app/research/mollusk-atlas/index.html": {
+      "sha256": "fee53e4426a6a65702b5860d3c7c29dd9aac8de1774dabcb907e292272d6edd1",
+      "bytes": 18034
+    },
+    "dist/en/app/research/pacific-atlas/index.html": {
+      "sha256": "e5bce27cdb23203496ad743c7109635bb646757d18c340ac1f96410761b7011e",
+      "bytes": 18883
+    },
+    "dist/en/app/search/index.html": {
+      "sha256": "13ccf901e97a0baf2287741bbd5bdc8099a8dc7500ae39ef015941c56901a8d5",
+      "bytes": 17224
+    },
+    "dist/en/app/tasks/index.html": {
+      "sha256": "2e11cdbeac35c8b053fce4ddeace7b460baa85caf42a27a61baad4862ba02462",
+      "bytes": 7981
+    },
+    "dist/en/blog/a-small-flame-in-the-dark/index.html": {
+      "sha256": "3f286ee21c93c93b8d7e24b5183870c69bebe641def700180343fefba06973dd",
+      "bytes": 9183
+    },
+    "dist/en/blog/index.html": {
+      "sha256": "8b0f160ec06dca9fde31391e49daa0e5af223e67eec59e9acea7ca68c5d97b0f",
+      "bytes": 10843
+    },
+    "dist/en/blog/listening-for-the-shape-of-silence/index.html": {
+      "sha256": "1ac8db66b14afd53ae606f6db526a67acfb2b438a9b64ac5fb22f8f937eaaa8f",
+      "bytes": 8971
+    },
+    "dist/en/blog/philosophy-behind-darwin-core-protocol/index.html": {
+      "sha256": "a78ec0e6c329730be37f290130d551001b5a0112445f504d086aeead5dceaad9",
+      "bytes": 9806
+    },
+    "dist/en/blog/reading-the-weather-in-a-leaf/index.html": {
+      "sha256": "1cc7c64b9d273495be1f9b55bbd6698148f99179b5bf3fc4d617fd0651fae8a3",
+      "bytes": 8629
+    },
+    "dist/en/blog/the-slower-rhythm-below-the-surface/index.html": {
+      "sha256": "471d5ce4b4d884f7b886c639ff82347032da00b216f7fd78bee9ba64e57c49c9",
+      "bytes": 9153
+    },
+    "dist/en/blog/why-shadows-make-a-place-feel-alive/index.html": {
+      "sha256": "99faf3b0e0c17c261c6e9ece4f70ad9b776c91499a8a937828f2772c909b76ec",
+      "bytes": 9121
+    },
+    "dist/en/deeper/index.html": {
+      "sha256": "b8eac4f8192ea395470cd41134210b331862d08946bf2bc8c03463eade8be36b",
+      "bytes": 11616
+    },
+    "dist/en/index.html": {
+      "sha256": "ac1eec96a2433ec43d39612d95a4a87a8d30acaf694d3b8c2434f02bd3d2572c",
+      "bytes": 11073
+    },
+    "dist/en/ocean/index.html": {
+      "sha256": "1af562cec0364606e1310eb367ffb997021718b5cb923ab37a0bd50250338375",
+      "bytes": 9954
+    },
+    "dist/en/support/index.html": {
+      "sha256": "7554ebe538668c1a6f8b5b1612f663da4f834d48f8e1df0a82b82d4d1eaf5205",
+      "bytes": 6479
+    },
+    "dist/en/tools/csv-to-darwin-core/index.html": {
+      "sha256": "e6a438881df95ea649333f14021002807ceea11cbf2826a795561443c3073178",
+      "bytes": 11143
+    },
+    "dist/en/tools/data-workflow/index.html": {
+      "sha256": "87ec1fde0466147687a12810ded296a124739cde1d4346f9fc6b7f31e04c2f24",
+      "bytes": 10096
+    },
+    "dist/en/tools/date-normalizer/index.html": {
+      "sha256": "e9b65124e175b592b13c3576e8b472e7b99e8a828d6a74384914aa03d7ca7bed",
+      "bytes": 11145
+    },
+    "dist/en/tools/duplicate-finder/index.html": {
+      "sha256": "66450e8b241b37b1acee6b0aba33b921924eb915b3b69075c1f5f8720321c05a",
+      "bytes": 10087
+    },
+    "dist/en/tools/index.html": {
+      "sha256": "78a50887b58f91dfea9c643f7d0ce59370d347b750c138ee8038121cb43b0476",
+      "bytes": 7311
+    },
+    "dist/es/app/contribute/index.html": {
+      "sha256": "2d683110f4c48c515e56a0bf3ba548ddc2f4f49ed5c84c6ebafee83a3702e3c2",
+      "bytes": 361
+    },
+    "dist/es/app/coordinate/index.html": {
+      "sha256": "96601fe6c25d3d9fa66434cc163d778f97e512f371fc71ca5b07ec9b7cb1e136",
+      "bytes": 379
+    },
+    "dist/es/app/darwinscan/index.html": {
+      "sha256": "536cffc6bd9b3a166dfd56fbb4c4c6b73862ab01fa5c7e758b8906616fa3d91f",
+      "bytes": 407
+    },
+    "dist/es/app/governance/proposals/index.html": {
+      "sha256": "712473be56415c2de37b2239257007a465caf90848db644f070aa98d7a956a77",
+      "bytes": 382
+    },
+    "dist/es/app/governance/voters/index.html": {
+      "sha256": "bdae4300e9ae039671f4b793f6d3c4e0cd73b89b076f1062bf40ee7817e1820d",
+      "bytes": 370
+    },
+    "dist/es/app/groups/index.html": {
+      "sha256": "b79fdc527fbeb27279b3eb7a7f6cb33ff6e3ec4ae0e7d8eeaaddad4238701ccc",
+      "bytes": 17406
+    },
+    "dist/es/app/groups/mollusks/index.html": {
+      "sha256": "d88cfd109c9c58a8443cc1506a29d86cf0ec88687e0f13c632eca9c8eb67b0df",
+      "bytes": 18008
+    },
+    "dist/es/app/groups/mollusks/proposals/specimen-review/index.html": {
+      "sha256": "c55dc68d64b48d6d88540d07b5cfc69a4c88563176ccdd2274c36d229875b080",
+      "bytes": 16745
+    },
+    "dist/es/app/groups/mollusks/proposals/universal-threshold/index.html": {
+      "sha256": "8791fd157ae4bc3e884103c4f1bc9d9a2b2ffb1ff4152532033cb8869132e3c0",
+      "bytes": 16632
+    },
+    "dist/es/app/groups/pacific/index.html": {
+      "sha256": "7fb97b68082ae5f68df63f446c6a8dff72e67f7e301e4351fa3e36e7fd6ee5ee",
+      "bytes": 18269
+    },
+    "dist/es/app/groups/pacific/proposals/evidence-format/index.html": {
+      "sha256": "623fcfc021f7760334b08a772fab47478412316a28bed0787f7489bc1abc6479",
+      "bytes": 16691
+    },
+    "dist/es/app/groups/pacific/proposals/expedition-fund/index.html": {
+      "sha256": "01b65f0df4d84b0f47d25c5514d854f4c51b20d79746d17ce0241cd34d0e18d9",
+      "bytes": 17116
+    },
+    "dist/es/app/index.html": {
+      "sha256": "49e8865d0959c80cfd81c5871f5cd56c988fcbafde7e8933df64f1eddedb1b52",
+      "bytes": 20109
+    },
+    "dist/es/app/profile/index.html": {
+      "sha256": "9155d4095ff2db4753d62bf336db98f4d77796f368ad8a45499fcfddc5f2f4d0",
+      "bytes": 21768
+    },
+    "dist/es/app/records/abyssal-skate/index.html": {
+      "sha256": "c6f22f31af3c920184bb58b58b7bb4ae5656b13e39f1b42b506d05b27d4ff49a",
+      "bytes": 17018
+    },
+    "dist/es/app/records/index.html": {
+      "sha256": "9a98630941cf2a482f81a577a1f509c4bc6103a8b28edb8d1a705413098ec80f",
+      "bytes": 16949
+    },
+    "dist/es/app/records/nudibranch/index.html": {
+      "sha256": "7bc8b04ad9b1414ea819cdac709f757b7a6c940952c7dcd51694aec98e03048c",
+      "bytes": 17089
+    },
+    "dist/es/app/records/reef-coral/index.html": {
+      "sha256": "dbec4eac45c41fdfcd1bf09c2e2ba5844b4b6cb0589c17b2b0c8321ba5d835d1",
+      "bytes": 17477
+    },
+    "dist/es/app/records/seagrass/index.html": {
+      "sha256": "7959b65b393ac7c99ad9d36ec41f8089ba3190c0ab90ec3f004776ee3f89e5db",
+      "bytes": 16855
+    },
+    "dist/es/app/records/view/index.html": {
+      "sha256": "7b234ed1e1d420545379d456491d61c64793e44871a55fed337a9fea5cc266f1",
+      "bytes": 15715
+    },
+    "dist/es/app/research/mollusk-atlas/index.html": {
+      "sha256": "4995afa18e1e07c9c7a41e67a20572234dca62438d934e16ca3a1b6ef2cad58c",
+      "bytes": 18397
+    },
+    "dist/es/app/research/pacific-atlas/index.html": {
+      "sha256": "5905c1cbb98d4fcaee905fd6e6420d57151cce293877fbb5c6aaaf90696d961b",
+      "bytes": 19255
+    },
+    "dist/es/app/search/index.html": {
+      "sha256": "68e7125994c6016b2e49a7dc82214f38d900a0b54f331840b7f8f4c3fd095ba4",
+      "bytes": 17395
+    },
+    "dist/es/app/tasks/index.html": {
+      "sha256": "d09efec65d6679f60acdef50375f6772f2ecc23d600e4f498dbfd9215da61a13",
+      "bytes": 8145
+    },
+    "dist/es/blog/a-small-flame-in-the-dark/index.html": {
+      "sha256": "a83999c8066288b7c9fdea08dc88db6479cac7b07dbb678da0ece01c319c4050",
+      "bytes": 8883
+    },
+    "dist/es/blog/index.html": {
+      "sha256": "fa70250a77ea06cdc39e5f8058418c43584cedb3db4a0ad6f3916954afb40d9c",
+      "bytes": 10796
+    },
+    "dist/es/blog/listening-for-the-shape-of-silence/index.html": {
+      "sha256": "dd0a2addf3c31c47370def8bdaac23581e532be897aee421e094068c672388c4",
+      "bytes": 8768
+    },
+    "dist/es/blog/philosophy-behind-darwin-core-protocol/index.html": {
+      "sha256": "b02e884476e80794fc9415d4f9b4e542738ba067f514a14f215a19aae569ddc4",
+      "bytes": 9228
+    },
+    "dist/es/blog/reading-the-weather-in-a-leaf/index.html": {
+      "sha256": "5e7067d8af76f889f26ed18e3b8b7220511a3075ea26e81fb6f599892a4d106f",
+      "bytes": 8525
+    },
+    "dist/es/blog/the-slower-rhythm-below-the-surface/index.html": {
+      "sha256": "bd5803c672dc1a54b7797d90c5424597789e3c70bf19b3dae60c6c1338283f44",
+      "bytes": 8991
+    },
+    "dist/es/blog/why-shadows-make-a-place-feel-alive/index.html": {
+      "sha256": "1b8762a73db8fa09120d8378fb4eca83f662d9f7e28b329326841a05be0e9cbc",
+      "bytes": 8922
+    },
+    "dist/es/deeper/index.html": {
+      "sha256": "013da6e3e70f1d9525a78a0465ca21330eb6df12e84ffacb407151c047fb1a37",
+      "bytes": 12425
+    },
+    "dist/es/index.html": {
+      "sha256": "855a802afb9fdb58fa4f3a8a9e325ab2a33106a899cf9c5757628518221ed34c",
+      "bytes": 11930
+    },
+    "dist/es/ocean/index.html": {
+      "sha256": "94f3cb23c9ade1be3da99e461bed9438c3952d6a87ff855046939dd375db2fdc",
+      "bytes": 10652
+    },
+    "dist/es/support/index.html": {
+      "sha256": "a487111c7c18eae36c3a022628c81633e21e5df4e75f8d24d0ae1385fcbabf40",
+      "bytes": 6783
+    },
+    "dist/es/tools/csv-to-darwin-core/index.html": {
+      "sha256": "11d123cc80f32663462cc7b512f79be850d8082968484f87bbe02dd0bf8772d9",
+      "bytes": 11490
+    },
+    "dist/es/tools/data-workflow/index.html": {
+      "sha256": "918dd3ac3ddc840853e6102e367bb9f4dc0cd50b8cf9bd52b2b19c36bff3fecb",
+      "bytes": 10419
+    },
+    "dist/es/tools/date-normalizer/index.html": {
+      "sha256": "3b15b683012cf196bfa97142202fb6e2a5c8ef061fe2e3e043aac4eb9a7c3f27",
+      "bytes": 11475
+    },
+    "dist/es/tools/duplicate-finder/index.html": {
+      "sha256": "949b985a010442abc257d92bca32396c3be2a953ac684a614bcc29a059386e5c",
+      "bytes": 10450
+    },
+    "dist/es/tools/index.html": {
+      "sha256": "4beb5ef66acdc0717c9e87302098009ad56cc0d747a679014696aa4d519e4062",
+      "bytes": 7594
+    },
+    "dist/favicon.ico": {
+      "sha256": "77ac4a1f36383e04437b896cf135b0336eb4399b6ce06218a17bbbfd96114498",
+      "bytes": 32038
+    },
+    "dist/favicon.svg": {
+      "sha256": "28933375dc40bff6fec8769411e2eff6f1e6d576a0c16a9e034c27315bdac2b0",
+      "bytes": 6771
+    },
+    "dist/i18n.js": {
+      "sha256": "1c9d2412a483a8a060439f080d234fe9d378d205a129277e98837352a457ce67",
+      "bytes": 6097
+    },
+    "dist/index.html": {
+      "sha256": "65af136b3dfaecfd8508c8b5e3550adb68c0ef7a438a807da3331100dc39ed05",
+      "bytes": 282
+    },
+    "dist/metrics.js": {
+      "sha256": "c9755167e65b9e6edb1108d19e7779ceb2da2622530718a8eb47d1b3f9c86c46",
+      "bytes": 898
+    },
+    "dist/ocean/index.html": {
+      "sha256": "24fab1ca94380aa67c1895186bfa676132fcdcd7428208c3dbc7b8f46d2cc5af",
+      "bytes": 300
+    },
+    "dist/robots.txt": {
+      "sha256": "4fe9448a5e8a3826477e1f05f6d339888c50d55304fe0343039f20231b29bc2f",
+      "bytes": 97
+    },
+    "dist/sitemap.xml": {
+      "sha256": "140ad9a0f38770ebe051da2ea0a3f7bc9803c162b59d467221d20ff61e383772",
+      "bytes": 7173
+    },
+    "dist/stats/stats.css": {
+      "sha256": "f19162c31d325a67e8b2be7a430c6e458f15927d7dc6d06fa9349135cb5d9eb2",
+      "bytes": 3992
+    },
+    "dist/stats/stats.js": {
+      "sha256": "a7fffbf4bb72e4f4c9f41f74a744c8deb77b194b2a8514a9d9bad6123154d495",
+      "bytes": 3462
+    },
+    "dist/style.css": {
+      "sha256": "392a56285057493013278c56c0727469a825059d9800fdefca3b9b18e4b85d8c",
+      "bytes": 140073
+    },
+    "dist/support/index.html": {
+      "sha256": "2ae1b3467cb5126f8e77fbd88cb5810637dce94713f7996e6c23eb1dc7c3c945",
+      "bytes": 306
+    },
+    "dist/tools/csv-to-darwin-core/index.html": {
+      "sha256": "b53b40809f716a56c38cf02986cea83587d66a5cae83fac15f3d3d196b8de88e",
+      "bytes": 357
+    },
+    "dist/tools/data-workflow/index.html": {
+      "sha256": "92feeb0389737f2b1000c2255fb7bf07e3cc34ac423b903f710bde6230e8544a",
+      "bytes": 342
+    },
+    "dist/tools/date-normalizer/index.html": {
+      "sha256": "008d528cc529e750db4942ef2d6388e05a5f8746f39c401ba8497050d245b676",
+      "bytes": 348
+    },
+    "dist/tools/duplicate-finder/index.html": {
+      "sha256": "6414f630d29887fb0720e41bfed46be163dbe6295613fc19c5a26d595386f7c1",
+      "bytes": 351
+    },
+    "dist/tools/index.html": {
+      "sha256": "2681d3ea6fc18312fb8b20c023fb98eb5c7007468a85e4b736fd8943d8f2cc70",
+      "bytes": 300
+    }
+  }
+}
