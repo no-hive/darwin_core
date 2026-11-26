@@ -19,7 +19,7 @@ git config --local commit.template .gitmessage
 
 ## Development
 
-See [local development](platform/web/README-LOCAL.md) for the site build. Published blog articles are managed in Sanity, not in the repository.
+See [local development](frontend/web/README-LOCAL.md) for the site build. Published blog articles are managed in Sanity, not in the repository.
 
 ## Licensing
 

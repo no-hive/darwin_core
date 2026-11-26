@@ -2,9 +2,9 @@ name: Web
 
 on:
   push:
-    paths: ['platform/web/**', 'platform/app/**', 'platform/tools/**', '.github/workflows/web.yml']
+    paths: ['frontend/web/**', 'frontend/app/**', 'frontend/tools/**', '.github/workflows/web.yml']
   pull_request:
-    paths: ['platform/web/**', 'platform/app/**', 'platform/tools/**', '.github/workflows/web.yml']
+    paths: ['frontend/web/**', 'frontend/app/**', 'frontend/tools/**', '.github/workflows/web.yml']
   workflow_dispatch:
 
 permissions:
@@ -20,14 +20,14 @@ jobs:
     timeout-minutes: 20
     defaults:
       run:
-        working-directory: platform/web
+        working-directory: frontend/web
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
           cache: npm
-          cache-dependency-path: platform/web/package-lock.json
+          cache-dependency-path: frontend/web/package-lock.json
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'

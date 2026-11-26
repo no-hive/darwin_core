@@ -2,9 +2,9 @@ name: Studio
 
 on:
   push:
-    paths: ['platform/studio/**', '.github/workflows/studio.yml']
+    paths: ['frontend/studio/**', '.github/workflows/studio.yml']
   pull_request:
-    paths: ['platform/studio/**', '.github/workflows/studio.yml']
+    paths: ['frontend/studio/**', '.github/workflows/studio.yml']
   workflow_dispatch:
 
 permissions:
@@ -20,14 +20,14 @@ jobs:
     timeout-minutes: 15
     defaults:
       run:
-        working-directory: platform/studio
+        working-directory: frontend/studio
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
           cache: npm
-          cache-dependency-path: platform/studio/package-lock.json
+          cache-dependency-path: frontend/studio/package-lock.json
       - run: npm ci --no-audit --no-fund
       - run: npx tsc --noEmit
       - run: npm run build

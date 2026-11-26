@@ -2,9 +2,9 @@ name: App
 
 on:
   push:
-    paths: ['platform/app/**', 'platform/web/src/**', 'platform/web/package.json', 'platform/web/package-lock.json', '.github/workflows/app.yml']
+    paths: ['frontend/app/**', 'frontend/web/src/**', 'frontend/web/package.json', 'frontend/web/package-lock.json', '.github/workflows/app.yml']
   pull_request:
-    paths: ['platform/app/**', 'platform/web/src/**', 'platform/web/package.json', 'platform/web/package-lock.json', '.github/workflows/app.yml']
+    paths: ['frontend/app/**', 'frontend/web/src/**', 'frontend/web/package.json', 'frontend/web/package-lock.json', '.github/workflows/app.yml']
   workflow_dispatch:
 
 permissions:
@@ -20,14 +20,14 @@ jobs:
     timeout-minutes: 10
     defaults:
       run:
-        working-directory: platform/web
+        working-directory: frontend/web
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
           cache: npm
-          cache-dependency-path: platform/web/package-lock.json
+          cache-dependency-path: frontend/web/package-lock.json
       - run: npm ci --no-audit --no-fund
       # React regression tests need repair after the monorepo migration.
       - run: node src/build-app.mjs
