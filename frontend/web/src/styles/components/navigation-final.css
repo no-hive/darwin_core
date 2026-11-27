@@ -27,7 +27,9 @@ body .site-header .site-nav{position:fixed;top:var(--nav-edge);right:var(--nav-e
 .site-nav .nav-cut-border polygon{fill:none;stroke-width:1;stroke-linejoin:miter;stroke-linecap:square;vector-effect:non-scaling-stroke}
 .site-nav.is-animating .nav-menu,.site-nav.is-animating .lang-menu{display:none}
 .site-nav>a::after,.site-nav>.nav-dropdown::after,.site-nav>.lang-dropdown::after{display:none}
-.site-nav.app-nav>a.app-add-finding{width:220px;flex:0 0 220px;border-color:var(--ink);background:var(--ink);color:var(--bg)}
+.site-nav.app-nav>a.app-add-finding{width:165px;flex:0 0 165px;border-color:var(--ink);background:var(--ink);color:var(--bg)}
+.site-nav.app-nav>a.app-search-link{width:var(--nav-control-size);flex:0 0 var(--nav-control-size);padding:0}
+.site-nav.app-nav>a.app-search-link svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round}
 .site-nav.app-nav>a.app-add-finding:hover,.site-nav.app-nav>a.app-add-finding:focus-visible{border-color:var(--accent);background:var(--accent);color:var(--bg)}
 .language-confirmation{width:min(440px,calc(100% - 40px));padding:32px;border:1px solid var(--accent);background:var(--bg);color:var(--ink);font:16px/1.6 var(--body)}
 .language-confirmation::backdrop{background:rgb(0 0 0 / 70%)}

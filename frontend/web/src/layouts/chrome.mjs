@@ -6,16 +6,16 @@ export const navigation = [
   {key:'app',route:'app/',en:'App',es:'App'}
 ];
 export const appNavigation=[
- {key:'main',route:'app/',en:'Main',es:'Inicio'},
  {key:'search',route:'app/search/',en:'Search',es:'Buscar'},
+ {key:'main',route:'app/',en:'Main',es:'Inicio'},
  {key:'groups',route:'app/groups/',en:'Groups',es:'Grupos'},{key:'profile',route:'app/profile/',en:'Profile',es:'Perfil'},
- {key:'add-finding',route:'app/records/new/',en:'Add + a finding',es:'Añadir + un hallazgo',width:{en:2,es:2}}
+ {key:'add-finding',route:'app/records/new/',en:'New finding +',es:'Nuevo hallazgo +'}
 ];
 export function renderHeader(lang,route,availableLocales=['en','es']){
   const app=route.startsWith('app/');
   const items=app?appNavigation:navigation;
   const active=item=>['records','groups'].includes(item.key)?route.startsWith(item.route):item.key==='main'?route==='app/':item.key==='search'?route==='app/search/'||route.startsWith('app/research/'):item.key==='about'?['concept/','community/','future/'].includes(route):item.key==='tools'?route.startsWith('tools/'):item.key==='blog'?route.startsWith('blog/'):route===item.route;
-  const link=(item,extra='')=>`<a class="${item.key==='add-finding'?'app-add-finding':extra} ${active(item)?'active':''}" href="/${lang}/${item.route}" ${active(item)?'aria-current="page"':''} ${item.width?.[lang]?`data-nav-width="${item.width[lang]}"`:''}>${item[lang]}</a>`;
+  const link=(item,extra='')=>`<a class="${item.key==='add-finding'?'app-add-finding':item.key==='search'&&app?'app-search-link':extra} ${active(item)?'active':''}" href="/${lang}/${item.route}" ${item.key==='search'&&app?`aria-label="${item[lang]}"`:''} ${active(item)?'aria-current="page"':''} ${item.width?.[lang]?`data-nav-width="${item.width[lang]}"`:''}>${item.key==='search'&&app?'<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg>':item[lang]}</a>`;
   return `<header class="site-header ${app?'app-header':''}"><a class="site-mark" href="/${lang}/concept/" aria-label="Darwin Core Protocol"><span>Darwin Core Protocol</span></a><nav class="site-nav ${app?'app-nav':''}" aria-label="${lang==='es'?'Navegación principal':'Primary navigation'}">${items.map(item=>item.children?`<div class="nav-dropdown${item.key==='records'?' records-dropdown':''}"><a class="nav-trigger ${active(item)?'active':''}" href="/${lang}/${item.route}" aria-expanded="false" aria-controls="${item.key}-menu">${item[lang]}</a><div class="nav-menu" id="${item.key}-menu">${item.children.map(c=>`<a href="/${lang}/${c.route}" class="${c.highlight?'nav-add-finding ':''}${route===c.route?'current':''}" ${route===c.route?'aria-current="page"':''}>${c[lang]}</a>`).join('')}</div></div>`:link(item,app?(item.key==='profile'?'profile-link':'app-section-link'):item.key==='app'?'app-link':'')).join('')}<div class="lang-dropdown"><button class="lang-trigger" type="button" aria-label="${lang==='es'?'Cambiar idioma':'Change language'}" aria-expanded="false" aria-controls="language-menu"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.8 12h16.4M12 3.5c2.2 2.3 3.3 5.1 3.3 8.5S14.2 18.2 12 20.5M12 3.5C9.8 5.8 8.7 8.6 8.7 12s1.1 6.2 3.3 8.5"/></svg></button><div class="lang-menu" id="language-menu">${availableLocales.map(locale=>`<a href="/${locale}/${route}" lang="${locale}" hreflang="${locale}" data-language="${locale}" ${lang===locale?'class="active" aria-current="true"':''}>${locale==='es'?'Español':'English'}</a>`).join('')}</div></div><button class="nav-collapse" type="button" aria-expanded="true" aria-label="${lang==='es'?'Alternar navegación':'Toggle navigation'}">−</button><svg class="nav-cut-border" aria-hidden="true"><line vector-effect="non-scaling-stroke"/></svg></nav></header>`;
 }
 /** Five equal footer columns: logo, About, Tools, Engage and App. */
