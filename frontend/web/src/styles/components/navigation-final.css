@@ -5,9 +5,9 @@ body .site-header .site-nav{position:fixed;top:var(--nav-edge);right:var(--nav-e
 .site-nav>a{width:108px}.site-nav>a[data-nav-width="2"]{width:216px;flex-basis:216px}.site-nav.app-nav>a.app-wide-link{width:216px;flex-basis:216px}
 .site-nav>a.active,.site-nav .nav-trigger.active,.site-nav>a:hover,.site-nav .nav-trigger:hover{z-index:2;border-color:var(--accent);color:var(--ink)}
 .site-nav .nav-dropdown:has(.active){z-index:3}.site-nav .nav-trigger.active{outline:1px solid var(--accent);outline-offset:-1px}
-.site-nav>a.app-link,.site-nav>a.profile-link{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-.app-page .site-nav>a.profile-link,.app-page .site-nav .nav-menu a.nav-add-finding{background:var(--accent);border-color:var(--accent);color:var(--bg)}
-.app-page .site-nav>a.profile-link:hover,.app-page .site-nav .nav-menu a.nav-add-finding:hover{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.site-nav>a.app-link,.site-nav>a.profile-link.active{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.app-page .site-nav>a.profile-link.active,.app-page .site-nav .nav-menu a.nav-add-finding{background:var(--accent);border-color:var(--accent);color:var(--bg)}
+.app-page .site-nav>a.profile-link.active:hover,.app-page .site-nav .nav-menu a.nav-add-finding:hover{background:var(--ink);border-color:var(--ink);color:var(--bg)}
 .app-page .site-mark{color:var(--accent)}
 .app-page .site-mark span{color:inherit}
 .app-page .site-mark:after{background:currentColor}

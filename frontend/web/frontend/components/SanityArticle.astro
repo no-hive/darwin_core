@@ -27,9 +27,12 @@ const related = (post.relatedArticles || []).filter((item) => item?.slug?.curren
   .sanity-body :global(blockquote) {margin: 1.5rem 0; padding-left: 1rem; border-left: 3px solid currentColor;}
   .sanity-body :global(.sanity-pullquote) {border: 0; padding: 0; text-align: center; font-size: 1.5em;}
   .sanity-body :global(pre), .sanity-body :global(.sanity-table) {overflow-x: auto; max-width: 100%;}
-  .sanity-body :global(pre) {padding: 1rem; background: #0d1117; color: #e6edf3;}
-  .sanity-body :global(table) {border-collapse: collapse; min-width: 100%;}
-  .sanity-body :global(td) {border: 1px solid currentColor; padding: .5rem;}
-  .sanity-related {margin-top: 3rem;}
+  .sanity-body :global(pre) {padding: 1rem; border: 1px solid color-mix(in srgb,currentColor 28%,transparent); background: #0d1117; color: #e6edf3;}
+  .sanity-body :global(table) {border-collapse: collapse; min-width: 100%; border: 1px solid color-mix(in srgb,currentColor 35%,transparent);}
+  .sanity-body :global(th), .sanity-body :global(td) {border-bottom: 1px solid color-mix(in srgb,currentColor 28%,transparent); padding: .65rem; text-align:left;}
+  .sanity-related {margin-top: 3rem; border-top:1px solid color-mix(in srgb,currentColor 25%,transparent); padding-top:2rem;}
+  .sanity-related ul {display:grid; gap:.75rem; margin:1rem 0 0; padding:0; list-style:none;}
+  .sanity-related li {padding:1rem; border:1px solid color-mix(in srgb,currentColor 25%,transparent);}
+  .sanity-related li:hover {border-color:currentColor; background:color-mix(in srgb,currentColor 5%,transparent);}
   .sanity-subtitle {font-size: 1.25rem;}
 </style>

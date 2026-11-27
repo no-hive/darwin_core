@@ -1,5 +1,6 @@
 /* Search-first explorer layout, scoped to DarwinScan. */
-.scan-hero{position:relative;isolation:isolate;z-index:10;box-sizing:border-box;aspect-ratio:4/1;min-height:0;padding:clamp(16px,3vw,36px);border:1px solid var(--line);background:var(--bg);display:flex;flex-direction:column;justify-content:center}
+.prototype-main:has(.scan-hero){margin-top:64px}
+.scan-hero{position:relative;isolation:isolate;z-index:10;box-sizing:border-box;aspect-ratio:16/5;min-height:0;padding:clamp(16px,3vw,36px);border:1px solid var(--line);background:var(--bg);display:flex;flex-direction:column;justify-content:center}
 /* The new fern artwork fills the existing 4:1 viewport without stretching.
    0% transparency = 100% opacity, applied only to the background image. */
 .scan-hero::before{content:"";position:absolute;inset:-1px;clip-path:inset(1px);z-index:-1;pointer-events:none;background-image:url('/assets/search-fern-data-mosaic.png');background-repeat:no-repeat;background-size:cover;background-position:center;opacity:.7}
@@ -11,7 +12,7 @@
 .scan-search .scan-search-input input{height:58px;min-height:58px;padding:0 18px;border:0;background:var(--bg);font:15px var(--body);color:var(--ink)}
 .scan-search .proto-button{width:62px;min-height:58px;padding:0;border:0;margin:0}
 .scan-search button svg{width:23px;height:23px;fill:none;stroke:currentColor;stroke-width:1.5}
-.scan-categories{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;padding:0;border:0;margin:26px 0 0}
+.scan-categories{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;padding:0;border:0;margin:64px 0 0}
 .scan-categories legend{font:12px/1.5 var(--body);color:var(--muted);padding:0;margin-bottom:12px}
 .scan-categories label{position:relative;min-width:0;cursor:pointer}
 .scan-categories input{position:absolute;width:1px;height:1px;opacity:0}
@@ -41,7 +42,7 @@
 .scan-result-detail{font:13px/1.6 var(--body);color:var(--muted);display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
 .scan-result-arrow{color:var(--accent)}
 @media(max-width:800px){.scan-result{grid-template-columns:90px minmax(0,1fr) 18px;gap:14px}.scan-result-detail{display:none}.scan-categories label>span{padding:16px}.scan-categories strong{font-size:13px}}
-@media(max-width:600px){.scan-hero{padding:12px}.scan-intro{font-size:14px;margin-bottom:22px}.scan-search{grid-template-columns:minmax(0,1fr) 52px}.scan-search .scan-search-input input{height:54px;min-height:54px;font-size:16px;padding:0 12px}.scan-search .proto-button{width:52px;min-height:54px}.scan-categories{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:20px}.scan-categories label>span{min-height:62px;padding:14px}.scan-categories small{font-size:23px}.scan-start{min-height:120px;padding-top:28px}.scan-result{grid-template-columns:1fr 18px;padding:16px}.scan-result-type{grid-column:1;grid-row:1}.scan-result-identity{grid-column:1;grid-row:2}.scan-result-arrow{grid-column:2;grid-row:2}.scan-results-header{align-items:flex-start}.scan-results-header>.proto-link{font-size:12px;white-space:nowrap}}
+@media(max-width:600px){.prototype-main:has(.scan-hero){margin-top:40px}.scan-hero{padding:12px}.scan-intro{font-size:14px;margin-bottom:22px}.scan-search{grid-template-columns:minmax(0,1fr) 52px}.scan-search .scan-search-input input{height:54px;min-height:54px;font-size:16px;padding:0 12px}.scan-search .proto-button{width:52px;min-height:54px}.scan-categories{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:40px}.scan-categories label>span{min-height:62px;padding:14px}.scan-categories small{font-size:23px}.scan-start{min-height:120px;padding-top:28px}.scan-result{grid-template-columns:1fr 18px;padding:16px}.scan-result-type{grid-column:1;grid-row:1}.scan-result-identity{grid-column:1;grid-row:2}.scan-result-arrow{grid-column:2;grid-row:2}.scan-results-header{align-items:flex-start}.scan-results-header>.proto-link{font-size:12px;white-space:nowrap}}
 /* Live suggestions sit below the searchbar without re-rendering the page. */
 .scan-search{position:relative;z-index:5}
 .scan-suggestions{position:absolute;z-index:30;top:calc(100% + 6px);left:-1px;right:-1px;max-height:min(520px,65svh);overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;border:1px solid var(--line);background:var(--bg);color:var(--ink)}

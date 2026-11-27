@@ -86,8 +86,6 @@ for (const lang of locales) {
     await expect(page).toHaveURL(new RegExp(href + '$'));
     await expect(page.locator('.article-body')).toBeVisible();
     await expect(page.locator('.related-card')).not.toHaveCount(0);
-    await page.locator('.article-back').click();
-    await expect(page).toHaveURL(new RegExp(`/${lang}/blog/$`));
   });
 
   for (const [from, to] of Object.entries(REDIRECTS)) {

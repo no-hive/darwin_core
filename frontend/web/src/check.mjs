@@ -112,7 +112,7 @@ for(const f of files.filter(f=>f.endsWith('.html'))){
    if(copy.beginningImage)assert.equal(visuals[0].querySelector('[data-about-swap-layer="next"] img')?.getAttribute('src'),copy.beginningImage.src);
  }
  if(/\/blog\/$/.test(route)){assert(!d.querySelector('.blog-crumbs'));assert.equal(d.querySelectorAll('.story-row[data-url]').length,catalogs[lang].length);}
- if(/\/blog\/[^/]+\/$/.test(route)){assert(d.querySelector('.article-back'));assert(!d.querySelector('.article-crumbs'));assert(d.querySelector('.article-body'));}
+ if(/\/blog\/[^/]+\/$/.test(route)){assert(!d.querySelector('.article-back'));assert(!d.querySelector('.article-crumbs'));assert(d.querySelector('.article-body'));}
  if(/\/app\/profile\/$/.test(route)){
    if(appRenderer()==='react'){assert(d.querySelector('main.mantine-app'));assert(d.querySelector('#app-react-data'));assert(d.querySelector('#profile-name'));}
    else {assert(d.querySelector('.profile-column'));assert(!d.querySelector('.profile-head'));}

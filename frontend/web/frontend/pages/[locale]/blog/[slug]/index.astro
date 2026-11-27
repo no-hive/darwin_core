@@ -24,7 +24,6 @@ const labels = ARTICLE_UI[locale];
 ---
 <ArticleLayout locale={locale} article={article}>
   <main class="article-main">
-    <a class="article-back" href={`/${locale}/blog/`}>{labels.back}</a>
     <article>
       <header class="article-header">
         <div class="article-meta"><span class="article-type">{labels.kinds[article.type]}</span><time class="article-date" datetime={article.isoDate}>{article.date}</time></div>

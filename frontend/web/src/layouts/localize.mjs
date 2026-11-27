@@ -105,5 +105,4 @@ export function preparePage(document,lang,route,articles){
    document.querySelector('.blog-crumbs')?.remove();
    prepareBlog(document,articles,lang);
  }
- if(es&&document.querySelector('.article-back'))document.querySelector('.article-back').textContent='← Volver al blog';
 }

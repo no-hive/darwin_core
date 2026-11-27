@@ -78,12 +78,13 @@ body.about-scroll-page{display:flow-root}
 :is(.concept-page,.community-page,.future-page) .about-action:hover{border-color:var(--ink)}
 :is(.concept-page,.community-page,.future-page) .about-action:focus-visible{outline:1px solid var(--accent);outline-offset:5px}
 @media(max-width:700px){:is(.concept-page,.community-page,.future-page) .about-action{height:112px;min-height:112px;padding:16px 20px}:is(.concept-page,.community-page,.future-page) .cta-title{font-size:clamp(22px,7vw,28px)}}
-.article-back{display:inline-flex;gap:8px;color:var(--muted);font-size:12px}.article-main{width:min(720px,90%)}.article-body{width:100%}.article-inline-media{margin:40px 0}.article-inline-media img{display:block;width:100%;height:auto;max-height:480px;object-fit:contain}
+.article-main{width:min(720px,90%)}.article-body{width:100%}.article-inline-media{margin:40px 0}.article-inline-media img{display:block;width:100%;height:auto;max-height:480px;object-fit:contain}
 
 /* Match Tools card interaction while retaining the About CTA palettes. */
 :is(.concept-page,.community-page,.future-page) .about-action{transition:background .2s,border-color .2s,transform .2s}
-:is(.concept-page,.community-page,.future-page) .about-action:hover,:is(.concept-page,.community-page,.future-page) .about-action:focus-visible{transform:translateX(-6px);border-color:var(--ink);background:color-mix(in srgb,var(--ink) 5%,var(--bg))}
+:is(.concept-page,.community-page,.future-page) .about-action:hover,:is(.concept-page,.community-page,.future-page) .about-action:focus-visible{transform:translateX(8px);border-color:var(--ink);background:color-mix(in srgb,var(--ink) 5%,var(--bg))}
 @media(prefers-reduced-motion:reduce){:is(.concept-page,.community-page,.future-page) .about-action{transition:none}:is(.concept-page,.community-page,.future-page) .about-action:hover,:is(.concept-page,.community-page,.future-page) .about-action:focus-visible{transform:none}}
+
 
 /* Both CTA variants share the same neutral styling and broad shaftless chevron. */
 :is(.concept-page,.community-page,.future-page) .cta-copy{flex:1}

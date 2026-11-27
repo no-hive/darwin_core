@@ -20,7 +20,7 @@ const { blocks, body } = Astro.props;
   .sanity-body :global(figcaption) {margin-top: .5rem; font-size: .875rem;}
   .sanity-body :global(.sanity-pullquote) {text-align: center; font-size: 1.5em;}
   .sanity-body :global(pre), .sanity-body :global(.sanity-table) {overflow-x: auto; max-width: 100%;}
-  .sanity-body :global(pre) {padding: 1rem; background: #0d1117; color: #e6edf3;}
-  .sanity-body :global(table) {border-collapse: collapse; min-width: 100%;}
-  .sanity-body :global(td) {border: 1px solid currentColor; padding: .5rem;}
+  .sanity-body :global(pre) {padding: 1rem; border: 1px solid color-mix(in srgb,currentColor 28%,transparent); background: #0d1117; color: #e6edf3;}
+  .sanity-body :global(table) {border-collapse: collapse; min-width: 100%; border: 1px solid color-mix(in srgb,currentColor 35%,transparent);}
+  .sanity-body :global(th), .sanity-body :global(td) {border-bottom: 1px solid color-mix(in srgb,currentColor 28%,transparent); padding: .65rem; text-align:left;}
 </style>
