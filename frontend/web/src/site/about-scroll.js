@@ -30,14 +30,14 @@
    to:entry.content.querySelector('[data-about-swap-to]'),
    base:entry.visual.querySelector('[data-about-swap-layer="base"]'),
    next:entry.visual.querySelector('[data-about-swap-layer="next"]'),
-   enabled:false,boundary:Infinity,ready:false,shown:null
+   enabled:false,ready:false,shown:null
  }));
  let swapFrame=0;
  function syncSwaps(){
    swapFrame=0;
    for(const swap of swaps){
-     const frame=swap.visual.getBoundingClientRect();
-     const next=swap.enabled&&swap.ready&&scrollY+frame.top+frame.height/2>=swap.boundary;
+     const target=swap.to.getBoundingClientRect();
+     const next=swap.enabled&&swap.ready&&target.top+collapsedHeight(swap.to)/2<=innerHeight*.618;
      if(next===swap.shown)continue;
      swap.shown=next;
      swap.visual.classList.toggle('is-next-visible',next);
@@ -49,8 +49,6 @@
    for(const swap of swaps){
      swap.enabled=getComputedStyle(swap.visual).position==='sticky'
        &&getComputedStyle(swap.section).display==='grid';
-     const from=swap.from.getBoundingClientRect(),to=swap.to.getBoundingClientRect();
-     swap.boundary=scrollY+(from.top+collapsedHeight(swap.from)/2+to.top+collapsedHeight(swap.to)/2)/2;
    }
    syncSwaps();
  }
