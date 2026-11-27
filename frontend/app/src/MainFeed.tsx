@@ -34,7 +34,7 @@ export function MainFeed({repository,locale,articles,now}:{repository:AppReposit
  return <div className="main-timeline"><Heading title={ui(locale,'Scroll to find where the world needs you','Desplázate para encontrar dónde te necesita el mundo')}/><div className="main-feed-layout">
   <section className="main-timeline-column" aria-label={ui(locale,'Community feed','Actividad de la comunidad')}>
    <Group mb="md" justify="space-between"><Text fw={600}>{ui(locale,'From your community','De tu comunidad')}</Text><Badge variant="light" color="gray">{events.length}</Badge></Group>
-   <Stack gap="md" className="main-event-list" aria-live="polite">{events.length?events.map(event=><JournalEntry key={event.id} event={event} repository={repository} locale={locale}/>):<Empty>{ui(locale,'No events for these sources and dates.','No hay eventos para estas fuentes y fechas.')}</Empty>}</Stack>
+   <Stack gap="md" className="main-event-list" aria-live="polite">{events.length?events.map(event=><JournalEntry key={event.id} event={event} repository={repository} locale={locale} minimal/>):<Empty>{ui(locale,'No events for these sources and dates.','No hay eventos para estas fuentes y fechas.')}</Empty>}</Stack>
   </section>
   <aside className="main-feed-sidebar" aria-label={ui(locale,'Groups and feed filters','Grupos y filtros de actividad')}>
    <Paper withBorder radius="lg" className="feed-controls-frame">

@@ -6,11 +6,19 @@ import {Icon,Source,ui} from './ui';
 import type {AppRepository} from './repository';
 import type {Locale} from './types';
 /** Shared event presentation for Journal and Main. */
-export function JournalEntry({event,repository,locale}:{event:FeedEvent;repository:AppRepository;locale:Locale}){
+export function JournalEntry({event,repository,locale,minimal=false}:{event:FeedEvent;repository:AppRepository;locale:Locale;minimal?:boolean}){
  const app=repository.model,item=event.item;
  const linkGroup=(id:string)=><Anchor href={app.link('groups',id,locale)}><Source>{app.groups().find((g:any)=>g.id===id)?.name}</Source></Anchor>;
  const displayDate=(date:string,label:string)=>date?<Text component="span" size="sm" c="dimmed">{label} <time dateTime={date}><Source>{date.slice(0,10)}</Source></time></Text>:null;
  const href=event.type==='finding'?app.link('records',item.id,locale):event.type==='voting'?app.proposalLink(item,locale):event.type==='article'?`/${locale}/blog/${item.slug}/`:event.type==='research'?app.link('research',item.id,locale):app.link('groups',item.groupId||item.id,locale)+'?tab=journal';
+ if(minimal){
+  const labels={finding:['Finding','Hallazgo'],voting:['Voting','Votación'],article:['Article','Artículo'],research:['Research','Investigación'],news:['Group update','Novedad del grupo']} as const;
+  const icons={finding:'record',voting:'ballot',article:'article',research:'research',news:'activity'};
+  const title=event.type==='finding'?findingName(item):event.type==='voting'?proposalTitle(item,locale):text(item.title)||app.groups().find((g:any)=>g.id===(item.groupId||item.id))?.name||labels.news[0];
+  const summary=event.type==='finding'?item.occurrenceRemarks:event.type==='article'?item.dek:event.type==='news'?item.news||item.description:item.description;
+  const group=app.groups().find((g:any)=>g.id===event.groupIds[0]);
+  return <Paper component="article" className="main-event main-event-minimal" withBorder data-event={event.type}><div className="main-event-icon"><Icon name={icons[event.type]} size={20}/></div><div className="main-event-body"><Text className="main-event-meta" size="sm" c="dimmed">{ui(locale,...labels[event.type])}{group&&<> {ui(locale,'in','en')} <Source>{group.name}</Source></>}</Text><Text component="h2" className="main-event-title"><Anchor href={href}><Source>{title}</Source></Anchor></Text>{summary&&<Text className="main-event-excerpt" size="sm" c="dimmed"><Source>{text(summary)}</Source></Text>}</div></Paper>;
+ }
  const check=event.type==='finding'?app.journal.verification(item):null;
  return <Paper component="article" className={'main-event main-event-'+event.type} withBorder radius="md" data-event={event.type}>
  <Box className="main-event-body" miw={0}>

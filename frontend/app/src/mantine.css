@@ -371,3 +371,14 @@
 @media(min-width:801px){.mantine-app .explorer-banner{border:0;border-radius:16px;background:#020d06}.mantine-app .explorer-banner:before{opacity:.55}.mantine-app .explorer-search input{border-radius:12px;background:#001c0c}.mantine-app .explorer-search .mantine-Input-section[data-position=right]{width:64px}.mantine-app .explorer-search .mantine-ActionIcon-root{border-radius:12px!important}}
 @media(min-width:801px){.mantine-app:has(.explorer-banner){padding-top:0}.mantine-app:has(.explorer-banner) .category-strip{margin-top:var(--nav-edge)}.mantine-app:has(.explorer-banner) .search-idle{width:100%;text-align:center}}
 .mantine-app:not(:has(.explorer-banner)){width:calc(100% - 4 * var(--nav-edge) + 2px);background:#06170c;--bg:#06170c;border-color:color-mix(in srgb,#c7ff00 42%,#1d5033)}
+.mantine-app .main-event-list{gap:0}
+.mantine-app .main-event-minimal{display:grid;grid-template-columns:40px minmax(0,1fr);gap:16px;padding:24px 16px;border:0;border-bottom:1px solid var(--rule);background:transparent}
+.mantine-app .main-event-minimal:hover{background:var(--panel-hover)}
+.mantine-app .main-event-minimal .main-event-icon{display:grid;place-items:center;width:40px;height:40px;color:var(--accent);border:1px solid var(--rule);background:transparent}
+.mantine-app .main-event-minimal .main-event-meta{display:block;margin:0 0 8px;line-height:1.4}
+.mantine-app .main-event-minimal .main-event-title{margin:0;font-size:17px;line-height:1.35}
+.mantine-app .main-event-minimal .main-event-excerpt{max-height:6.4em;overflow:hidden;margin-top:8px;line-height:1.6;mask-image:linear-gradient(to bottom,#000 50%,transparent 100%)}
+.mantine-app :is(.feed-controls-frame,.finding-preview-card){background:#020f08;border:1px solid color-mix(in srgb,#c7ff00 42%,#1d5033)}
+.mantine-app :is(.mantine-Combobox-dropdown,.mantine-Select-dropdown){z-index:300;max-height:280px;overflow-y:auto;background:#06170c;border:1px solid color-mix(in srgb,#c7ff00 42%,#1d5033);color:#efffe8}
+.mantine-app :is(.mantine-Combobox-option,.mantine-Select-option){padding:10px 12px;cursor:pointer;color:#efffe8}
+.mantine-app :is(.mantine-Combobox-option,.mantine-Select-option)[data-combobox-selected],.mantine-app :is(.mantine-Combobox-option,.mantine-Select-option):hover{background:#14351c}
