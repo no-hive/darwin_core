@@ -110,7 +110,9 @@ body.about-scroll-page{display:flow-root}
 
 @media(min-width:701px){
   :is(.concept-page,.community-page,.future-page){--about-column-gap:60px}
-  :is(.concept-page,.community-page,.future-page) :is(.scroll-section,.scroll-section:first-child){grid-template-columns:minmax(0,1.618fr) minmax(0,1fr);column-gap:var(--about-column-gap);padding-inline:var(--nav-edge)}
+  :is(.concept-page,.community-page,.future-page) .scroll-section.image-left{grid-template-columns:minmax(0,1.618fr) minmax(0,1fr)}
+  :is(.concept-page,.community-page,.future-page) .scroll-section.image-right{grid-template-columns:minmax(0,1fr) minmax(0,1.618fr)}
+  :is(.concept-page,.community-page,.future-page) .scroll-section{column-gap:var(--about-column-gap);padding-inline:var(--nav-edge)}
   :is(.concept-page,.community-page,.future-page) .scroll-visual{padding:0}
   :is(.concept-page,.community-page,.future-page) .scroll-content{padding-inline:0}
 }
