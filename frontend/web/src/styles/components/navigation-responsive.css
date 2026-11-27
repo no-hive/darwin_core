@@ -1,5 +1,6 @@
 /* App navigation accommodates Governance without clipping its dropdown. */
 @media(min-width:601px) and (max-width:1100px){
+ :root{--nav-edge:30px}
  body .site-header .site-nav.app-nav{width:calc(100vw - 2 * var(--nav-edge))}
  .site-nav.app-nav>a,.site-nav.app-nav>a.app-wide-link,.site-nav.app-nav>.nav-dropdown,.site-nav.app-nav>.lang-dropdown{width:auto;min-width:0;flex:1 1 0}
  .app-header .site-mark span{visibility:hidden}

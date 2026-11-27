@@ -2,7 +2,7 @@
    The inline html first-paint color must not show through a collapsed margin. */
 body.about-scroll-page{display:flow-root}
 :is(.concept-page,.community-page,.future-page) .about-section-divider{width:40%;height:0;margin:0 auto;padding:0;border:0;border-top:1px solid var(--line)}
-.about-scroll-page .scroll-section{min-height:133.333svh}.about-scroll-page .scroll-visual{top:calc(var(--nav-edge) + 78px);height:calc(100svh - var(--nav-edge) - 94px)}
+.about-scroll-page .scroll-section{min-height:133.333svh}.about-scroll-page .scroll-visual{top:calc(var(--nav-height) + 2 * var(--nav-edge));height:calc(100svh - var(--nav-height) - 3 * var(--nav-edge))}
 .about-scroll-page .scroll-visual img{object-fit:contain}.about-scroll-page .scroll-content{min-height:133.333svh;gap:8vh}
 /* Two images occupy the same existing portrait frame; swapping adds no height. */
 .about-scroll-page .about-visual-stage{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,1fr);width:100%;height:100%}
@@ -40,7 +40,7 @@ body.about-scroll-page{display:flow-root}
 @media(min-width:701px){
   /* The text block and image share a center line; include the text's height
      instead of aligning its top edge with the middle of the picture. */
-  .about-scroll-page:is(.concept-page,.community-page,.future-page) .scroll-content{padding-top:var(--about-text-start,max(0px,calc((100svh - var(--nav-edge) - 94px - var(--about-first-block-height,0px))/2)))}
+  .about-scroll-page:is(.concept-page,.community-page,.future-page) .scroll-content{padding-top:var(--about-text-start,max(0px,calc((100svh - var(--nav-height) - 3 * var(--nav-edge) - var(--about-first-block-height,0px))/2)))}
 }
 .concept-privacy>.concept-explainer+p{margin-top:24px}
 .audience-image-placeholder{display:grid;place-items:center;box-sizing:border-box;width:var(--audience-image-width,100%);max-width:100%;height:var(--audience-image-height,66px);margin-top:28px;border:1px solid var(--line);background:color-mix(in srgb,var(--accent) 3%,var(--bg));overflow:hidden}
@@ -107,3 +107,11 @@ body.about-scroll-page{display:flow-root}
 .future-page .scroll-copy h2{font-size:clamp(30px,3vw,44px);line-height:1.08;letter-spacing:-.035em}
 .future-page .scroll-copy p{font-size:var(--type-body);line-height:1.65}
 :is(.concept-page,.community-page,.future-page) .about-action[data-cta-image="future"]{--cta-image:url('/assets/future-digital-fish.webp');--cta-image-position:50% 56%}
+
+@media(min-width:701px){
+  :is(.concept-page,.community-page,.future-page){--about-column-gap:60px}
+  :is(.concept-page,.community-page,.future-page) :is(.scroll-section,.scroll-section:first-child){grid-template-columns:minmax(0,1.618fr) minmax(0,1fr);column-gap:var(--about-column-gap);padding-inline:var(--nav-edge)}
+  :is(.concept-page,.community-page,.future-page) .scroll-visual{padding:0}
+  :is(.concept-page,.community-page,.future-page) .scroll-content{padding-inline:0}
+}
+@media(min-width:701px) and (max-width:1100px){:is(.concept-page,.community-page,.future-page){--about-column-gap:40px}}
