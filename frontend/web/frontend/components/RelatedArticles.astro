@@ -12,7 +12,7 @@ const labels = ARTICLE_UI[locale];
     <h2 id="related-articles-heading">{labels.related}</h2>
     <div class="related-grid">{matches.map(({ article: related }) => (
       <a class="related-card" href={`/${locale}/blog/${related.slug}/`}>
-        <img src={related.image} width={related.width} height={related.height} alt={related.alt} loading="lazy" />
+        <span class="related-media"><img src={related.image} width={related.width} height={related.height} alt={related.alt} loading="lazy" /></span>
         <div class="related-copy"><span class="related-kind">{labels.kinds[related.type]}</span><h3>{text(related.title)}</h3><p>{text(related.dek)}</p></div>
       </a>
     ))}</div>
