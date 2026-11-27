@@ -10,7 +10,7 @@ for(const file of fs.readdirSync('dist',{recursive:true}).filter(file=>/^(en|es)
 for(const lang of ['en','es']){
  const parse=route=>parseHTML(fs.readFileSync(`dist/${lang}/${route}index.html`,'utf8')).document;
  const concept=parse('');assert(concept.querySelector('.audience-image-placeholder img'));
- const community=parse('deeper/');assert.equal(community.querySelectorAll('.about-inline-image').length,0);assert.deepEqual([...community.querySelectorAll('.about-action')].map(a=>a.getAttribute('href')),[`/${lang}/app/`,`/${lang}/ocean/`]);
+ const community=parse('deeper/');assert.equal(community.querySelectorAll('.about-inline-image').length,0);assert.deepEqual([...community.querySelectorAll('.about-action')].map(a=>a.getAttribute('href')),[`/${lang}/ocean/`,`/${lang}/app/`]);
  assert(!community.querySelector('.concept-explainer[open]'));
  const home=parse('app/search/');assert(!home.querySelector('.scan-results'));assert(home.querySelector('[data-scan-query]'));
  assert(fs.readFileSync(`dist/${lang}/app/darwinscan/index.html`,'utf8').includes('location.search+location.hash'));

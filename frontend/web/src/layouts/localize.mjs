@@ -75,6 +75,7 @@ export function preparePage(document,lang,route,articles){
    }
    const next='community/';
    const label=es?'Leer más sobre la comunidad':'Read more about community';
+   const futureLabel=es?'Lee sobre el futuro':'Read about Future';
    const last=[...document.querySelectorAll('[data-about-story]')].at(-1);
    if(last)last.outerHTML=`<div class="about-actions"><a class="about-action about-action-primary" data-cta-image="app" href="/${lang}/app/">${es?'Probar la app':'Try our app'}${ctaChevron}</a><a class="about-action about-action-secondary" href="/${lang}/${next}">${label}${ctaChevron}</a></div>`;
    if(route==='concept/'){
@@ -82,7 +83,7 @@ export function preparePage(document,lang,route,articles){
      actions.parentElement.classList.add('concept-final-content');
      const contribution=conceptIntro[lang];
      actions.insertAdjacentHTML('beforebegin',`<article class="scroll-copy concept-contribution" data-about-story><h2>${contribution.contributionHeading}</h2><p>${contribution.contributionText}</p></article>`);
-     actions.innerHTML=`<a class="about-action about-action-primary" data-cta-image="app" href="/${lang}/app/"><span class="cta-copy"><strong class="cta-title">${es?'Probar la app':'Try our app'}</strong></span>${ctaChevron}</a><a class="about-action about-action-secondary" data-cta-image="community" href="/${lang}/community/"><span class="cta-copy"><strong class="cta-title">${label}</strong></span>${ctaChevron}</a>`;
+     actions.innerHTML=`<a class="about-action about-action-primary" data-cta-image="community" href="/${lang}/community/"><span class="cta-copy"><strong class="cta-title">${label}</strong></span>${ctaChevron}</a><a class="about-action about-action-secondary" data-cta-image="future" href="/${lang}/future/"><span class="cta-copy"><strong class="cta-title">${futureLabel}</strong></span>${ctaChevron}</a>`;
      const finalSection=actions.closest('.scroll-section');
      const deer=finalSection.querySelector('.scroll-visual img');
      const deerImage={src:deer.getAttribute('src'),alt:deer.getAttribute('alt')};

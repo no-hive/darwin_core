@@ -14,11 +14,11 @@ const mobileVisual=image=>`<figure class="about-mobile-scene">${visual(image)}</
 
 function storyActions(lang,copy){
   const actions=[
-    [copy.appAction,'app','primary'],
-    [copy.futureAction,'future','secondary'],
-    [copy.blogAction,'blog','secondary']
+    [copy.futureAction,'future'],
+    [copy.appAction,'app'],
+    [copy.blogAction,'blog']
   ];
-  return `<div class="about-actions">${actions.filter(([label])=>label).map(([label,page,variant])=>`<a class="about-action about-action-${variant}" data-cta-image="${page}" href="/${lang}/${page}/"><span class="cta-copy"><strong class="cta-title">${esc(label)}</strong></span>${ctaChevron}</a>`).join('')}</div>`;
+  return `<div class="about-actions">${actions.filter(([label])=>label).map(([label,page],index)=>`<a class="about-action about-action-${index===0?'primary':'secondary'}" data-cta-image="${page}" href="/${lang}/${page}/"><span class="cta-copy"><strong class="cta-title">${esc(label)}</strong></span>${ctaChevron}</a>`).join('')}</div>`;
 }
 
 export function configureAboutSwap(section,from,to,image){
