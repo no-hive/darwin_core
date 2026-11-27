@@ -238,6 +238,11 @@
 .mantine-app .research-row{border-color:var(--rule)}.mantine-app .research-row:hover{background:var(--panel-hover)}.mantine-app .finding-peek{border-color:var(--accent)!important;border-radius:var(--radius)!important}
 .mantine-app .finding-upload-link{padding:0;border:0;background:transparent;color:var(--accent);font:600 12px/1.4 'Albert Sans',sans-serif;cursor:pointer}.mantine-app .finding-upload-link:hover{text-decoration:underline}.mantine-app .finding-upload-link:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 
+/* All actionable App surfaces use the same quiet category-style hover wash. */
+.mantine-app :is(.mantine-Button-root,.mantine-ActionIcon-root,.mantine-Menu-item,.mantine-Select-option,.mantine-Combobox-option,.mantine-Tabs-tab,.mantine-Chip-label,.mantine-SegmentedControl-label,.mantine-Accordion-control,[role="button"]):not(:disabled):not([data-disabled]):hover{background:var(--panel-hover)}
+.mantine-app :is(a,button,[role="link"]):not(:disabled):not([data-disabled]):hover{background-color:var(--panel-hover)}
+.mantine-app :is(.mantine-Tabs-tab[data-active],.mantine-Chip-label[data-checked],.mantine-SegmentedControl-input:checked+.mantine-SegmentedControl-label):hover{background:var(--panel-active)}
+
 /* Compact self-observation publication form. Mock UI only; shared chrome is untouched. */
 .mantine-app .finding-core-page{max-width:1160px}
 .mantine-app .finding-core-layout{display:grid;grid-template-columns:minmax(0,740px) minmax(280px,340px);gap:20px;align-items:start}
