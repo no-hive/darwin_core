@@ -360,7 +360,7 @@
 .mantine-app .finding-verification-panel .mantine-Anchor-root{font-size:.875rem}
 
 /* Search is a free-standing explorer rather than a framed work surface. */
-.mantine-app:has(.explorer-banner){padding:32px 0 48px;border:0;background:transparent;--bg:#08150d}
+.mantine-app:has(.explorer-banner){padding:32px 0 48px;border:0;background:#08150d;--bg:#08150d}
 .mantine-app:has(.explorer-banner) .category-strip{margin-top:64px}
 .mantine-app:has(.explorer-banner) .search-idle{padding:32px 20px}
 @media(max-width:800px){.mantine-app:has(.explorer-banner){padding:16px 0 36px}.mantine-app:has(.explorer-banner) .category-strip{margin-top:40px}.mantine-app:has(.explorer-banner) .search-idle{padding:24px 16px}}
