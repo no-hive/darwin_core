@@ -15,7 +15,7 @@ if(!entry)throw Error('The application client entry was not emitted.');
 const filename=path.basename(entry[0]);
 // Scope the library reset/components to App content. The original navigation
 // and footer retain their current shared stylesheet and markup.
-const componentStyles=['global','default-css-variables','baseline','ActionIcon','Alert','Anchor','Avatar','Badge','Button','Checkbox','Chip','CloseButton','Divider','Group','InlineInput','Input','Loader','Menu','Modal','ModalBase','Overlay','Paper','Popover','Progress','Radio','SegmentedControl','SimpleGrid','Slider','Stack','Switch','Table','Tabs','ThemeIcon','Typography','UnstyledButton'];
+const componentStyles=['global','default-css-variables','baseline','ActionIcon','Alert','Anchor','Avatar','Badge','Button','Checkbox','Chip','CloseButton','Combobox','Divider','Group','InlineInput','Input','Loader','Menu','Modal','ModalBase','Overlay','Paper','Popover','Progress','Radio','SegmentedControl','SimpleGrid','Slider','Stack','Switch','Table','Tabs','ThemeIcon','Typography','UnstyledButton'];
 const scope=postcss.atRule({name:'scope',params:'(.mantine-app)'});
 for(const name of componentStyles)scope.append(postcss.parse(await readFile(path.join(root,'node_modules/@mantine/core/styles',`${name}.css`),'utf8')).nodes);
 const custom=await readFile(path.join(root,'../app/src/mantine.css'),'utf8');
