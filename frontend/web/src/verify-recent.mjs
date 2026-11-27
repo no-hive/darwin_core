@@ -10,13 +10,12 @@ for(const file of fs.readdirSync('dist',{recursive:true}).filter(file=>/^(en|es)
 for(const lang of ['en','es']){
  const parse=route=>parseHTML(fs.readFileSync(`dist/${lang}/${route}index.html`,'utf8')).document;
  const concept=parse('');assert(concept.querySelector('.audience-image-placeholder img'));
- const community=parse('deeper/');assert.equal(community.querySelectorAll('.about-inline-image').length,1);assert(community.querySelector('.about-inline-image').closest('[data-about-story]').querySelector('h2').textContent.includes(lang==='es'?'líquidas':'Liquid'));assert.deepEqual([...community.querySelectorAll('.about-action')].map(a=>a.getAttribute('href')),[`/${lang}/app/`,`/${lang}/ocean/`]);
+ const community=parse('deeper/');assert.equal(community.querySelectorAll('.about-inline-image').length,0);assert.deepEqual([...community.querySelectorAll('.about-action')].map(a=>a.getAttribute('href')),[`/${lang}/app/`,`/${lang}/ocean/`]);
  assert(!community.querySelector('.concept-explainer[open]'));
  const home=parse('app/search/');assert(!home.querySelector('.scan-results'));assert(home.querySelector('[data-scan-query]'));
  assert(fs.readFileSync(`dist/${lang}/app/darwinscan/index.html`,'utf8').includes('location.search+location.hash'));
 }
 assert(css.includes('.tool-detail-page .article-card-image{height:auto;aspect-ratio:4/3;object-fit:cover}'));
-assert(css.includes('.audience-image-placeholder:hover img'));assert(css.includes('filter:brightness(1.24);opacity:1'));assert(css.includes('.about-inline-image:hover'));
 for(const verb of ['Record your finding','You can record shared findings','You record an endangered species','a black box that records how'])assert.equal(findingNouns(verb),verb);
 assert.equal(findingNouns('Your records and a record.'),'Your findings and a finding.');
 console.log(`OK: ${count} OG images and metadata, footer text, App order/dropdown, Search entry, noun/verb wording, Tools image sizing, hover states and Community double CTA.`);

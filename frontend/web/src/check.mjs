@@ -103,7 +103,7 @@ for(const f of files.filter(f=>f.endsWith('.html'))){
        assert.deepEqual([...details[i].querySelectorAll('.concept-explainer-body p')].map(child=>child.textContent),hint.paragraphs);
        assert(!details[i].hasAttribute('name'),'Explanations expand independently');
      });
-     assert.equal(node.querySelector('.about-inline-media img')?.getAttribute('src'),section.inlineImage?.src,`Inline image belongs to the configured section: ${route}, ${index}`);
+     assert(!node.querySelector('.about-inline-media'),`About copy does not render a horizontal illustration: ${route}, ${index}`);
    });
    const visuals=[...d.querySelectorAll('.scroll-visual')];
    assert.equal(visuals[0].querySelector('img')?.getAttribute('src'),copy.images[0].src);

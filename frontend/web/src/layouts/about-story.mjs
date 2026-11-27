@@ -35,7 +35,7 @@ function story(section,attributes=''){
   const renderedHints=hints.map(hint=>`<details class="concept-explainer"${hint.open?' open':''}><summary><span>${esc(hint.summary)}</span><i aria-hidden="true">+</i></summary><div class="concept-explainer-body" tabindex="0">${paragraphs(hint.paragraphs)}</div></details>`).join('');
   const explanation=hints.length>1?`<div class="story-explainers">${renderedHints}</div>`:renderedHints;
   const followup=section.afterParagraphs?.length?`<div class="about-story-followup" data-about-followup>${paragraphs(section.afterParagraphs)}</div>`:'';
-  return `<article class="scroll-copy${followup?' has-followup':''}" data-about-story ${attributes}><h2>${esc(section.heading)}</h2>${paragraphs(section.paragraphs||[section.text])}${section.inlineImage?`<figure class="about-inline-image about-inline-media" tabindex="0"><img src="${esc(section.inlineImage.src)}" alt="${esc(section.inlineImage.alt)}" loading="lazy"></figure>`:''}${section.imagePlaceholder?`<div class="about-inline-image" role="img" tabindex="0" aria-label="${esc(section.imagePlaceholder)}"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5.5" width="17" height="13"/><circle cx="9" cy="10" r="1.5"/><path d="m4 17 5-4 4 3 3-5 4 6"/></svg></div>`:''}${explanation}${followup}</article>`;
+  return `<article class="scroll-copy${followup?' has-followup':''}" data-about-story ${attributes}><h2>${esc(section.heading)}</h2>${paragraphs(section.paragraphs||[section.text])}${explanation}${followup}</article>`;
 }
 
 /** Shared Community/Future layout; each swap includes its mobile flow image. */

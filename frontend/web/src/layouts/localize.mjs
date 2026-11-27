@@ -62,7 +62,7 @@ export function preparePage(document,lang,route,articles){
      const intro=conceptIntro[lang],firstContent=document.querySelector('.scroll-section .scroll-content');
      firstContent.classList.add('concept-intro-content');
      firstContent.innerHTML=`<article class="scroll-copy concept-intro" data-about-story><h2>${intro.heading}</h2>${intro.paragraphs.map(p=>`<p>${p}</p>`).join('')}<details class="concept-explainer"><summary><span>${intro.summary}</span><i aria-hidden="true">+</i></summary><div class="concept-explainer-body" tabindex="0"><p>${intro.explanation}</p></div></details></article>`;
-     firstContent.insertAdjacentHTML('beforeend',`<article class="scroll-copy concept-audience" data-about-story><h2>${intro.audienceHeading}</h2><p>${intro.audienceText}</p><div class="audience-image-placeholder"><img src="/assets/community-silhouettes-textured.webp" alt="${es?'Siluetas de personas conversando ante un fondo verde luminoso.':'Silhouettes of people talking against a luminous green background.'}"></div></article>`);
+     firstContent.insertAdjacentHTML('beforeend',`<article class="scroll-copy concept-audience" data-about-story><h2>${intro.audienceHeading}</h2><p>${intro.audienceText}</p></article>`);
      const audience=firstContent.querySelector('.concept-audience');
      audience.insertAdjacentHTML('beforebegin',`<article class="scroll-copy concept-issue" data-about-story><h2>${intro.issueHeading}</h2><p>${intro.issueText}</p></article>`);
      configureAboutSwap(firstContent.closest('.scroll-section'),firstContent.querySelector('.concept-issue'),audience,{
