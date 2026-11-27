@@ -8,7 +8,7 @@ Use the format `type(scope): description`, with an imperative description and a 
 
 Supported types: `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `build`, `ci`, `chore`, and `revert`. Use `!` after the scope for breaking changes and explain them in the commit body.
 
-Each commit covers one scope: `web`, `app`, `tools`, `studio`, `protocols`, `docs`, or `repo` for repository-wide configuration. Split work touching multiple scopes into separate commits. Review the staged changes to verify the scope: the message hook validates the format, not the meaning of the changes.
+Each commit covers one scope: `web`, `app`, `tools`, `studio`, `score-as-a-service`, `main-protocol`, `agora-governor-fork`, `docs`, or `repo` for repository-wide configuration. Split work touching multiple scopes into separate commits. Review the staged changes to verify the scope: the message hook validates the format, not the meaning of the changes.
 
 Enable the local commit hook and template after cloning:
 
