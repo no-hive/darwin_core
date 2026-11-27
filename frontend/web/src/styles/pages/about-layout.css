@@ -1,7 +1,7 @@
 /* Contain the header's top margin so About's body paints the top gutter too.
    The inline html first-paint color must not show through a collapsed margin. */
 body.about-scroll-page{--about-nav-height:60px;display:flow-root}
-:is(.concept-page,.community-page,.future-page) .about-section-divider{width:40%;height:0;margin:40px auto;padding:0;border:0;border-top:1px solid var(--line)}
+:is(.concept-page,.community-page,.future-page) .about-section-divider{width:40%;height:0;margin:80px auto;padding:0;border:0;border-top:1px solid var(--line)}
 .about-scroll-page .scroll-section{min-height:133.333svh}.about-scroll-page .scroll-visual{top:calc(var(--about-nav-height) + 2 * var(--nav-edge));height:calc(100svh - var(--about-nav-height) - 3 * var(--nav-edge))}
 .about-scroll-page .scroll-visual img{object-fit:contain}.about-scroll-page .scroll-content{min-height:133.333svh;gap:8vh}
 /* Two images occupy the same existing portrait frame; swapping adds no height. */
@@ -109,11 +109,12 @@ body.about-scroll-page{--about-nav-height:60px;display:flow-root}
 :is(.concept-page,.community-page,.future-page) .about-action[data-cta-image="future"]{--cta-image:url('/assets/future-digital-fish.webp');--cta-image-position:50% 56%}
 
 @media(min-width:701px){
-  :is(.concept-page,.community-page,.future-page){--about-panel-width:min(500px,calc((100vw - 6 * var(--nav-edge)) / 2));--about-column-gap:calc((100vw - 2 * var(--about-panel-width)) / 3)}
+  :is(.concept-page,.community-page,.future-page){--about-panel-width:min(400px,calc((100vw - 6 * var(--nav-edge)) / 2));--about-column-gap:calc((100vw - 2 * var(--about-panel-width)) / 3)}
   :is(.concept-page,.community-page,.future-page) .scroll-section.image-left,:is(.concept-page,.community-page,.future-page) .scroll-section.image-right{grid-template-columns:repeat(2,minmax(0,var(--about-panel-width)))}
   :is(.concept-page,.community-page,.future-page) .scroll-section{column-gap:var(--about-column-gap);padding-inline:var(--about-column-gap)}
   :is(.concept-page,.community-page,.future-page) .scroll-visual{display:grid;align-items:start;justify-items:center;padding:0}
-  :is(.concept-page,.community-page,.future-page) :is(.scroll-visual>img,.about-visual-stage){width:100%;height:min(620px,calc(var(--about-panel-width) * 1.5))}
+  :is(.concept-page,.community-page,.future-page) :is(.scroll-visual>img,.about-visual-stage){width:100%;height:min(600px,calc(var(--about-panel-width) * 1.5))}
   :is(.concept-page,.community-page,.future-page) .scroll-content{padding-inline:0}
   :is(.concept-page,.community-page,.future-page) .scroll-copy{max-width:none}
+  :is(.concept-page,.community-page,.future-page) .about-section-divider + .scroll-section .scroll-content{padding-top:0!important}
 }
