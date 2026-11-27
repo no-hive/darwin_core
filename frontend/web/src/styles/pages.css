@@ -320,7 +320,7 @@ body.app-page .site-header{background:var(--dwc-color-scan-bg)}
 .featured-card,.related-card{box-shadow:none}.featured-card:hover,.featured-card:focus-visible{transform:none;box-shadow:none}.blog-page .story-row.selected{transform:none}.blog-page .story-row{transition:background-color .18s ease,border-color .18s ease,color .18s ease}.story-row:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 @media(max-width:600px){.tools-local-banner{grid-template-columns:1fr;gap:4px;padding:14px 16px}.tool-app .app-privacy{padding:14px 16px}}
 /* App content meets the footer as one continuous frame. */
-body.mantine-app-page main.mantine-app{margin-bottom:0!important}
+body.mantine-app-page main.mantine-app{margin-bottom:0}
 body.mantine-app-page footer.site-footer{margin-top:0}
 .profile-main{width:min(1360px,92%);min-height:calc(100svh - 89px);padding:38px 0 42px}
 .profile-view{grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start;gap:18px;padding-top:0}
