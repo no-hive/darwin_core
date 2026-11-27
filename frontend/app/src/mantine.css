@@ -394,8 +394,12 @@
 .mantine-app .profile-settings-button{position:absolute;top:16px;right:16px}
 .mantine-app .profile-summary-card>.mantine-Group-root{padding-right:40px}
 .mantine-app .profile-summary-radar{margin-top:20px;padding-top:20px;border-top:1px solid var(--rule)}
-.mantine-app .profile-summary-radar .mantine-radar{margin:12px auto 0;background:transparent;border:0}
+.mantine-app .profile-summary-radar .mantine-radar{width:min(100%,440px);margin:12px auto 0;padding:0;background:transparent;border:0}
 .mantine-app .profile-summary-details,.mantine-app .profile-summary-search{margin-top:20px;padding-top:20px;border-top:1px solid var(--rule)}
+.mantine-app .profile-summary-card>.mantine-Group-root{align-items:center}
+.mantine-app .profile-summary-card #profile-name{margin:0;font-size:24px;line-height:1.2;overflow-wrap:anywhere}
+.mantine-app .profile-summary-details{padding-top:0;border-top:0}
+.mantine-app .profile-summary-groups strong{font-size:14px;color:var(--ink)}
 .mantine-app .profile-summary-search>.mantine-Group-root{display:block}
 .mantine-app .profile-summary-search .profile-finder{width:100%}
 .mantine-app .profile-summary-search .mantine-Group-root>.mantine-Button-root{display:none}
