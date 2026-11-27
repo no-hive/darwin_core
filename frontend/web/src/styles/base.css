@@ -55,7 +55,7 @@ h2{font-size:clamp(var(--type-section),4vw,var(--type-display));line-height:1.08
 [data-chart="area"] .chart-area{fill:color-mix(in srgb,var(--accent) 15%,transparent)}
 [data-chart="area"] .chart-line{stroke-width:1}
 [data-chart="step"] .chart-line{stroke-dasharray:3 3;stroke-width:2}
-body{--bg:#0b190e;--ink:#e3e6d5;--muted:#a2b48a;--accent:#b3cf66;--line:#29432b}
+body{--bg:#08150d;--ink:#e3e6d5;--muted:#a2b48a;--accent:#b3cf66;--line:#29432b}
 .identity-card{display:grid;grid-template-columns:86px 1fr;gap:0 23px;align-items:start}
 .identity-copy h2,.activity-card h2{margin:0;color:var(--ink);font:400 var(--type-section)/1.1 var(--headline);letter-spacing:-.025em}
 .protocol-id{display:flex;align-items:center;gap:10px;margin-top:12px;color:var(--muted);font:400 var(--type-micro)/1.35 var(--body);letter-spacing:.08em}
