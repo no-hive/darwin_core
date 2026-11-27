@@ -55,7 +55,6 @@ export function MainFeed({repository,locale,articles,now}:{repository:AppReposit
       <Box component="fieldset" className="feed-filter-set"><legend>{ui(locale,'Period','Periodo')}</legend>
        <Chip.Group value={preferences.period} onChange={value=>change({period:value as Preferences['period']})}><Group gap={8} className="feed-filter-chips"><Chip value="all" variant="outline" radius="xl">{ui(locale,'All time','Todo el tiempo')}</Chip>{['7','30','90'].map(days=><Chip key={days} value={days} variant="outline" radius="xl">{ui(locale,`${days} days`,`${days} días`)}</Chip>)}</Group></Chip.Group>
       </Box>
-      {['popular','less-popular'].includes(preferences.sort)&&<Text size="xs" c="dimmed">{ui(locale,'Based on votes and connections. Articles without activity data have no ranking score.','Según votos y conexiones. Los artículos sin datos de actividad no tienen puntuación.')}</Text>}
      </Stack>
     </section>
    </Paper>
