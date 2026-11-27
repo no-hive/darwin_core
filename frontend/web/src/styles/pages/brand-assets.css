@@ -6,9 +6,6 @@ body.brand-assets-page:before{display:none}
 .brand-assets .brand-kit-intro{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px;height:auto;padding:0;max-width:none}
 .brand-assets .brand-kicker{margin:0 0 18px;color:#aab8ff;font:500 12px/1.4 var(--body);letter-spacing:.14em}
 .brand-assets h1{margin:0;color:var(--ink);font:400 clamp(48px,7vw,80px)/1.08 var(--headline);letter-spacing:-.035em}
-.brand-assets .brand-download-all{display:inline-flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px 24px;min-height:52px;margin-left:auto;padding:15px 20px;border:1px solid #bdc8ff;background:#bdc8ff;color:#101114;font-size:15px;font-weight:600;line-height:1.4}
-.brand-assets .brand-download-all span{font-size:12px;font-weight:500;white-space:nowrap}
-.brand-assets .brand-download-all:hover{background:#d4dcff;border-color:#d4dcff;color:#101114}
 .brand-assets .brand-kit-section{margin-top:76px}
 .brand-assets .brand-kit-social{margin-top:24px}
 .brand-assets .brand-guidelines h2{margin:0;color:var(--ink);font:400 30px/1.2 var(--headline);letter-spacing:-.025em}
@@ -50,4 +47,4 @@ body.brand-assets-page:before{display:none}
 .brand-assets .brand-guidelines p a{color:#bdc8ff;text-decoration:underline;text-underline-offset:3px}
 .brand-assets a:focus-visible,.brand-assets button:focus-visible{outline:2px solid #bdc8ff;outline-offset:4px}
 @media(max-width:960px){.brand-assets .brand-core-grid,.brand-assets .brand-social-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.brand-assets .brand-core-grid{grid-template-rows:none}.brand-assets .brand-card--wide{grid-column:1/-1;grid-row:auto}.brand-assets .brand-card--square{grid-column:auto;grid-row:auto}.brand-assets .brand-core-grid .brand-card--wide .brand-preview{aspect-ratio:6/1;flex:none}}
-@media(max-width:600px){.brand-assets .brand-kit-wrap{padding:44px 20px 0}.brand-assets .brand-core-grid,.brand-assets .brand-social-grid,.brand-assets .brand-guidelines{grid-template-columns:minmax(0,1fr)}.brand-assets .brand-kit-section:not(.brand-kit-social),.brand-assets .brand-guidelines{margin-top:52px}.brand-assets .brand-guidelines{gap:30px}.brand-assets .brand-kit-intro{flex-wrap:nowrap;gap:16px}.brand-assets h1{min-width:0;font-size:clamp(30px,7vw,42px)}.brand-assets .brand-download-all{max-width:50%;min-height:44px;padding:10px 12px;font-size:12px;flex:none}.brand-assets .brand-download-all span{display:none}.brand-assets .brand-card-control{width:44px;height:44px}.brand-assets .brand-guidelines h2{font-size:28px}}
+@media(max-width:600px){.brand-assets .brand-kit-wrap{padding:44px 20px 0}.brand-assets .brand-core-grid,.brand-assets .brand-social-grid,.brand-assets .brand-guidelines{grid-template-columns:minmax(0,1fr)}.brand-assets .brand-kit-section:not(.brand-kit-social),.brand-assets .brand-guidelines{margin-top:52px}.brand-assets .brand-guidelines{gap:30px}.brand-assets h1{min-width:0;font-size:clamp(30px,7vw,42px)}.brand-assets .brand-card-control{width:44px;height:44px}.brand-assets .brand-guidelines h2{font-size:28px}}

@@ -1,11 +1,10 @@
-"""Export the approved brand artwork as opaque PNGs, plus a reproducible ZIP.
+"""Export the approved brand artwork as opaque PNGs.
 
 Run from the checkout with Python, Pillow and fontTools. The mascot's source
 luminance is the same tonal mask used in navigation; no AI redraw is involved.
 """
 from io import BytesIO
 from pathlib import Path
-from zipfile import ZipFile, ZipInfo, ZIP_DEFLATED
 
 from fontTools.ttLib import TTFont
 from PIL import Image, ImageColor, ImageDraw, ImageFont
@@ -14,7 +13,6 @@ ROOT = Path(__file__).resolve().parent.parent
 ASSETS = ROOT / 'src/site/assets'
 OUTPUT = ASSETS / 'brand-kit'
 ETHEREUM = '#627eea'
-exported = []
 
 font = TTFont(ASSETS / 'fonts/cormorant-garamond-600.woff')
 font.flavor = None
@@ -65,7 +63,6 @@ def save(canvas, group, name):
     target = OUTPUT / group / name
     target.parent.mkdir(parents=True, exist_ok=True)
     canvas.convert('RGB').save(target, optimize=True)
-    exported.append(target)
 
 
 def centered(canvas, image, center):
@@ -115,16 +112,4 @@ for name, color, background in themes:
     # All artwork lies inside x=200..1400, y=90..810.
     save(canvas, 'social', f'darwin-core-protocol-{name}-1600x900.png')
 
-# Previous exports keep their public URLs; the archive contains only this run.
-files = sorted(exported)
-with ZipFile(OUTPUT / 'darwin-core-protocol-brand-kit.zip', 'w') as archive:
-    for file in files:
-        entry = ZipInfo(str(file.relative_to(OUTPUT)), (2026, 1, 1, 0, 0, 0))
-        entry.compress_type = ZIP_DEFLATED
-        entry.external_attr = 0o644 << 16
-        archive.writestr(entry, file.read_bytes())
-    license_entry = ZipInfo('IMAGE-LICENSE.txt', (2026, 1, 1, 0, 0, 0))
-    license_entry.compress_type = ZIP_DEFLATED
-    license_entry.external_attr = 0o644 << 16
-    archive.writestr(license_entry, (OUTPUT / 'IMAGE-LICENSE.txt').read_bytes())
-print(f'Exported {len(files)} opaque PNGs and the Brand Kit ZIP.')
+print('Exported approved Brand Kit PNGs.')

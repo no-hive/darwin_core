@@ -97,7 +97,7 @@ body .site-mark{position:relative;align-self:stretch;margin-left:63px;padding:0 
 body .site-mark:before{content:"";position:absolute;z-index:1;left:-63px;top:0;width:63px;height:100%;border:0;background:transparent}
 /* Cropped artwork matches the ink bounds of the three-line 23px Cormorant wordmark.
    Luminance preserves shading; the page supplies the tint. */
-body .site-mark:after{content:"";position:absolute;z-index:2;left:-63px;top:calc(50% + .2645px);transform:translateY(-50%);width:63px;height:51.06px;background:var(--accent);-webkit-mask:url("assets/dwc-crab-crystal-tonal-cropped.svg") center/auto 100% no-repeat;mask:url("assets/dwc-crab-crystal-tonal-cropped.svg") center/auto 100% no-repeat;mask-mode:luminance;pointer-events:none}
+body .site-mark:after{content:"";position:absolute;z-index:2;left:-63px;top:calc(50% + .2645px);transform:translateY(-50%);width:63px;height:51.06px;background:var(--accent);-webkit-mask:url("assets/dwc-crab-crystal-mask.webp") center/auto 100% no-repeat;mask:url("assets/dwc-crab-crystal-mask.webp") center/auto 100% no-repeat;mask-mode:luminance;pointer-events:none}
 body .site-mark span{width:72px;font:600 23px/.79 "Cormorant Garamond",Georgia,serif;letter-spacing:-.025em;text-transform:none;white-space:normal}
 footer.site-footer{max-width:none;margin:110px 0 0;padding:56px 5%;border:0;background:var(--dwc-color-footer-bg);color:var(--dwc-color-footer-muted);display:grid;font:10px/1.45 var(--body);letter-spacing:.08em;text-transform:uppercase}
 footer.site-footer section{display:flex;flex-direction:column;align-items:flex-start;gap:11px}
