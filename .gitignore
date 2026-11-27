@@ -6,6 +6,7 @@ frontend/web/.astro/
 frontend/web/.migration/
 frontend/web/.sites-runtime/
 frontend/web/qa/results/
+frontend/web/test-results/
 frontend/web/cms/exports/
 frontend/web/cms/studio/dist/
 frontend/web/cms/studio/.sanity/
