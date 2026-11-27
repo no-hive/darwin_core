@@ -373,6 +373,10 @@
 .mantine-app:not(:has(.explorer-banner)){width:calc(100% - 4 * var(--nav-edge) + 2px);background:#06170c;--bg:#06170c;border-color:color-mix(in srgb,#c7ff00 42%,#1d5033)}
 .mantine-app .main-event-list{gap:0}
 .mantine-app .main-event-minimal{display:grid;grid-template-columns:40px minmax(0,1fr);gap:16px;padding:24px 16px;border:0;border-bottom:1px solid var(--rule);background:transparent}
+.mantine-app .main-event-minimal{position:relative;cursor:pointer}
+.mantine-app .main-event-minimal .main-event-title a::after{content:'';position:absolute;inset:0}
+.mantine-app :is(a[href],button:not(:disabled),[role=button]:not([aria-disabled=true]),summary){cursor:pointer}
+.mantine-app :is(.finding-core-tile,.finding-core-table tbody tr,.group-tile){cursor:pointer}
 .mantine-app .main-event-minimal:hover{background:var(--panel-hover)}
 .mantine-app .main-event-minimal .main-event-icon{display:grid;place-items:center;width:40px;height:40px;color:var(--accent);border:1px solid var(--rule);background:transparent}
 .mantine-app .main-event-minimal .main-event-meta{display:block;margin:0 0 8px;line-height:1.4}
