@@ -16,6 +16,28 @@ collect(COPY.en,COPY.es);
 function addAboutSectionDivider(document){
  document.querySelector('.scroll-story > .scroll-section')?.insertAdjacentHTML('afterend','<hr class="about-section-divider">');
 }
+const toolArticleSlugs={
+ 'tools/csv-to-darwin-core/':['prepare-biodiversity-csv-darwin-core','darwin-core-archive-explained'],
+ 'tools/date-normalizer/':['darwin-core-event-date-format','coordinate-uncertainty-biodiversity-data'],
+ 'tools/duplicate-finder/':['biodiversity-data-deduplication','match-scientific-names-biodiversity-data'],
+ 'tools/data-workflow/':['what-is-darwin-core-standard','darwin-core-archive-explained']
+};
+const articleKinds={en:{Article:'Article',Guide:'Guide',News:'News'},es:{Article:'Artículo',Guide:'Guía',News:'Noticias'}};
+const esc=value=>String(value||'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
+function prepareToolRelatedArticles(document,lang,route,articles){
+ const slugs=toolArticleSlugs[route];
+ if(!slugs)return;
+ const related=slugs.map(slug=>articles.find(article=>article.slug===slug)).filter(Boolean);
+ for(const article of articles)if(related.length<2&&!related.includes(article))related.push(article);
+ if(related.length!==2)throw Error(`Tool related articles missing for ${route}`);
+ const heading=[...document.querySelectorAll('.section-head')].find(node=>/Related Blog Materials|Materiales relacionados del blog/.test(node.textContent));
+ const grid=heading?.nextElementSibling;
+ if(!heading||!grid?.classList.contains('grid'))throw Error(`Tool related article container missing for ${route}`);
+ const title=heading.querySelector('h2')?.textContent.trim()||'Related Blog Materials';
+ const cards=related.map(article=>`<a class="related-card" href="/${lang}/blog/${esc(article.slug)}/"><span class="related-media"><img src="${esc(article.image)}" width="${esc(article.width)}" height="${esc(article.height)}" alt="${esc(article.alt)}" loading="lazy"></span><div class="related-copy"><span class="related-kind">${esc(articleKinds[lang][article.type]||article.type)}</span><h3>${esc(article.title)}</h3><p>${esc(article.dek)}</p></div></a>`).join('');
+ heading.insertAdjacentHTML('beforebegin',`<section class="article-related tool-related" aria-labelledby="tool-related-heading"><h2 id="tool-related-heading">${esc(title)}</h2><div class="related-grid">${cards}</div></section>`);
+ heading.remove();grid.remove();
+}
 Object.assign(pairs,{'Recent activity':'Actividad reciente','Occupation':'Ocupación','Age':'Edad','Copy':'Copiar','Edit profile':'Editar perfil','Name':'Nombre','Protocol name':'Nombre del protocolo','Birth month':'Mes de nacimiento','Birth year':'Año de nacimiento','Cancel':'Cancelar','Save changes':'Guardar cambios','Shared<br><em>work.</em>':'Trabajo<br><em>compartido.</em>','Keep the next actions, open questions, and review work visible to the people moving the protocol forward.':'Mantén visibles las próximas acciones, preguntas y revisiones para las personas que desarrollan el protocolo.','New task':'Nueva tarea','Add task':'Añadir tarea','Describe the next action':'Describe la próxima acción','Focus':'Enfoque','open tasks':'tareas abiertas','Review':'Revisión','waiting for input':'esperando aportaciones','Method':'Método','Local':'Local','stored in this browser':'guardado en este navegador','Next':'Pendiente','In progress':'En curso'});
 export function localize(document,lang){
  if(lang!=='es')return;
@@ -42,6 +64,7 @@ export function preparePage(document,lang,route,articles){
    const data=document.createElement('script');data.type='application/json';data.id='profile-directory-data';data.textContent=JSON.stringify({...directory,copy:c}).replaceAll('<','\\u003c');document.querySelector('.profile-main').after(data);
  }
  if(route.startsWith('app/')){preparePrototype(document,lang,route);if(route!=='app/profile/')return;}
+ if(route.startsWith('tools/'))prepareToolRelatedArticles(document,lang,route,articles);
  if(['concept/','community/','future/'].includes(route)){
    document.querySelector('.intro')?.remove();
    if(route==='future/'){

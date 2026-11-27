@@ -1,2 +1,7 @@
 .tool-detail-page .article-card-image{height:auto;aspect-ratio:4/3;object-fit:cover}
 .site-footer .footer-placeholder{color:var(--dwc-color-footer-muted);opacity:.7;cursor:default}
+.tool-detail-page footer.site-footer{display:grid;grid-template-columns:minmax(200px,1.4fr) repeat(4,minmax(0,1fr));gap:clamp(16px,2.2vw,36px);width:100%;max-width:none;margin:110px 0 0;padding:56px 5%;border:0;background:var(--dwc-color-footer-bg);color:var(--dwc-color-footer-muted);overflow:visible}
+.tool-detail-page footer.site-footer>section{display:flex;min-width:0;padding-top:calc(100% / 6);overflow-wrap:anywhere}
+.tool-detail-page footer.site-footer>.footer-app-column{display:flex;min-width:0}
+.tool-detail-page footer.site-footer .footer-mascot{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:contain}
+@media(max-width:900px){.tool-detail-page footer.site-footer{grid-template-columns:repeat(2,minmax(0,1fr))}.tool-detail-page footer.site-footer>.footer-app-column{grid-column:span 2;width:min(320px,100%)}.tool-detail-page footer.site-footer>section{padding-top:0}}
