@@ -25,27 +25,30 @@
     "groups": [
       {
         "group": "Start here",
-        "pages": ["index", "project-state", "team"]
-      },
-      {
-        "group": "Vision",
-        "pages": ["vision", "concept/liquid-dao"]
+        "pages": [
+          "index",
+          "project-state",
+          "team",
+          "vision"
+        ]
       },
       {
         "group": "How It Works",
-        "pages": ["how-it-works"]
+        "pages": [
+          "how-it-works",
+          "main-protocol-v1",
+          "liquid-dao-v1",
+          "agora-governor",
+          "graph",
+          "dapp"
+        ]
       },
       {
-        "group": "Safety",
-        "pages": ["security"]
-      },
-      {
-        "group": "Contribute",
-        "pages": ["contribute"]
-      },
-      {
-        "group": "More",
-        "pages": ["changelog", "partners", "brand-kit"]
+        "group": "Other",
+        "pages": [
+          "contribute",
+          "changelog"
+        ]
       }
     ]
   },

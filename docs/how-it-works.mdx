@@ -1,26 +1,39 @@
 ---
-title: "How It Works"
+title: "Intro"
 description: "The protocol, voting system, hook and free tools"
 ---
 
 The project is organized around a protocol for recording findings and a voting system for community coordination. Their separation lets each part evolve independently. See [Project State](/project-state) for the current alpha status and limitations.
 
-## Recording findings
+The Technical objects can be divided into: 1. On-chain data registry. 2. On-chain coordnation infrastructure (Liquid DAO + Agora). 3. graph to collect on-chain data 4. web app to access on-chain data + write on-chain
 
-The protocol records observations using the Darwin Core standard. The current test interface includes a **“Not a real finding”** option: those entries are marked as test data and stored separately from real findings.
+<Columns cols={3}>
+  <Column>
+    <Card title="Registry Protocol v1" icon="adjust">
+      The heart of the system. Data is stored here.
+    </Card>
+  </Column>
+  <Column>
+    <Card title="Liquid DAO v1" icon="sparkle">
+       DAOs power is stored and recalculated here.
+    </Card>
+  </Column>
+  <Column>
+    <Card title="Agora Governor" icon="asterisk">
+      The contracts kit to let DAO vote and execute.
+    </Card>
+  </Column>
+</Columns>
 
-## Voting and coordination
-
-The voting stack contains the voting logic and is built on Agora and [LiquidDAO](/concept/liquid-dao). The protocol and voting system are separate components.
-
-## The hook
-
-A hook connects the protocol to the voting system. Keeping this connection explicit allows either component to change without requiring the other to become the same system.
-
-## Free tools
-
-The project provides free tools for working with data locally and, as the registry develops, for connecting findings to it. The tools section of the repository contains the current implementation.
-
-## Planned architecture
-
-The documented direction is to use Base for day-to-day project activity and Ethereum mainnet for a permanent registry of verified findings. The current prototype runs on Sepolia; moving to this planned architecture is future work.
+<Columns cols={2}>
+  <Column>
+    <Card title="App" icon="square">
+      The web interface to get access both to all previously mentioned on-chain parts.
+    </Card>
+  </Column>
+  <Column>
+    <Card title="Graph" icon="circle-dashed">
+      The off chain infrastructure to optimize data flowing into the app.
+    </Card>
+  </Column>
+</Columns>
