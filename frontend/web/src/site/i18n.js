@@ -9,7 +9,7 @@
  let confirmed=false;try{confirmed=!!localStorage.getItem(languageKey);}catch{}
  let external=true;try{external=!document.referrer||new URL(document.referrer).origin!==location.origin;}catch{}
  const entryLocale=document.documentElement.lang;
- if(!confirmed&&entryLocale!=='en'&&external&&!document.querySelector('.language-confirmation')){
+ if(!confirmed&&entryLocale!=='en'&&external&&!matchMedia('(max-width:700px)').matches&&!document.querySelector('.language-confirmation')){
    const dialog=document.createElement('dialog');dialog.className='language-confirmation';dialog.setAttribute('aria-labelledby','language-confirmation-title');
    dialog.innerHTML='<h2 id="language-confirmation-title">Choose your language / Elige tu idioma</h2><p>Would you like to read this page in English or Spanish?</p><div><button type="button" data-language-choice="en">English</button><button type="button" data-language-choice="es">Español</button></div>';
    document.body.append(dialog);
