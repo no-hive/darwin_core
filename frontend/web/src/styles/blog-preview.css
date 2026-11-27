@@ -16,7 +16,7 @@
 .blog-page .featured-copy h2{font-size:26px;line-height:1.2}
 
 /* The preview is a fixed reading surface: title is never shortened, excerpt takes only the remaining space. */
-.blog-page .featured-card{height:606px}.blog-page .featured-card>img{height:44%;aspect-ratio:auto;object-fit:cover}.blog-page .featured-copy{display:flex;flex:1 1 auto;min-height:0;flex-direction:column;overflow:hidden}.blog-page .featured-copy>p:first-child,.blog-page .featured-copy h2{flex:none}.blog-page #preview-excerpt{flex:1 1 auto;min-height:0;overflow:hidden;margin-bottom:0}
+.blog-page .featured-card{height:606px}.blog-page .featured-card>img{height:44%;aspect-ratio:auto;object-fit:cover}.blog-page .featured-copy{display:flex;flex:1 1 auto;min-height:0;flex-direction:column;overflow:hidden}.blog-page .featured-copy>p:first-child,.blog-page .featured-copy h2{flex:none}.blog-page #preview-excerpt{flex:1 1 auto;min-height:0;overflow:hidden;margin-bottom:0;mask-image:linear-gradient(to bottom,#000 0%,#000 calc(100% - 2.8em),transparent 100%);-webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 calc(100% - 2.8em),transparent 100%)}
 @media(max-width:760px){.blog-page .featured-card{height:560px}}@media(max-width:520px){.blog-page .featured-card{height:540px}}
 
 /* Selection moves the complete row, including all columns and its background. */
