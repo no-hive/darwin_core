@@ -238,6 +238,15 @@
 .mantine-app .research-row{border-color:var(--rule)}.mantine-app .research-row:hover{background:var(--panel-hover)}.mantine-app .finding-peek{border-color:var(--accent)!important;border-radius:var(--radius)!important}
 .mantine-app .finding-upload-link{padding:0;border:0;background:transparent;color:var(--accent);font:600 12px/1.4 'Albert Sans',sans-serif;cursor:pointer}.mantine-app .finding-upload-link:hover{text-decoration:underline}.mantine-app .finding-upload-link:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 
+/* Native and Mantine listboxes share the App's field and panel treatment. */
+.mantine-app :is(.mantine-NativeSelect-select,.mantine-Select-input,.mantine-Combobox-input){background:var(--bg);color:var(--ink);border-color:var(--rule)}
+.mantine-app :is(.mantine-NativeSelect-select,.mantine-Select-input,.mantine-Combobox-input):hover{border-color:var(--muted)}
+.mantine-app :is(.mantine-NativeSelect-select,.mantine-Select-input,.mantine-Combobox-input):focus{border-color:var(--accent)}
+.mantine-app :is(.mantine-Select-dropdown,.mantine-Combobox-dropdown,.mantine-Popover-dropdown){padding:4px;border:1px solid var(--rule);border-radius:var(--radius);background:var(--panel);color:var(--ink);box-shadow:none}
+.mantine-app :is(.mantine-Select-option,.mantine-Combobox-option){border-radius:calc(var(--radius) - 1px);color:var(--ink)}
+.mantine-app :is(.mantine-Select-option,.mantine-Combobox-option):hover,.mantine-app :is(.mantine-Select-option,.mantine-Combobox-option)[data-combobox-selected]{background:var(--panel-hover);color:var(--ink)}
+.mantine-app .mantine-NativeSelect-select option{background:var(--bg);color:var(--ink)}
+
 /* All actionable App surfaces use the same quiet category-style hover wash. */
 .mantine-app :is(.mantine-Button-root,.mantine-ActionIcon-root,.mantine-Menu-item,.mantine-Select-option,.mantine-Combobox-option,.mantine-Tabs-tab,.mantine-Chip-label,.mantine-SegmentedControl-label,.mantine-Accordion-control,[role="button"]):not(:disabled):not([data-disabled]):hover{background:var(--panel-hover)}
 .mantine-app :is(a,button,[role="link"]):not(:disabled):not([data-disabled]):hover{background-color:var(--panel-hover)}
