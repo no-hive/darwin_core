@@ -382,3 +382,15 @@
 .mantine-app :is(.mantine-Combobox-dropdown,.mantine-Select-dropdown){z-index:300;max-height:280px;overflow-y:auto;background:#06170c;border:1px solid color-mix(in srgb,#c7ff00 42%,#1d5033);color:#efffe8}
 .mantine-app :is(.mantine-Combobox-option,.mantine-Select-option){padding:10px 12px;cursor:pointer;color:#efffe8}
 .mantine-app :is(.mantine-Combobox-option,.mantine-Select-option)[data-combobox-selected],.mantine-app :is(.mantine-Combobox-option,.mantine-Select-option):hover{background:#14351c}
+.mantine-app .profile-findings-layout{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:28px;align-items:start}
+.mantine-app .profile-findings-main{min-width:0}
+.mantine-app .profile-summary-aside{position:sticky;top:112px;min-width:0}
+.mantine-app .profile-summary-card{padding:20px;background:#020f08;border:1px solid color-mix(in srgb,#c7ff00 42%,#1d5033)}
+.mantine-app .profile-summary-details,.mantine-app .profile-summary-search{margin-top:20px;padding-top:20px;border-top:1px solid var(--rule)}
+.mantine-app .profile-summary-search>.mantine-Group-root{display:block}
+.mantine-app .profile-summary-search .profile-finder{width:100%}
+.mantine-app .profile-summary-search .mantine-Group-root>.mantine-Button-root{display:none}
+.mantine-app .profile-summary-search .profile-finder-results{left:0;right:auto;width:100%}
+.mantine-app .profile-add-finding{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-top:20px;padding:18px 20px;background:#c7ff00;color:#020f08;font-weight:600;text-decoration:none}
+.mantine-app .profile-add-finding:hover,.mantine-app .profile-add-finding:focus-visible{background:#d6ff31;color:#020f08}
+@media(max-width:950px){.mantine-app .profile-findings-layout{grid-template-columns:1fr}.mantine-app .profile-summary-aside{position:static;grid-row:1}}
