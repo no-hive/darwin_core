@@ -107,3 +107,12 @@ body.about-scroll-page{display:flow-root}
 .future-page .scroll-copy h2{font-size:clamp(30px,3vw,44px);line-height:1.08;letter-spacing:-.035em}
 .future-page .scroll-copy p{font-size:var(--type-body);line-height:1.65}
 :is(.concept-page,.community-page,.future-page) .about-action[data-cta-image="future"]{--cta-image:url('/assets/future-digital-fish.webp');--cta-image-position:50% 56%}
+
+/* Editorial scenes share one responsive column gap while preserving each image's ratio. */
+@media(min-width:701px){
+  :is(.concept-page,.community-page,.future-page){--about-column-gap:clamp(32px,5vw,88px)}
+  :is(.concept-page,.community-page,.future-page) .scroll-section{grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:var(--about-column-gap);padding-inline:var(--about-column-gap)}
+  :is(.concept-page,.community-page,.future-page) .scroll-visual{top:var(--nav-edge);height:calc(100svh - 2 * var(--nav-edge));padding:0}
+  :is(.concept-page,.community-page,.future-page) .scroll-content{padding-inline:0}
+  :is(.concept-page,.community-page,.future-page) .about-image-fade img{max-width:100%;max-height:100%}
+}
