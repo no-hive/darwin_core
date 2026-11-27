@@ -410,3 +410,6 @@
 .mantine-app .search-result-name small{margin-top:4px;color:var(--muted)}
 .mantine-app .search-result-detail{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
 .mantine-app :is(.explorer-banner,.explorer-banner::before,.explorer-search input,.explorer-search .mantine-ActionIcon-root,.category-strip,.category-choice){border-radius:0!important}
+.mantine-app .search-results-area{display:flow-root;min-height:560px}
+.mantine-app:has(.explorer-banner) .search-idle{display:grid;place-items:center;min-height:560px;padding:0;color:var(--muted)}
+.mantine-app .search-idle svg{opacity:.3}
