@@ -1,6 +1,6 @@
 import {createHash} from 'node:crypto';
 import {spawnSync} from 'node:child_process';
-import {readdir, readFile, rename, rm, stat, writeFile} from 'node:fs/promises';
+import {readdir, readFile, rm, stat, writeFile} from 'node:fs/promises';
 import {join, relative} from 'node:path';
 
 const root = new URL('../src/site/assets/', import.meta.url).pathname;
@@ -27,17 +27,17 @@ async function validate(){
 }
 
 async function optimize(){
-  const candidates = (await files()).filter(file => /\.(?:png|webp)$/i.test(file) && !/\/(dwc-|brand-|footer-|community-governance-transparent)/.test(file));
+  const candidates = (await files()).filter(file => /\.png$/i.test(file) && !/\/(dwc-|brand-|footer-|community-governance-transparent)/.test(file));
   const replacements = [];
   for(const file of candidates){
     const before = (await stat(file)).size;
     if(before < 80 * 1024) continue;
-    const png = /\.png$/i.test(file), output = png ? file.replace(/\.png$/i, '.webp') : `${file}.optimized.webp`;
+    const output = file.replace(/\.png$/i, '.webp');
     const result = spawnSync('magick', [file, '-quality', '85', '-define', 'webp:method=6', output], {encoding:'utf8'});
     if(result.status !== 0) throw Error(result.stderr || `ImageMagick failed for ${file}`);
     if((await stat(output)).size >= before){await rm(output); continue;}
-    replacements.push([relative(project, file), relative(project, png ? output : file)]);
-    if(png) await rm(file); else await rename(output, file);
+    replacements.push([relative(project, file), relative(project, output)]);
+    await rm(file);
   }
   const sources = (await walk(project)).filter(file => /\.(?:mjs|js|ts|tsx|astro|css|html|json)$/.test(file) && !file.includes('/node_modules/') && !file.includes('/dist/'));
   for(const source of sources){
