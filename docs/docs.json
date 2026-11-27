@@ -24,12 +24,12 @@
   "navigation": {
     "groups": [
       {
-        "group": "Start here",
+        "group": "Overview",
         "pages": [
           "index",
           "project-state",
-          "team",
-          "vision"
+          "vision",
+          "team"
         ]
       },
       {
