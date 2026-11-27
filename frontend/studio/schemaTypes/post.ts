@@ -46,6 +46,6 @@ export const post = defineType({
       ]}),
       defineArrayMember({name: 'separator', type: 'object', fields: [defineField({name: 'label', type: 'string', hidden: true})], preview: {prepare: () => ({title: 'Separator'})}}),
     ]}),
-    defineField({name: 'relatedArticles', description: 'Select and arrange related articles manually.', type: 'array', of: [defineArrayMember({type: 'reference', to: [{type: 'post'}], options: {filter: ({document}) => ({filter: '_id != $id && _id != $draftId', params: {id: document?._id?.replace(/^drafts\./, '') || '', draftId: document?._id || ''}})}})], validation: (rule) => rule.unique()}),
+    defineField({name: 'relatedArticles', description: 'Select and arrange exactly two related articles manually.', type: 'array', of: [defineArrayMember({type: 'reference', to: [{type: 'post'}], options: {filter: ({document}) => ({filter: '_id != $id && _id != $draftId', params: {id: document?._id?.replace(/^drafts\./, '') || '', draftId: document?._id || ''}})}})], validation: (rule) => rule.required().min(2).max(2).unique()}),
   ],
 })
