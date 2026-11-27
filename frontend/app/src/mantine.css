@@ -409,3 +409,4 @@
 .mantine-app .search-result-name strong,.mantine-app .search-result-name small{display:block;overflow-wrap:anywhere}
 .mantine-app .search-result-name small{margin-top:4px;color:var(--muted)}
 .mantine-app .search-result-detail{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+.mantine-app :is(.explorer-banner,.explorer-banner::before,.explorer-search input,.explorer-search .mantine-ActionIcon-root,.category-strip,.category-choice){border-radius:0!important}
