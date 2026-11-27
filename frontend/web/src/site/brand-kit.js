@@ -46,4 +46,10 @@
       button.removeAttribute('aria-busy');
     }
   });
+  kit.addEventListener('dblclick',event=>{
+    if(event.target.closest?.('a,button,input,select,textarea'))return;
+    const card=event.target.closest?.('.brand-card');
+    const download=card?.querySelector('a[download]');
+    if(download)download.click();
+  });
 })();

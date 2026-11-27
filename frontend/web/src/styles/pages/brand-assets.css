@@ -21,7 +21,8 @@ body.brand-assets-page:before{display:none}
 .brand-assets .brand-core-grid .brand-card--square .brand-preview{aspect-ratio:1;flex:none}
 .brand-assets .brand-core-grid .brand-card--square figcaption{margin-top:auto}
 .brand-assets .brand-social-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
-.brand-assets .brand-card{display:flex;flex-direction:column;min-width:0;margin:0;border:1px solid var(--line);background:#191b21}
+.brand-assets .brand-card{display:flex;flex-direction:column;min-width:0;margin:0;border:1px solid var(--line);background:#191b21;transition:transform .16s ease,border-color .16s ease}
+.brand-assets .brand-card:hover,.brand-assets .brand-card:focus-within{transform:translateX(8px);border-color:#aab8ff}
 .brand-assets .brand-preview{aspect-ratio:16/9;overflow:hidden;background:#000}
 .brand-assets .brand-preview img{display:block;width:100%;height:100%;object-fit:contain}
 .brand-assets .brand-card figcaption{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 18px 16px;border-top:1px solid var(--line)}
@@ -32,6 +33,7 @@ body.brand-assets-page:before{display:none}
 .brand-assets .brand-card-control{display:grid;place-items:center;flex:none;width:40px;height:40px;padding:0;border:1px solid #5668af;border-radius:8px;background:transparent;color:#c7d1ff;cursor:pointer}
 .brand-assets .brand-card-control svg{display:block;width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .brand-assets .brand-card-control:hover{background:#252e4d;border-color:#aab8ff;color:#e2e7ff}
+.brand-assets .brand-card:hover .brand-card-control[download],.brand-assets .brand-card:focus-within .brand-card-control[download]{background:#bdc8ff;border-color:#bdc8ff;color:#101114}
 .brand-assets .brand-card-control:disabled{opacity:.5;cursor:progress}
 .brand-assets .brand-copy-status{position:fixed;z-index:500;bottom:24px;left:50%;transform:translateX(-50%);width:max-content;max-width:calc(100vw - 40px);margin:0;padding:14px 18px;border:1px solid #627eea;background:#191b21;color:#f2f4ed;font:400 14px/1.5 var(--body);box-shadow:0 8px 28px #0006}
 .brand-assets .brand-copy-status[hidden]{display:none}
