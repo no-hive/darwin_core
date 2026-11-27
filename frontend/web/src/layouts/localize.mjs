@@ -127,6 +127,7 @@ export function preparePage(document,lang,route,articles){
  }
  if(route==='blog/'){
    document.querySelector('.blog-crumbs')?.remove();
+   if(es)document.querySelector('#writing-title').textContent='Todo lo que querías saber sobre la ciencia descentralizada';
    prepareBlog(document,articles,lang);
  }
 }
