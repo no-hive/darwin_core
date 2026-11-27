@@ -1,5 +1,5 @@
 import {useEffect,useMemo,useState} from 'react';
-import {ActionIcon,Alert,Anchor,Avatar,Badge,Box,Button,Checkbox,Divider,Group,Menu,Modal,NativeSelect,Paper,Progress,Radio,SegmentedControl,SimpleGrid,Stack,Tabs,Text,TextInput,ThemeIcon,Title} from '@mantine/core';
+import {ActionIcon,Anchor,Avatar,Badge,Box,Button,Checkbox,Divider,Group,Menu,Modal,NativeSelect,Paper,Progress,Radio,SegmentedControl,SimpleGrid,Stack,Tabs,Text,TextInput,ThemeIcon,Title} from '@mantine/core';
 import {COPY} from '../../web/src/site/app/prototype-copy.mjs';
 import {text} from '../../web/src/site/app/prototype-core.mjs';
 import {occurrenceSummary,occurrenceTitle} from '../../web/src/site/app/dwc-occurrence.mjs';
@@ -9,7 +9,7 @@ import {MainFeed} from './MainFeed';
 import {GroupWorkspace} from './GroupWorkspace';
 import {randomSuggestions} from './feed';
 import {FindingDetail,FindingList} from './FindingViews';
-import {Empty,Heading,Icon,Person,Source,ui} from './ui';
+import {Banner,Empty,Heading,Icon,Person,Source,ui} from './ui';
 import type {AppRepository} from './repository';
 import type {FeedArticle,Locale,LocationState} from './types';
 interface Props {repository:AppRepository;locale:Locale;location:LocationState;navigate:(url:string)=>void;articles:FeedArticle[];now:string}
@@ -53,7 +53,7 @@ export function MantineWorkspace({repository,locale,location,navigate,articles,n
   body=record?<><Anchor component="button" onClick={()=>go('app/records/')} size="sm" mb="lg">← {c.records}</Anchor><FindingDetail record={record} repository={repository} locale={locale}/></>:<Empty>{c.unknown}</Empty>;
  }else if(route==='app/groups/'){
   const mine=app.search({categories:['groups'],scope:'mine'}),recommended=app.search({categories:['groups'],scope:'discover'});
-  body=<div className="groups-directory"><section aria-labelledby="my-groups-heading"><Group className="groups-section-heading" gap="md" align="center"><Title order={1} id="my-groups-heading">{c.myGroups}</Title><Badge color="gray" variant="light" size="lg">{mine.length}</Badge></Group><SimpleGrid cols={{base:1,sm:2,lg:3}}>{mine.length?mine.map(groupTile):<Empty>{c.noGroups}</Empty>}</SimpleGrid></section><section aria-labelledby="recommended-groups-heading"><Group className="groups-section-heading" gap="md" align="center"><Title order={2} id="recommended-groups-heading">{c.discover}</Title><Badge color="gray" variant="light" size="lg">{recommended.length}</Badge></Group><SimpleGrid cols={{base:1,sm:2,lg:3}}>{recommended.map(groupTile)}<Paper className="group-search-tile" withBorder radius="md" p="lg" component="a" href={`/${locale}/app/search/?types=groups`}><ThemeIcon radius="xl" size={44} variant="light"><Icon name="search"/></ThemeIcon><Text fw={600} size="lg" mt="lg">{c.searchAnyGroup}</Text><Group mt="auto" justify="space-between"><Text size="sm" c="dimmed">{c.scan}</Text><Icon name="arrow" size={18}/></Group></Paper></SimpleGrid></section></div>;
+  body=<div className="groups-directory"><Heading title={c.groups} description={c.groupsIntro}/><section aria-labelledby="my-groups-heading"><Group className="groups-section-heading" gap="md" align="center"><Title order={2} id="my-groups-heading">{c.myGroups}</Title><Badge color="gray" variant="light" size="lg">{mine.length}</Badge></Group><SimpleGrid cols={{base:1,sm:2,lg:3}}>{mine.length?mine.map(groupTile):<Empty>{c.noGroups}</Empty>}</SimpleGrid></section><section aria-labelledby="recommended-groups-heading"><Group className="groups-section-heading" gap="md" align="center"><Title order={2} id="recommended-groups-heading">{c.discover}</Title><Badge color="gray" variant="light" size="lg">{recommended.length}</Badge></Group><SimpleGrid cols={{base:1,sm:2,lg:3}}>{recommended.map(groupTile)}<Paper className="group-search-tile group-action-banner" withBorder radius="md" p="lg" component="a" href={`/${locale}/app/search/?types=groups`}><ThemeIcon radius="xl" size={44} variant="light"><Icon name="search"/></ThemeIcon><Text fw={600} size="lg" mt="lg">{c.searchAnyGroup}</Text><Group mt="auto" justify="space-between"><Text size="sm" c="dimmed">{c.scan}</Text><Icon name="arrow" size={18}/></Group></Paper></SimpleGrid></section></div>;
  }else if(/^app\/groups\/[^/]+\/proposals\//.test(route)){
   const parts=route.split('/'),proposal=app.proposals().find((p:any)=>p.id===parts[4]&&p.groupId===parts[2]);
   body=proposal?<ProposalDetail key={proposal.id} repository={repository} proposal={proposal} locale={locale}/>:<Empty>{c.unknown}</Empty>;
@@ -63,5 +63,5 @@ export function MantineWorkspace({repository,locale,location,navigate,articles,n
   const project:any=app.seed.research.find((r:any)=>r.id===route.split('/')[2]);
   if(project)body=<><Heading title={<Source>{text(project.title)}</Source>} description={<Source>{text(project.description)}</Source>} eyebrow={c.research}/><Group mb="xl">{project.groupIds.map((id:string)=><Badge variant="light" component="a" href={url('groups',id)} key={id} tt="none"><Source>{groups.find((g:any)=>g.id===id)?.name}</Source></Badge>)}</Group><div className="app-columns"><Box><Text fw={600} mb="md">{c.records}</Text><FindingList items={app.records().filter((r:any)=>r.researchIds.includes(project.id))} app={app} locale={locale}/></Box><Box><Text fw={600} mb="md">{c.members}</Text>{people(project.memberIds)}</Box></div></>;
  }
- return <>{notice&&<Alert mb="lg" withCloseButton onClose={()=>setNotice('')} color="forest" role="status">{notice}</Alert>}{body||<Empty>{c.unknown}</Empty>}</>;
+ return <>{notice&&<Box mb="lg" role="status"><Banner kind="status" onDismiss={()=>setNotice('')}>{notice}</Banner></Box>}{body||<Empty>{c.unknown}</Empty>}</>;
 }

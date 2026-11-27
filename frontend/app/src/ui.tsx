@@ -1,4 +1,4 @@
-import {Anchor,Avatar,Badge,Box,Button,Group,Paper,Stack,Text,Title} from '@mantine/core';
+import {ActionIcon,Anchor,Avatar,Badge,Box,Button,Group,Paper,Stack,Text,Title} from '@mantine/core';
 import type {ReactNode} from 'react';
 import type {Locale} from './types';
 export const ui=(locale:Locale,en:string,es:string)=>locale==='es'?es:en;
@@ -28,6 +28,7 @@ export function Icon({name,size=18}:{name:string;size?:number}){
 }
 export function Heading({title,description,action,eyebrow}:{title:ReactNode;description?:ReactNode;action?:ReactNode;eyebrow?:string}){return <Group className="app-page-heading" justify="space-between" align="flex-start" gap="lg"><Box>{eyebrow&&<Text size="xs" tt="uppercase" fw={600} c="dimmed" mb={8}>{eyebrow}</Text>}<Title order={1}>{title}</Title>{description&&<Text c="dimmed" mt={10} maw={700}>{description}</Text>}</Box>{action}</Group>;}
 export function Empty({children}:{children:ReactNode}){return <Paper className="app-empty" p="xl" radius="md"><Icon name="leaf" size={28}/><Text c="dimmed" mt="sm">{children}</Text></Paper>;}
+export function Banner({kind='information',children,onDismiss}:{kind?:'information'|'action'|'status';children:ReactNode;onDismiss?:()=>void}){return <Paper className="app-banner" data-kind={kind} withBorder p="md"><Group wrap="nowrap" align="flex-start" gap="sm"><span className="app-banner-icon" aria-hidden="true"><Icon name={kind==='status'?'check':kind==='action'?'arrow':'leaf'} size={18}/></span><Box flex={1} miw={0}><Text size="sm">{children}</Text></Box>{onDismiss&&<ActionIcon variant="subtle" aria-label="Dismiss notice" onClick={onDismiss}><Icon name="close" size={16}/></ActionIcon>}</Group></Paper>;}
 export function Person({name,id,href}:{name:string;id?:string;href?:string}){return <Group gap="sm" wrap="nowrap"><Avatar color="forest" radius="xl" size="sm">{name.split(/\s+/).slice(0,2).map(s=>s[0]).join('')}</Avatar><Box miw={0}>{href?<Anchor href={href} fw={500}><Source>{name}</Source></Anchor>:<Text size="sm" fw={500}><Source>{name}</Source></Text>}{id&&<Text size="xs" c="dimmed"><Source>{id}</Source></Text>}</Box></Group>;}
 
 /** Test mode does not replace the record's scientific verification status. */
