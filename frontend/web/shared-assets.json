@@ -16,10 +16,6 @@
     "target": "src/site/app/search/index.html"
   },
   {
-    "source": "src/site/assets/community-hardware.png",
-    "target": "src/site/assets/future-hardware-stylized.png"
-  },
-  {
     "source": "src/site/AGENTS.md",
     "target": "dist/AGENTS.md"
   },
@@ -124,8 +120,8 @@
     "target": "dist/assets/brand-logo-1-approved.png"
   },
   {
-    "source": "src/site/assets/community-birds.png",
-    "target": "dist/assets/community-birds.png"
+    "source": "src/site/assets/community-birds.webp",
+    "target": "dist/assets/community-birds.webp"
   },
   {
     "source": "src/site/assets/community-governance-transparent.png",
@@ -136,44 +132,40 @@
     "target": "dist/assets/community-governance.webp"
   },
   {
-    "source": "src/site/assets/community-hardware.png",
-    "target": "dist/assets/community-hardware.png"
+    "source": "src/site/assets/community-liquid-banner.webp",
+    "target": "dist/assets/community-liquid-banner.webp"
   },
   {
-    "source": "src/site/assets/community-liquid-banner.png",
-    "target": "dist/assets/community-liquid-banner.png"
+    "source": "src/site/assets/community-liquid-expanded.webp",
+    "target": "dist/assets/community-liquid-expanded.webp"
   },
   {
-    "source": "src/site/assets/community-liquid-expanded.png",
-    "target": "dist/assets/community-liquid-expanded.png"
+    "source": "src/site/assets/community-liquid-pixel-mosaic.webp",
+    "target": "dist/assets/community-liquid-pixel-mosaic.webp"
   },
   {
-    "source": "src/site/assets/community-liquid-pixel-mosaic.png",
-    "target": "dist/assets/community-liquid-pixel-mosaic.png"
-  },
-  {
-    "source": "src/site/assets/community-mountain-researcher-goat.png",
-    "target": "dist/assets/community-mountain-researcher-goat.png"
+    "source": "src/site/assets/community-mountain-researcher-goat.webp",
+    "target": "dist/assets/community-mountain-researcher-goat.webp"
   },
   {
     "source": "src/site/assets/community-mushroom.webp",
     "target": "dist/assets/community-mushroom.webp"
   },
   {
-    "source": "src/site/assets/community-mushrooms-amber-v2.png",
-    "target": "dist/assets/community-mushrooms-amber-v2.png"
+    "source": "src/site/assets/community-mushrooms-amber-v2.webp",
+    "target": "dist/assets/community-mushrooms-amber-v2.webp"
   },
   {
-    "source": "src/site/assets/community-researcher-goat.png",
-    "target": "dist/assets/community-researcher-goat.png"
+    "source": "src/site/assets/community-researcher-goat.webp",
+    "target": "dist/assets/community-researcher-goat.webp"
   },
   {
-    "source": "src/site/assets/community-silhouettes-textured.png",
-    "target": "dist/assets/community-silhouettes-textured.png"
+    "source": "src/site/assets/community-silhouettes-textured.webp",
+    "target": "dist/assets/community-silhouettes-textured.webp"
   },
   {
-    "source": "src/site/assets/concept-field-researcher.png",
-    "target": "dist/assets/concept-field-researcher.png"
+    "source": "src/site/assets/concept-field-researcher.webp",
+    "target": "dist/assets/concept-field-researcher.webp"
   },
   {
     "source": "src/site/assets/donate/LICENSE-cryptocurrency-icons.md",
@@ -336,40 +328,36 @@
     "target": "dist/assets/footer-mascot-frame.png"
   },
   {
-    "source": "src/site/assets/frog-woodland.png",
-    "target": "dist/assets/frog-woodland.png"
+    "source": "src/site/assets/frog-woodland.webp",
+    "target": "dist/assets/frog-woodland.webp"
   },
   {
-    "source": "src/site/assets/future-digital-fish.png",
-    "target": "dist/assets/future-digital-fish.png"
+    "source": "src/site/assets/future-digital-fish.webp",
+    "target": "dist/assets/future-digital-fish.webp"
   },
   {
-    "source": "src/site/assets/future-diving-whale.png",
-    "target": "dist/assets/future-diving-whale.png"
+    "source": "src/site/assets/future-diving-whale.webp",
+    "target": "dist/assets/future-diving-whale.webp"
   },
   {
     "source": "src/site/assets/future-golden-eye.webp",
     "target": "dist/assets/future-golden-eye.webp"
   },
   {
-    "source": "src/site/assets/community-hardware.png",
-    "target": "dist/assets/future-hardware-stylized.png"
+    "source": "src/site/assets/future-jellyfish.webp",
+    "target": "dist/assets/future-jellyfish.webp"
   },
   {
-    "source": "src/site/assets/future-jellyfish.png",
-    "target": "dist/assets/future-jellyfish.png"
+    "source": "src/site/assets/future-luminous-earth.webp",
+    "target": "dist/assets/future-luminous-earth.webp"
   },
   {
-    "source": "src/site/assets/future-luminous-earth.png",
-    "target": "dist/assets/future-luminous-earth.png"
+    "source": "src/site/assets/future-whales.webp",
+    "target": "dist/assets/future-whales.webp"
   },
   {
-    "source": "src/site/assets/future-whales.png",
-    "target": "dist/assets/future-whales.png"
-  },
-  {
-    "source": "src/site/assets/future-yellow-submersible.png",
-    "target": "dist/assets/future-yellow-submersible.png"
+    "source": "src/site/assets/future-yellow-submersible.webp",
+    "target": "dist/assets/future-yellow-submersible.webp"
   },
   {
     "source": "src/site/assets/jellyfish.webp",
@@ -444,12 +432,12 @@
     "target": "dist/assets/rhino-tools.webp"
   },
   {
-    "source": "src/site/assets/search-fern-data-mosaic.png",
-    "target": "dist/assets/search-fern-data-mosaic.png"
+    "source": "src/site/assets/search-fern-data-mosaic.webp",
+    "target": "dist/assets/search-fern-data-mosaic.webp"
   },
   {
-    "source": "src/site/assets/search-shadowed-ferns.png",
-    "target": "dist/assets/search-shadowed-ferns.png"
+    "source": "src/site/assets/search-shadowed-ferns.webp",
+    "target": "dist/assets/search-shadowed-ferns.webp"
   },
   {
     "source": "src/site/assets/vendor/JSZIP-LICENSE.md",

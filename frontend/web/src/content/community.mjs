@@ -5,7 +5,7 @@ export const community = {
         'Pushing science forward is hard when you’re flying alone. Darwin Core Protocol puts coordination at the heart of how it works.',
         'Create a group with other scientists. You can record shared findings when you work together, or simply link your own findings to the group to contribute to its overall reputation.'
       ]},
-      {heading:'Why bother coordinating?',inlineImage:{src:'/assets/community-liquid-pixel-mosaic.png',alt:'Flowing orange and black organic shapes rendered in a luminous alphanumeric pixel mosaic, suggesting connected, fluid communities.'},paragraphs:[
+      {heading:'Why bother coordinating?',inlineImage:{src:'/assets/community-liquid-pixel-mosaic.webp',alt:'Flowing orange and black organic shapes rendered in a luminous alphanumeric pixel mosaic, suggesting connected, fluid communities.'},paragraphs:[
         'It is about more than sharing. It is about visibility so you can really receive what you deserve. Funding, trust, reputation, access to secrets of the field you study are among the rewards.'
       ],explainer:{summary:'What could this look like?',paragraphs:[
         'Imagine you discover a new marine species and decide to join a community focused on the Pacific.',
@@ -35,7 +35,7 @@ export const community = {
         'So be ready for your voice to be heard.'
       ]}
     ],
-    images:[{src:'/assets/community-birds.png',alt:'Dark birds in flight, rendered in tiny character cells against a vivid orange background.'},{src:'/assets/community-mushrooms-amber-v2.png',edgeFade:true,alt:'Four slender mushrooms growing on decaying wood, rendered in an amber alphanumeric mosaic.'},{src:'/assets/community-mountain-researcher-goat.png',alt:'A researcher taking field notes beside a mountain goat, rendered in an amber alphanumeric mosaic.'}],
+    images:[{src:'/assets/community-birds.webp',alt:'Dark birds in flight, rendered in tiny character cells against a vivid orange background.'},{src:'/assets/community-mushrooms-amber-v2.webp',edgeFade:true,alt:'Four slender mushrooms growing on decaying wood, rendered in an amber alphanumeric mosaic.'},{src:'/assets/community-mountain-researcher-goat.webp',alt:'A researcher taking field notes beside a mountain goat, rendered in an amber alphanumeric mosaic.'}],
     appAction:'Try our app',
     futureAction:'Read about Future'
   },
@@ -45,7 +45,7 @@ export const community = {
         'Impulsar la ciencia es difícil cuando vuelas en solitario. Darwin Core Protocol sitúa la coordinación en el centro de su funcionamiento.',
         'Crea un grupo con otros científicos. Pueden registrar hallazgos compartidos cuando trabajan juntos, o puedes simplemente vincular tus propios hallazgos al grupo para contribuir a su reputación general.'
       ]},
-      {heading:'¿Por qué coordinarse?',inlineImage:{src:'/assets/community-liquid-pixel-mosaic.png',alt:'Formas orgánicas fluidas en naranja y negro, representadas en un mosaico de píxeles alfanuméricos luminosos que evoca comunidades conectadas.'},paragraphs:[
+      {heading:'¿Por qué coordinarse?',inlineImage:{src:'/assets/community-liquid-pixel-mosaic.webp',alt:'Formas orgánicas fluidas en naranja y negro, representadas en un mosaico de píxeles alfanuméricos luminosos que evoca comunidades conectadas.'},paragraphs:[
         'Se trata de algo más que compartir. Se trata de visibilidad para que puedas recibir lo que realmente mereces. La financiación, la confianza, la reputación y el acceso a los secretos del campo que estudias están entre las recompensas.'
       ],explainer:{summary:'¿Cómo podría ser en la práctica?',paragraphs:[
         'Imagina que descubres una nueva especie marina y decides unirte a una comunidad centrada en el Pacífico.',
@@ -75,7 +75,7 @@ export const community = {
         'Así que prepárate para que tu voz sea escuchada.'
       ]}
     ],
-    images:[{src:'/assets/community-birds.png',alt:'Aves oscuras en vuelo, representadas con diminutas celdas de caracteres sobre un fondo naranja intenso.'},{src:'/assets/community-mushrooms-amber-v2.png',edgeFade:true,alt:'Cuatro setas de tallos delgados sobre madera en descomposición, en un mosaico alfanumérico de tonos ámbar.'},{src:'/assets/community-mountain-researcher-goat.png',alt:'Una persona investigadora toma notas de campo junto a una cabra montés, en un mosaico alfanumérico de tonos ámbar.'}],
+    images:[{src:'/assets/community-birds.webp',alt:'Aves oscuras en vuelo, representadas con diminutas celdas de caracteres sobre un fondo naranja intenso.'},{src:'/assets/community-mushrooms-amber-v2.webp',edgeFade:true,alt:'Cuatro setas de tallos delgados sobre madera en descomposición, en un mosaico alfanumérico de tonos ámbar.'},{src:'/assets/community-mountain-researcher-goat.webp',alt:'Una persona investigadora toma notas de campo junto a una cabra montés, en un mosaico alfanumérico de tonos ámbar.'}],
     appAction:'Prueba nuestra app',
     futureAction:'Lee sobre el futuro'
   }

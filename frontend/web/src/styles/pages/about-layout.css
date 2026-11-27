@@ -97,8 +97,8 @@ body.about-scroll-page{display:flow-root}
 /* Image is independent from the readable label and chevron. */
 :is(.concept-page,.community-page,.future-page) .about-action{position:relative;isolation:isolate;overflow:hidden;width:100%;flex-shrink:0}
 :is(.concept-page,.community-page,.future-page) .about-action[data-cta-image]::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:var(--cta-image);background-size:cover;background-position:var(--cta-image-position,center);opacity:0;transition:opacity .2s}
-:is(.concept-page,.community-page,.future-page) .about-action[data-cta-image="app"]{--cta-image:url('/assets/search-fern-data-mosaic.png')}
-:is(.concept-page,.community-page,.future-page) .about-action[data-cta-image="community"]{--cta-image:url('/assets/community-mushrooms-amber-v2.png');--cta-image-position:50% 30%}
+:is(.concept-page,.community-page,.future-page) .about-action[data-cta-image="app"]{--cta-image:url('/assets/search-fern-data-mosaic.webp')}
+:is(.concept-page,.community-page,.future-page) .about-action[data-cta-image="community"]{--cta-image:url('/assets/community-mushrooms-amber-v2.webp');--cta-image-position:50% 30%}
 :is(.concept-page,.community-page,.future-page) .about-action[data-cta-image="blog"]{--cta-image:url('/assets/blog-bird.webp')}
 :is(.concept-page,.community-page,.future-page) .about-action[data-cta-image]:hover::before,:is(.concept-page,.community-page,.future-page) .about-action[data-cta-image]:focus-visible::before{opacity:.7}
 @media(prefers-reduced-motion:reduce){:is(.concept-page,.community-page,.future-page) .about-action[data-cta-image]::before{transition:none}}
@@ -106,4 +106,4 @@ body.about-scroll-page{display:flow-root}
 .future-page .scroll-visual,.future-page .scroll-visual img{background:transparent}
 .future-page .scroll-copy h2{font-size:clamp(30px,3vw,44px);line-height:1.08;letter-spacing:-.035em}
 .future-page .scroll-copy p{font-size:var(--type-body);line-height:1.65}
-:is(.concept-page,.community-page,.future-page) .about-action[data-cta-image="future"]{--cta-image:url('/assets/future-digital-fish.png');--cta-image-position:50% 56%}
+:is(.concept-page,.community-page,.future-page) .about-action[data-cta-image="future"]{--cta-image:url('/assets/future-digital-fish.webp');--cta-image-position:50% 56%}

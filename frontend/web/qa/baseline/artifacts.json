@@ -152,7 +152,7 @@
       "sha256": "5195361a6241f22d13647c842543ce39bd368e1478982e743f809b432c6a9b7b",
       "bytes": 68238
     },
-    "dist/assets/community-birds.png": {
+    "dist/assets/community-birds.webp": {
       "sha256": "f782efefc0d0b20a05c4d501a8307b4082989b61e50d006fb5a512cc9819f88e",
       "bytes": 1614134
     },
@@ -164,15 +164,15 @@
       "sha256": "f3dfa2a6e503f2c74c23b3029234ffb7c3acc886f8138e0735b74ee860df3979",
       "bytes": 1056056
     },
-    "dist/assets/community-liquid-banner.png": {
+    "dist/assets/community-liquid-banner.webp": {
       "sha256": "ac135b45df5b96629c6a786e117d84882272317254bb74a5c684b07f01747b90",
       "bytes": 1116323
     },
-    "dist/assets/community-liquid-expanded.png": {
+    "dist/assets/community-liquid-expanded.webp": {
       "sha256": "16cb5165fb14d0198b470b465f74b7a1952cd111a02d604fa14cd6237a4e34af",
       "bytes": 1427063
     },
-    "dist/assets/community-liquid-pixel-mosaic.png": {
+    "dist/assets/community-liquid-pixel-mosaic.webp": {
       "sha256": "e60aac0135c7cc0d7791714d0fc065385e11a81716e1c47ed4feda94910be56d",
       "bytes": 2442331
     },
@@ -180,7 +180,7 @@
       "sha256": "eed4779116197d039a20336cb3af36f71785ab7876d3189cc8dbc2c51feccc25",
       "bytes": 2010582
     },
-    "dist/assets/community-silhouettes-textured.png": {
+    "dist/assets/community-silhouettes-textured.webp": {
       "sha256": "f2ecf22ebf4def2cbf00d0e41552601564ffa02dd52dc5bb8e11a6d7f3975558",
       "bytes": 930955
     },
@@ -244,7 +244,7 @@
       "sha256": "56bce1c651414e33dfd57404f84241d67561143c2692087698f690339cf20913",
       "bytes": 25792
     },
-    "dist/assets/frog-woodland.png": {
+    "dist/assets/frog-woodland.webp": {
       "sha256": "ecc170df474781d370dec993215699532c62099297326d4e081c3a103126ab0f",
       "bytes": 2457679
     },
@@ -256,15 +256,15 @@
       "sha256": "55c06365fd389a4ee8f2e1cfed3da14c2176a1fef2589b697c4112288270431b",
       "bytes": 2007452
     },
-    "dist/assets/future-hardware-stylized.png": {
+    "dist/assets/future-hardware-stylized.webp": {
       "sha256": "a9176e7c29e20c151e12578aa8a446a772ed348f7d68660acbc74408d58405a8",
       "bytes": 2839447
     },
-    "dist/assets/future-jellyfish.png": {
+    "dist/assets/future-jellyfish.webp": {
       "sha256": "385b35e65fb6e9405e80c1000bf96f95d00bf0137e8a9962dcdaded2dcadeb63",
       "bytes": 1959410
     },
-    "dist/assets/future-whales.png": {
+    "dist/assets/future-whales.webp": {
       "sha256": "a39970148614e386f6407fe3cb49e22276436a1f35533799222216421b25599f",
       "bytes": 1718523
     },
