@@ -27,4 +27,11 @@ body .site-header .site-nav{position:fixed;top:var(--nav-edge);right:var(--nav-e
 .site-nav .nav-cut-border polygon{fill:none;stroke-width:1;stroke-linejoin:miter;stroke-linecap:square;vector-effect:non-scaling-stroke}
 .site-nav.is-animating .nav-menu,.site-nav.is-animating .lang-menu{display:none}
 .site-nav>a::after,.site-nav>.nav-dropdown::after,.site-nav>.lang-dropdown::after{display:none}
+.language-confirmation{width:min(440px,calc(100% - 40px));padding:32px;border:1px solid var(--accent);background:var(--bg);color:var(--ink);font:16px/1.6 var(--body)}
+.language-confirmation::backdrop{background:rgb(0 0 0 / 70%)}
+.language-confirmation h2{margin:0 0 16px;font:400 26px/1.2 var(--headline)}
+.language-confirmation p{margin:0 0 24px;color:var(--muted)}
+.language-confirmation div{display:flex;gap:12px}
+.language-confirmation button{flex:1;min-height:48px;border:1px solid var(--accent);background:transparent;color:var(--ink);font:500 16px var(--body);cursor:pointer}
+.language-confirmation button:hover,.language-confirmation button:focus-visible{background:var(--accent);color:var(--bg)}
 

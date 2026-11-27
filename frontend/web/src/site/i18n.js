@@ -5,6 +5,19 @@
  const disposers=[];
  const listen=(node,type,callback,options)=>{node.addEventListener(type,callback,options);disposers.push(()=>node.removeEventListener(type,callback,options));};
  const nav=document.querySelector('.site-nav'); if(!nav)return;
+ const languageKey='dwc-language-confirmed-v1';
+ let confirmed=false;try{confirmed=!!localStorage.getItem(languageKey);}catch{}
+ let external=true;try{external=!document.referrer||new URL(document.referrer).origin!==location.origin;}catch{}
+ const entryLocale=document.documentElement.lang;
+ if(!confirmed&&entryLocale!=='en'&&external&&!document.querySelector('.language-confirmation')){
+   const dialog=document.createElement('dialog');dialog.className='language-confirmation';dialog.setAttribute('aria-labelledby','language-confirmation-title');
+   dialog.innerHTML='<h2 id="language-confirmation-title">Choose your language / Elige tu idioma</h2><p>Would you like to read this page in English or Spanish?</p><div><button type="button" data-language-choice="en">English</button><button type="button" data-language-choice="es">Español</button></div>';
+   document.body.append(dialog);
+   dialog.addEventListener('cancel',event=>event.preventDefault());
+   dialog.addEventListener('click',event=>{const choice=event.target.closest('[data-language-choice]')?.dataset.languageChoice;if(!choice)return;try{localStorage.setItem(languageKey,choice);}catch{}if(choice===entryLocale){dialog.close();dialog.remove();return;}const alternate=document.querySelector(`link[rel="alternate"][hreflang="${choice}"]`);const target=new URL(alternate?new URL(alternate.href).pathname:`/${choice}/`,location.origin);target.search=location.search;target.hash=location.hash;location.assign(target.href);});
+   dialog.showModal();
+ }
+ for(const link of nav.querySelectorAll('.lang-menu [data-language]'))listen(link,'click',()=>{try{localStorage.setItem(languageKey,link.dataset.language);}catch{}});
  const simpleConceptMobile=()=>document.body.classList.contains('concept-page')&&matchMedia('(max-width: 700px), (max-width: 1000px) and (pointer: coarse)').matches;
  const aboutVisual=document.body.classList.contains('about-scroll-page')?document.querySelector('.scroll-section .scroll-visual'):null;
  const toggle=nav.querySelector('.nav-collapse');
