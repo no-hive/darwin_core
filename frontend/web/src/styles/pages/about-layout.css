@@ -34,7 +34,8 @@ body.about-scroll-page{--about-nav-height:60px;display:flow-root}
 .about-visual-placeholder{display:grid;place-items:center;width:100%;height:100%;border:1px solid var(--line);background:color-mix(in srgb,var(--accent) 3%,var(--bg))}
 .about-visual-placeholder svg{width:36px;height:36px;fill:none;stroke:var(--muted);stroke-width:1;opacity:.65}
 .concept-page .scroll-section:first-child{min-height:133.333svh}
-.concept-page .scroll-content.concept-intro-content,.concept-page .scroll-content.concept-middle-content,.concept-page .scroll-content.concept-final-content,:is(.community-page,.future-page) .scroll-content.about-modular-content{justify-content:flex-start;min-height:133.333svh;gap:clamp(160px,40svh,480px)}
+.concept-page .scroll-content.concept-intro-content,.concept-page .scroll-content.concept-middle-content,.concept-page .scroll-content.concept-final-content,:is(.concept-page,.community-page,.future-page) .scroll-content.about-modular-content{justify-content:flex-start;min-height:133.333svh;gap:clamp(160px,40svh,480px)}
+@media(min-width:701px){.concept-page [data-about-major-break]{margin-top:clamp(240px,45svh,540px)}}
 .concept-page .scroll-copy>p+p{margin-top:24px}
 .about-modular-content .scroll-copy>p+p{margin-top:24px}
 @media(min-width:701px){

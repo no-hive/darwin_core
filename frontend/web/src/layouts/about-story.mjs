@@ -36,7 +36,7 @@ function story(section,attributes=''){
   const renderedHints=hints.map(hint=>`<details class="concept-explainer"${hint.open?' open':''}><summary><span>${esc(hint.summary)}</span><i aria-hidden="true">+</i></summary><div class="concept-explainer-body" tabindex="0">${paragraphs(hint.paragraphs)}</div></details>`).join('');
   const explanation=hints.length>1?`<div class="story-explainers">${renderedHints}</div>`:renderedHints;
   const followup=section.afterParagraphs?.length?`<div class="about-story-followup" data-about-followup>${paragraphs(section.afterParagraphs)}</div>`:'';
-  return `<article class="scroll-copy${followup?' has-followup':''}" data-about-story ${attributes}><h2>${esc(section.heading)}</h2>${paragraphs(section.paragraphs||[section.text])}${explanation}${followup}</article>`;
+  return `<article class="scroll-copy${followup?' has-followup':''}" data-about-story ${section.majorBreak?'data-about-major-break':''} ${attributes}><h2>${esc(section.heading)}</h2>${paragraphs(section.paragraphs||[section.text])}${explanation}${followup}</article>`;
 }
 
 /** Shared Community/Future layout; each swap includes its mobile flow image. */

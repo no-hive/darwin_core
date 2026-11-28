@@ -83,8 +83,8 @@ export function preparePage(document,lang,route,articles){
    if(route==='concept/'){
      const es=lang==='es';
      const images=[{src:'/assets/fern.webp',alt:es?'Un helecho desplegándose en un mosaico de caracteres verdes.':'An unfurling fern in pale green characters against deep forest-green shadows.'},{src:'/assets/frog-woodland.webp',alt:es?'Una rana sobre el musgo de un bosque, representada con caracteres.':'A frog resting on moss in a tall green woodland, rendered in tiny characters.'},{src:'/assets/blog-deer.webp',alt:es?'Un ciervo en un bosque tranquilo, representado con caracteres.':'A deer in a quiet woodland, rendered in character cells.'}];
-     const copy={sections:aboutCopy[lang].concept,images,communityAction:es?'Leer más sobre la comunidad':'Read more about community',futureAction:es?'Lee sobre el futuro':'Read about Future'};
-     document.querySelector('.scroll-story').innerHTML=renderAboutStory(lang,copy,[2,5],{0:{after:0,image:{src:'/assets/concept-field-researcher.webp',alt:es?'Una persona investigadora trabaja en un bosque de musgo.':'A researcher works in a mossy forest, rendered in green character cells.'}},1:{after:2,image:images[2]}});
+     const copy={sections:aboutCopy[lang].concept,images,communityAction:es?'Explora la comunidad':'Explore Community',futureAction:es?'Sumérgete en el futuro':'Dive Into Future'};
+     document.querySelector('.scroll-story').innerHTML=renderAboutStory(lang,copy,[2,6],{0:{after:0,image:{src:'/assets/concept-field-researcher.webp',alt:es?'Una persona investigadora trabaja en un bosque de musgo.':'A researcher works in a mossy forest, rendered in green character cells.'}},1:{after:2,image:images[2]}});
      addAboutSectionDivider(document);
      document.querySelector('.page-transition')?.remove();
      return;
