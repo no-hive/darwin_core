@@ -3,9 +3,9 @@
   "theme": "willow",
   "name": "Darwin Core Protocol",
   "colors": {
-    "primary": "#48582D",
-    "light": "#BACB79",
-    "dark": "#5B6C37"
+    "primary": "#B3CF66",
+    "light": "#B3CF66",
+    "dark": "#48582D"
   },
   "appearance": {
     "default": "dark"
