@@ -6,6 +6,7 @@ import {localizedArticles} from './content/article-catalog.mjs';
 import {appRenderer} from './config/migration.mjs';
 import {community} from './content/community.mjs';
 import {future} from './content/future.mjs';
+import {aboutCopy} from './content/about-copy.mjs';
 import postcss from 'postcss';
 import {SITE} from './config/site.mjs';
 import {imageDimensions} from './lib/images.mjs';
@@ -87,7 +88,7 @@ for(const f of files.filter(f=>f.endsWith('.html'))){
    assert.equal(d.querySelectorAll('.about-action').length,2,`About actions: ${route}`);
    assert(!d.querySelector('.intro'),`No redundant About title: ${route}`);
  }
- const copy=route.endsWith('/community/')?community[lang]:route.endsWith('/future/')?future[lang]:null;
+ const copy=route.endsWith('/community/')?{...community[lang],sections:aboutCopy[lang].community}:route.endsWith('/future/')?{...future[lang],sections:aboutCopy[lang].future}:null;
  if(copy){
    const stories=[...d.querySelectorAll('[data-about-story]')];
    assert.deepEqual(stories.map(node=>node.querySelector('h2')?.textContent),copy.sections.map(item=>item.heading),`About section order: ${route}`);
@@ -107,8 +108,10 @@ for(const f of files.filter(f=>f.endsWith('.html'))){
    });
    const visuals=[...d.querySelectorAll('.scroll-visual')];
    assert.equal(visuals[0].querySelector('img')?.getAttribute('src'),copy.images[0].src);
-   assert.equal(visuals[1].querySelector('img')?.getAttribute('src'),copy.images[1].src);
-   assert.equal(visuals[1].querySelector('[data-about-swap-layer="next"] img')?.getAttribute('src'),copy.images[2].src);
+   const communityRoute=route.endsWith('/community/');
+   assert.equal(visuals[1].querySelector('img')?.getAttribute('src'),copy.images[communityRoute?2:1].src);
+   const swapVisual=communityRoute?visuals[0]:visuals[1];
+   assert.equal(swapVisual.querySelector('[data-about-swap-layer="next"] img')?.getAttribute('src'),copy.images[communityRoute?1:2].src);
    if(copy.beginningImage)assert.equal(visuals[0].querySelector('[data-about-swap-layer="next"] img')?.getAttribute('src'),copy.beginningImage.src);
  }
  if(/\/blog\/$/.test(route)){assert(!d.querySelector('.blog-crumbs'));assert.equal(d.querySelectorAll('.story-row[data-url]').length,catalogs[lang].length);}

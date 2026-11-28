@@ -63,7 +63,7 @@ async function render(html,relative,lang,localized){
  const tool=document.getElementById('tool-app');
  if(tool){tool.dataset.workerSrc='/assets/processing-worker.js?v='+tools.workerHash;document.querySelectorAll('script[src]').forEach(script=>{const src=script.getAttribute('src').split('?')[0],name=src.split('/').at(-1);if(src.endsWith('/vendor/jszip.min.js')){script.remove();return;}if(tools.scripts[name])script.setAttribute('src','/assets/'+name+'?v='+tools.scripts[name]);});}
  if(selectedAppRenderer==='react'&&route.startsWith('app/'))await prepareReactApp(document,lang,route);
- applyFindingWording(document,{preserveAppContent:route.startsWith('app/')});
+ applyFindingWording(document,{preserveAppContent:route.startsWith('app/'),preserveMainContent:['concept/','community/','future/'].includes(route)});
  document.querySelectorAll('link[rel="stylesheet"]').forEach(n=>{if(/(?:^|\/)style\.css(?:\?|$)/.test(n.getAttribute('href')))n.setAttribute('href',`/style.css?v=${styleVersion}`);});
  applyInitialPaint(document,route);
  const url=applyMetadata(document,lang,route,localized,ogImages);

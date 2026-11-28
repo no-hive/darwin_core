@@ -36,8 +36,10 @@
  function syncSwaps(){
    swapFrame=0;
    for(const swap of swaps){
-     const target=swap.to.getBoundingClientRect();
-     const next=swap.enabled&&swap.ready&&target.top+collapsedHeight(swap.to)/2<=innerHeight*.618;
+     const communitySwap=document.body.classList.contains('community-page');
+     const block=communitySwap?swap.from:swap.to;
+     const target=block.getBoundingClientRect();
+     const next=swap.enabled&&swap.ready&&target.top+collapsedHeight(block)/2<=innerHeight*(communitySwap?.5:.618);
      if(next===swap.shown)continue;
      swap.shown=next;
      swap.visual.classList.toggle('is-next-visible',next);
