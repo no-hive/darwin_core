@@ -76,7 +76,8 @@ export function preparePage(document,lang,route,articles){
    }
    if(route==='community/'){
      document.body.classList.add('community-page');
-     document.querySelector('.scroll-story').innerHTML=renderAboutStory(lang,{...community[lang],sections:aboutCopy[lang].community},[2,3],{1:{after:1,image:community[lang].images[2]}});
+     const copy=community[lang];
+     document.querySelector('.scroll-story').innerHTML=renderAboutStory(lang,{...copy,sections:aboutCopy[lang].community,images:[copy.images[0],copy.images[2]]},[3,2],{0:{after:1,image:copy.images[1]}});
      addAboutSectionDivider(document);
      document.querySelector('.page-transition')?.remove();
      return;
