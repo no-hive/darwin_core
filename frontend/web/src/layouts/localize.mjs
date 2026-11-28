@@ -53,6 +53,7 @@ export function preparePage(document,lang,route,articles){
  const es=lang==='es';
  if(route==='support/'){
    document.querySelector('main').outerHTML=renderDonate(lang);
+   const script=document.createElement('script');script.defer=true;script.src='/donate.js';document.body.append(script);
    return;
  }
  if(route==='app/profile/'){
