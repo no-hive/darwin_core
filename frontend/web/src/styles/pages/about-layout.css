@@ -108,8 +108,7 @@ body.about-scroll-page{--about-nav-height:60px;display:flow-root}
 @media(prefers-reduced-motion:reduce){:is(.concept-page,.community-page,.future-page) .about-action[data-cta-image]::before{transition:none}}
 
 .future-page .scroll-visual,.future-page .scroll-visual img{background:transparent}
-.future-page .scroll-copy h2{font-size:clamp(30px,3vw,44px);line-height:1.08;letter-spacing:-.035em}
-.future-page .scroll-copy p{font-size:var(--type-body);line-height:1.65}
+@media(min-width:701px){:is(.concept-page,.community-page,.future-page) .scroll-copy h2{font-size:24px;line-height:1.2;letter-spacing:-.03em}:is(.concept-page,.community-page,.future-page) .scroll-copy p{font-size:18px;line-height:1.55}}
 :is(.concept-page,.community-page,.future-page) .about-action[data-cta-image="future"]{--cta-image:url('/assets/future-digital-fish.webp');--cta-image-position:50% 56%}
 
 @media(min-width:701px){
