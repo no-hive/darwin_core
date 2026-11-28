@@ -8,7 +8,7 @@ function visual(image){
   }
   return `<div class="about-visual-placeholder" role="img" aria-label="${esc(image)}"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5.5" width="17" height="13"/><circle cx="9" cy="10" r="1.5"/><path d="m4 17 5-4 4 3 3-5 4 6"/></svg></div>`;
 }
-const paragraphs=items=>items.map(text=>`<p>${esc(text)}</p>`).join('');
+const paragraphs=items=>items.map(item=>typeof item==='object'&&item.fields?`<dl class="about-example-fields">${item.fields.map(([label,value])=>`<div><dt>${esc(label)}:</dt> <dd>${esc(value)}</dd></div>`).join('')}</dl>`:`<p>${esc(item)}</p>`).join('');
 export const renderVisualSwap=(base,image)=>`<span class="about-visual-stage"><span class="about-swap-layer" data-about-swap-layer="base">${base}</span><span class="about-swap-layer" data-about-swap-layer="next" aria-hidden="true">${visual(image)}</span></span>`;
 const mobileVisual=image=>`<figure class="about-mobile-scene">${visual(image)}</figure>`;
 
@@ -36,7 +36,7 @@ function story(section,attributes=''){
   const renderedHints=hints.map(hint=>`<details class="concept-explainer"${hint.open?' open':''}><summary><span>${esc(hint.summary)}</span><i aria-hidden="true">+</i></summary><div class="concept-explainer-body" tabindex="0">${paragraphs(hint.paragraphs)}</div></details>`).join('');
   const explanation=hints.length>1?`<div class="story-explainers">${renderedHints}</div>`:renderedHints;
   const followup=section.afterParagraphs?.length?`<div class="about-story-followup" data-about-followup>${paragraphs(section.afterParagraphs)}</div>`:'';
-  return `<article class="scroll-copy${followup?' has-followup':''}" data-about-story ${section.majorBreak?'data-about-major-break':''} ${attributes}><h2>${esc(section.heading)}</h2>${paragraphs(section.paragraphs||[section.text])}${explanation}${followup}</article>`;
+  return `<article class="scroll-copy${followup?' has-followup':''}" data-about-story ${section.majorBreak?'data-about-major-break':''} ${section.step?'data-about-step':''} ${attributes}><h2>${esc(section.heading)}</h2>${paragraphs(section.paragraphs||[section.text])}${explanation}${followup}</article>`;
 }
 
 /** Shared Community/Future layout; each swap includes its mobile flow image. */

@@ -36,6 +36,8 @@ body.about-scroll-page{--about-nav-height:60px;display:flow-root}
 .concept-page .scroll-section:first-child{min-height:133.333svh}
 .concept-page .scroll-content.concept-intro-content,.concept-page .scroll-content.concept-middle-content,.concept-page .scroll-content.concept-final-content,:is(.concept-page,.community-page,.future-page) .scroll-content.about-modular-content{justify-content:flex-start;min-height:133.333svh;gap:clamp(160px,40svh,480px)}
 @media(min-width:701px){.concept-page [data-about-major-break]{margin-top:clamp(240px,45svh,540px)}}
+.about-example-fields{margin:20px 0}.about-example-fields div+div{margin-top:8px}.about-example-fields dt{display:inline;font-weight:700}.about-example-fields dd{display:inline;margin:0}
+@media(min-width:701px){.concept-page .about-modular-content{gap:32px!important}.concept-page .about-modular-content [data-about-major-break]{margin-top:clamp(300px,55svh,600px)}.concept-page .scroll-section:first-child .about-modular-content{gap:clamp(160px,40svh,480px)!important}}
 .concept-page .scroll-copy>p+p{margin-top:24px}
 .about-modular-content .scroll-copy>p+p{margin-top:24px}
 @media(min-width:701px){
