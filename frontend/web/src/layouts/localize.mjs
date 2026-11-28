@@ -2,14 +2,13 @@ import {renderBrandKit} from './brand-kit.mjs';
 import {prepareBlog} from './blog.mjs';
 import {renderDonate} from './donate.mjs';
 import {future} from '../content/future.mjs';
-import {renderAboutStory,configureAboutSwap} from './about-story.mjs';
-import {ctaChevron} from './about-story.mjs';
+import {aboutCopy} from '../content/about-copy.mjs';
+import {community} from '../content/community.mjs';
+import {renderAboutStory} from './about-story.mjs';
 import {preparePrototype} from './prototype.mjs';
 import {profileDirectory,profileCopy} from '../content/profiles.mjs';
 import {COPY} from '../locales/site.mjs';
 import {aboutEs} from '../locales/about.mjs';
-import {conceptIntro} from '../content/concept.mjs';
-import {renderCommunity} from './community.mjs';
 const pairs={...aboutEs};
 function collect(a,b){if(typeof a==='string'&&typeof b==='string')pairs[a]=b;else if(a&&b&&typeof a==='object')for(const k of Object.keys(a))collect(a[k],b[k]);}
 collect(COPY.en,COPY.es);
@@ -69,56 +68,27 @@ export function preparePage(document,lang,route,articles){
    document.querySelector('.intro')?.remove();
    if(route==='future/'){
      document.body.classList.add('future-page');
-     document.querySelector('.scroll-story').innerHTML=renderAboutStory(lang,future[lang],[2,3],{0:{after:0,image:future[lang].beginningImage},1:{after:1,image:future[lang].images[2]}});
+     document.querySelector('.scroll-story').innerHTML=renderAboutStory(lang,{...future[lang],sections:aboutCopy[lang].future},[2,2],{0:{after:0,image:future[lang].beginningImage},1:{after:0,image:future[lang].images[2]}});
      addAboutSectionDivider(document);
      document.querySelector('.page-transition')?.remove();
      return;
    }
    if(route==='community/'){
      document.body.classList.add('community-page');
-     document.querySelector('.scroll-story').innerHTML=renderCommunity(lang);
+     document.querySelector('.scroll-story').innerHTML=renderAboutStory(lang,{...community[lang],sections:aboutCopy[lang].community},[2,3],{1:{after:1,image:community[lang].images[2]}});
      addAboutSectionDivider(document);
      document.querySelector('.page-transition')?.remove();
      return;
    }
    if(route==='concept/'){
-     const intro=conceptIntro[lang],firstContent=document.querySelector('.scroll-section .scroll-content');
-     firstContent.classList.add('concept-intro-content');
-     firstContent.innerHTML=`<article class="scroll-copy concept-intro" data-about-story><h2>${intro.heading}</h2>${intro.paragraphs.map(p=>`<p>${p}</p>`).join('')}<details class="concept-explainer"><summary><span>${intro.summary}</span><i aria-hidden="true">+</i></summary><div class="concept-explainer-body" tabindex="0"><p>${intro.explanation}</p></div></details></article>`;
-     firstContent.insertAdjacentHTML('beforeend',`<article class="scroll-copy concept-audience" data-about-story><h2>${intro.audienceHeading}</h2><p>${intro.audienceText}</p></article>`);
-     const audience=firstContent.querySelector('.concept-audience');
-     audience.insertAdjacentHTML('beforebegin',`<article class="scroll-copy concept-issue" data-about-story><h2>${intro.issueHeading}</h2><p>${intro.issueText}</p></article>`);
-     configureAboutSwap(firstContent.closest('.scroll-section'),firstContent.querySelector('.concept-issue'),audience,{
-       src:'/assets/concept-field-researcher.webp',
-       alt:es?'Una persona con auriculares trabaja con equipo electrónico portátil en un bosque de musgo, en un mosaico de caracteres verdes.':'A researcher wearing headphones works with portable electronic equipment in a mossy forest, rendered in green character cells.'
-     });
-     const secondContent=document.querySelectorAll('.scroll-section .scroll-content')[1];
-     secondContent.classList.add('concept-middle-content');
-     secondContent.innerHTML=`<article class="scroll-copy concept-record" data-about-story><h2>${intro.recordHeading}</h2></article><article class="scroll-copy concept-privacy" data-about-story><h2>${intro.privacyHeading}</h2><p>${intro.privacyIntro}</p><details class="concept-explainer concept-privacy-example"><summary><span>${intro.privacyExampleSummary}</span><i aria-hidden="true">+</i></summary><div class="concept-explainer-body" tabindex="0">${intro.privacyExampleParagraphs.map(p=>`<p>${p}</p>`).join('')}</div></details></article><article class="scroll-copy concept-process" data-about-story><h2>${intro.processHeading}</h2>${intro.processParagraphs.map(p=>`<p>${p}</p>`).join('')}</article>`;
-   }
-   const next='community/';
-   const label=es?'Leer más sobre la comunidad':'Read more about community';
-   const futureLabel=es?'Lee sobre el futuro':'Read about Future';
-   const last=[...document.querySelectorAll('[data-about-story]')].at(-1);
-   if(last)last.outerHTML=`<div class="about-actions"><a class="about-action about-action-primary" data-cta-image="app" href="/${lang}/app/">${es?'Probar la app':'Try our app'}${ctaChevron}</a><a class="about-action about-action-secondary" href="/${lang}/${next}">${label}${ctaChevron}</a></div>`;
-   if(route==='concept/'){
-     const actions=document.querySelector('.about-actions');
-     actions.parentElement.classList.add('concept-final-content');
-     const contribution=conceptIntro[lang];
-     actions.insertAdjacentHTML('beforebegin',`<article class="scroll-copy concept-contribution" data-about-story><h2>${contribution.contributionHeading}</h2><p>${contribution.contributionText}</p></article>`);
-     actions.innerHTML=`<a class="about-action about-action-primary" data-cta-image="community" href="/${lang}/community/"><span class="cta-copy"><strong class="cta-title">${label}</strong></span>${ctaChevron}</a><a class="about-action about-action-secondary" data-cta-image="future" href="/${lang}/future/"><span class="cta-copy"><strong class="cta-title">${futureLabel}</strong></span>${ctaChevron}</a>`;
-     const finalSection=actions.closest('.scroll-section');
-     const deer=finalSection.querySelector('.scroll-visual img');
-     const deerImage={src:deer.getAttribute('src'),alt:deer.getAttribute('alt')};
-     const middle=document.querySelector('.concept-middle-content');
-     const contributionBlock=finalSection.querySelector('.concept-contribution');
-     middle.append(contributionBlock,actions);
-     configureAboutSwap(middle.closest('.scroll-section'),middle.querySelector('.concept-process'),contributionBlock,deerImage);
-     finalSection.remove();
+     const es=lang==='es';
+     const images=[{src:'/assets/fern.webp',alt:es?'Un helecho desplegándose en un mosaico de caracteres verdes.':'An unfurling fern in pale green characters against deep forest-green shadows.'},{src:'/assets/frog-woodland.webp',alt:es?'Una rana sobre el musgo de un bosque, representada con caracteres.':'A frog resting on moss in a tall green woodland, rendered in tiny characters.'},{src:'/assets/blog-deer.webp',alt:es?'Un ciervo en un bosque tranquilo, representado con caracteres.':'A deer in a quiet woodland, rendered in character cells.'}];
+     const copy={sections:aboutCopy[lang].concept,images,communityAction:es?'Leer más sobre la comunidad':'Read more about community',futureAction:es?'Lee sobre el futuro':'Read about Future'};
+     document.querySelector('.scroll-story').innerHTML=renderAboutStory(lang,copy,[2,5],{0:{after:0,image:{src:'/assets/concept-field-researcher.webp',alt:es?'Una persona investigadora trabaja en un bosque de musgo.':'A researcher works in a mossy forest, rendered in green character cells.'}},1:{after:2,image:images[2]}});
      addAboutSectionDivider(document);
-
+     document.querySelector('.page-transition')?.remove();
+     return;
    }
-   document.querySelector('.page-transition')?.remove();
  }
  if(route==='tools/'){
    document.querySelector('#tools-title').innerHTML=es?'Herramientas gratuitas<br>para trabajar con Darwin Core':'Free tools to facilitate<br>work with Darwin Core';

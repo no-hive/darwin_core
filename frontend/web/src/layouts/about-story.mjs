@@ -14,6 +14,7 @@ const mobileVisual=image=>`<figure class="about-mobile-scene">${visual(image)}</
 
 function storyActions(lang,copy){
   const actions=[
+    [copy.communityAction,'community'],
     [copy.futureAction,'future'],
     [copy.appAction,'app'],
     [copy.blogAction,'blog']
