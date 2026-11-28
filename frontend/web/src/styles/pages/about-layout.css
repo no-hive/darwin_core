@@ -74,6 +74,7 @@ body.about-scroll-page{--about-nav-height:60px;display:flow-root}
 .about-action{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:68px;padding:18px 22px;border:1px solid var(--line);font:500 16px/1.3 var(--body);color:var(--ink)}
 .about-action:hover{border-color:var(--ink)}
 :is(.concept-page,.community-page,.future-page) .about-actions{gap:16px;grid-auto-rows:1fr}
+@media(min-width:701px){:is(.community-page,.future-page) .about-modular-content>.about-actions{margin-top:80px}.concept-page .about-modular-content>.about-actions{margin-top:clamp(240px,40svh,480px)}}
 :is(.concept-page,.community-page,.future-page) .about-action{display:flex;align-items:center;height:132px;min-height:132px;padding:18px 24px;border:1px solid var(--line);border-radius:0;background:var(--bg);color:var(--ink);text-transform:none;box-shadow:none}
 :is(.concept-page,.community-page,.future-page) .about-action::before,:is(.concept-page,.community-page,.future-page) .about-action::after{content:none}
 :is(.concept-page,.community-page,.future-page) .cta-copy{display:grid;gap:14px;min-width:0}
