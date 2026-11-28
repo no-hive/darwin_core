@@ -37,7 +37,7 @@ export const community = {
     ],
     images:[{src:'/assets/community-birds.webp',alt:'Dark birds in flight, rendered in tiny character cells against a vivid orange background.'},{src:'/assets/community-mushrooms-amber-v2.webp',edgeFade:true,alt:'Four slender mushrooms growing on decaying wood, rendered in an amber alphanumeric mosaic.'},{src:'/assets/community-mountain-researcher-goat.webp',alt:'A researcher taking field notes beside a mountain goat, rendered in an amber alphanumeric mosaic.'}],
     appAction:'Try our app',
-    futureAction:'Read about Future'
+    futureAction:'Dive Into Future'
   },
   es: {
     sections: [
@@ -77,6 +77,6 @@ export const community = {
     ],
     images:[{src:'/assets/community-birds.webp',alt:'Aves oscuras en vuelo, representadas con diminutas celdas de caracteres sobre un fondo naranja intenso.'},{src:'/assets/community-mushrooms-amber-v2.webp',edgeFade:true,alt:'Cuatro setas de tallos delgados sobre madera en descomposición, en un mosaico alfanumérico de tonos ámbar.'},{src:'/assets/community-mountain-researcher-goat.webp',alt:'Una persona investigadora toma notas de campo junto a una cabra montés, en un mosaico alfanumérico de tonos ámbar.'}],
     appAction:'Prueba nuestra app',
-    futureAction:'Lee sobre el futuro'
+    futureAction:'Sumérgete en el futuro'
   }
 };

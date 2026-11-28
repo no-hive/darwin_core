@@ -77,7 +77,7 @@ body.about-scroll-page{--about-nav-height:60px;display:flow-root}
 :is(.concept-page,.community-page,.future-page) .about-action{display:flex;align-items:center;height:132px;min-height:132px;padding:18px 24px;border:1px solid var(--line);border-radius:0;background:var(--bg);color:var(--ink);text-transform:none;box-shadow:none}
 :is(.concept-page,.community-page,.future-page) .about-action::before,:is(.concept-page,.community-page,.future-page) .about-action::after{content:none}
 :is(.concept-page,.community-page,.future-page) .cta-copy{display:grid;gap:14px;min-width:0}
-:is(.concept-page,.community-page,.future-page) .cta-title{font-family:var(--headline);font-size:clamp(28px,2.8vw,38px);font-weight:400;line-height:1.2;letter-spacing:-.025em;text-wrap:balance}
+:is(.concept-page,.community-page,.future-page) .cta-title{font-family:var(--headline);font-size:clamp(22px,2vw,28px);font-weight:400;line-height:1.2;letter-spacing:-.025em;text-wrap:balance}
 :is(.concept-page,.community-page,.future-page) .about-action:hover{border-color:var(--ink)}
 :is(.concept-page,.community-page,.future-page) .about-action:focus-visible{outline:1px solid var(--accent);outline-offset:5px}
 @media(max-width:700px){:is(.concept-page,.community-page,.future-page) .about-action{height:112px;min-height:112px;padding:16px 20px}:is(.concept-page,.community-page,.future-page) .cta-title{font-size:clamp(22px,7vw,28px)}}
